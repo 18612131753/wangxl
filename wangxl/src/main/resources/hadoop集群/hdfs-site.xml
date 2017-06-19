@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<property>
+		<!-- 使用federation时，如果使用了2个HDFS集群<value>cluster1,cluster2</value>名字可以随便起，相互不重复即可 -->
+		<name>dfs.nameservices</name>
+		<value>cluster</value>
+	</property>
+	<property>
+		<!-- 指定NameService是cluster时的namenode有哪些，这里的值也是逻辑名称，名字随便起，相互不重复即可 -->
+		<!-- 如果是federation，则写多个标签 
+		<property>
+<name>dfs.ha.namenodes.cluster1</name>
+<value>hadoop101,hadoop102</value>
+</property> 
+<property>
+<name>dfs.ha.namenodes.cluster2</name>
+<value>hadoop103,hadoop104</value>
+</property>
+-->
+		<name>dfs.ha.namenodes.cluster</name>
+		<value>master1,master2</value>
+	</property>
+	<property>
+		<!-- cluster.master1 都是上面命名的 ，指定master1的RPC地址-->
+		<name>dfs.namenode.rpc-address.cluster.master1</name>
+		<value>master1:8020</value>
+	</property>
+	<property>
+		<!-- cluster.master2 都是上面命名的 ，指定master1的RPC地址-->
+		<name>dfs.namenode.rpc-address.cluster.master2</name>
+		<value>master2:8020</value>
+	</property>
+	<property>
+		<!-- 指定master1的http地址 -->
+		<name>dfs.namenode.http-address.cluster.master1</name>
+		<value>master1:50070</value>
+	</property>
+	<property>
+		<name>dfs.namenode.http-address.cluster.master2</name>
+		<value>master2:50070</value>
+	</property>
+	<property>
+		<name>dfs.namenode.servicerpc-address.cluster.master1</name>
+		<value>master1:53333</value>
+	</property>
+	<property>
+		<name>dfs.namenode.servicerpc-address.cluster.master2</name>
+		<value>master2:53333</value>
+	</property>
+	<property>
+			<!-- 这是配置nn上面的editlog要copy到那些机器上,指定cluster的两个NameNode共享edits文件目录时，使用的JournalNode集群信息 -->
+	    <name>dfs.namenode.shared.edits.dir</name>  
+	    <value>qjournal://slave1:8485;slave2:8485;slave3:8485/cluster</value>
+	</property>
+	<property>
+		  <!-- 指定cluster是否启动自动故障恢复，即当NameNode出故障时，是否自动切换到另一台NameNode -->
+	    <name>dfs.client.failover.proxy.provider.cluster</name>
+	    <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+	</property>
+	<property>
+	    <name>dfs.journalnode.edits.dir</name>
+	    <value>/home/hadoop/hadoopdata/journal</value>
+	</property>
+	<property>
+		<!-- 指定DataNode存储block的副本数量。默认值是3个 -->
+		<name>dfs.replication</name>
+		<value>3</value>
+	</property>
+	<property>  
+		<name>dfs.namenode.name.dir</name>  
+		<value>file:/home/hadoop/hadoopdata/name</value>  
+	</property>  
+	<property>  
+		<name>dfs.datanode.data.dir</name>  
+		<value>file:/home/hadoop/hadoopdata/data</value>  
+	</property>  
+	<property>
+		<name>dfs.ha.automatic-failover.enabled</name>
+		<value>true</value>
+	</property>
+	<property>  
+		<name>dfs.webhdfs.enabled</name>  
+		<value>true</value>
+	</property>
+	<property>  
+	  <!-- 0.0.0.0 表示本机 -->
+		<name>dfs.journalnode.http-address</name>  
+		<value>0.0.0.0:8480</value>  
+	</property>  
+	<property>  
+		<name>dfs.journalnode.rpc-address</name>  
+		<value>0.0.0.0:8485</value>  
+	</property>
+	<property>    
+		<name>dfs.permissions</name>    
+		<value>false</value>    
+	</property>
+</configuration>

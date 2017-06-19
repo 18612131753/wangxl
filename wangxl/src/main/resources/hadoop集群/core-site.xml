@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<!-- 默认的HDFS路径 -->
+		<!-- 当有多个HDFS集群同时工作时，用户如果不写集群名称，那么默认使用哪个哪？在这里指定！该值来自于hdfs-site.xml中的配置 -->
+		<!-- viewfs:/// -->
+		<name>fs.defaultFS</name>
+		<value>hdfs://cluster</value>
+	</property>
+	<property>
+		<!-- 临时文件夹，指定后需将使用到的所有子级文件夹都要手动创建出来，否则无法正常启动服务。 -->
+		<name>hadoop.tmp.dir</name>
+		<value>/home/hadoop/hadoopdata/tmp/</value>
+	</property>
+	<property>
+		<!-- ZooKeeper集群的地址和端口 -->
+		<name>ha.zookeeper.quorum</name>
+		<value>slave1:2181,slave2:2181,slave3:2181</value>
+	</property>
+	<property>
+		<name>io.file.buffer.size</name>
+		<value>131072</value>
+	</property>
+	<property>
+		<!-- 一旦需要NameNode切换，使用ssh方式进行操作 -->
+		<name>dfs.ha.fencing.methods</name>
+		<value>sshfence</value>
+	</property>
+	<property>
+		<!-- 如果使用ssh进行故障切换，使用ssh通信时用的密钥存储的位置 -->
+		<name>dfs.ha.fencing.ssh.private-key-files</name>
+		<value>/home/hadoop/.ssh/id_dsa</value>
+	</property>
+	<property>
+	  <name>io.compression.codecs</name>
+	  <value>
+	  org.apache.hadoop.io.compress.GzipCodec,
+	  org.apache.hadoop.io.compress.DefaultCodec,
+	  org.apache.hadoop.io.compress.BZip2Codec,
+	  org.apache.hadoop.io.compress.SnappyCodec
+	  </value>
+	</property>
+</configuration>

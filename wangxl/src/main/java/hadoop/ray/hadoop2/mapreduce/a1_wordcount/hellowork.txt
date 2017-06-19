@@ -1,0 +1,12 @@
+hello java £¡
+hello work £¡
+hello work £¡
+hello work £¡
+hello hadoop
+hello hadoop
+hello mapreduce
+hello mapreduce
+hello mapreduce
+hello mapreduce
+hello mapreduce
+hello wordcount

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<property>
+		<name>mapreduce.framework.name</name>
+		<value>yarn</value>
+	</property>
+	<property>
+		<name>mapreduce.jobtracher.http.address</name>
+		<value>masterall:50020</value>
+	</property>
+	<property>
+        <name>yarn.app.mapreduce.am.resource.mb</name>
+        <value>512</value>
+     </property>
+     
+     <!-- 跨平台提交jar，需要配置这两项 start  -->
+	 <property>  
+        <name>mapred.remote.os</name>
+        <value>Linux</value>
+        <description>Remote MapReduce framework's OS, can be either Linux or Windows</description> 
+	</property>
+	<!-- 配置使用跨平台提交任务 -->
+	<property>
+        <name>mapreduce.app-submission.cross-platform</name>
+        <value>true</value>
+	</property>
+	<!-- 跨平台提交jar，需要配置这两项 end -->
+</configuration>
