@@ -1,10 +1,8 @@
-package ray.java.serializable;
+package ali.rule.r1.serializable;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -30,11 +28,7 @@ public class MainT {
 			System.out.println(s2.toString());
 			ois.close();
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e ) {
 			e.printStackTrace();
 		}
 	}

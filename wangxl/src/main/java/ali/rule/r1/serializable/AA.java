@@ -1,4 +1,4 @@
-package ray.java.serializable;
+package ali.rule.r1.serializable;
 
 import java.io.Serializable;
 
@@ -16,7 +16,7 @@ public class AA implements Serializable {
 	 * 而新增的值则会设置成null，删除的值则不会显示。
 	*/
 	
-	private static final long serialVersionUID = -2337937881709830076L;
+	private static final long serialVersionUID = -2337937881709830078L;
 
 	// private static final long serialVersionUID = 1L;
 
