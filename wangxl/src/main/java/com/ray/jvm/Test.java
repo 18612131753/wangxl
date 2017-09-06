@@ -9,13 +9,12 @@ import java.util.List;
  * */
 public class Test {
 
-	public static void main(String[] args) {
-		byte[] b = null;
-		for (int i = 0; i < 2; i++)
+    public static void main(String[] args) {
+        byte[] b = null;
+        for (int i = 0; i < 2; i++)
 			b = new byte[1 * 1024 * 1024];
 		System.out.println(b);
 		String a1 = "abc";
-		
 		String a2 = "abc";
 		System.out.println(a1 == a2);
 		List list = new ArrayList<HashMap>();

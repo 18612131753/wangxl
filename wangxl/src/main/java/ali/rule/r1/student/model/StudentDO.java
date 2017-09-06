@@ -2,10 +2,13 @@ package ali.rule.r1.student.model;
 
 import java.util.List;
 
+import ali.rule.r1.student.base.SexEnum;
+
 public class StudentDO {
 
 	private Integer id ;
 	private String name ;
+	private Integer sex = SexEnum.BOY.getValue() ;
 	private String class_id ;
 	private Boolean man ; //isman
 	
@@ -35,7 +38,13 @@ public class StudentDO {
 	public void setTeachers(List<TeacherDO> teachers) {
 		this.teachers = teachers;
 	}
-
+	
+	public Integer getSex() {
+		return sex;
+	}
+	public void setSex(Integer sex) {
+		this.sex = sex;
+	}
 	public Boolean getMan() {
 		return man;
 	}
