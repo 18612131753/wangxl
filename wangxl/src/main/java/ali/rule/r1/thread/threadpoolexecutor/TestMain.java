@@ -1,6 +1,9 @@
 package ali.rule.r1.thread.threadpoolexecutor;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 基本线程10个，最大线程池30个
@@ -10,13 +13,26 @@ import java.util.concurrent.ExecutorService;
  * 所以最大可以跑40个线程，30个在执行，10个在缓存，从第41个开始，将错误
  */
 public class TestMain {
-	// 测试构造的线程池
-		public static void main(String[] args) {
-			CustomThreadPoolExecutor exec = new CustomThreadPoolExecutor();
-			// 1.初始化
-			exec.init();
 
-			ExecutorService pool = exec.getCustomThreadPoolExecutor();
+		public static void main(String[] args) {
+			/** 
+		     * 线程池初始化方法 
+		     *  
+		     * corePoolSize 核心线程池大小----10 
+		     * maximumPoolSize 最大线程池大小----30 
+		     * keepAliveTime 线程池中超过corePoolSize数目的空闲线程最大存活时间----30+单位TimeUnit 
+		     * TimeUnit keepAliveTime时间单位----TimeUnit.MINUTES 
+		     * workQueue 阻塞队列----new ArrayBlockingQueue<Runnable>(10)====10容量的阻塞队列 
+		     * threadFactory 新建线程工厂----new CustomThreadFactory()====定制的线程工厂 
+		     * rejectedExecutionHandler 当提交任务数超过maxmumPoolSize+workQueue之和时, 
+		     *                          即当提交第41个任务时(前面线程都没有执行完,此测试方法中用sleep(100)), 
+		     *                                任务会交给RejectedExecutionHandler来处理 
+		     */
+			ExecutorService pool = new ThreadPoolExecutor(
+					10, 30, 30, TimeUnit.MINUTES, 
+					new ArrayBlockingQueue<Runnable>(10),
+					new CustomThreadFactory(), 
+					new CustomRejectedExecutionHandler());
 			for (int i = 1; i < 50; i++) {
 				System.out.println("提交第" + i + "个任务!");
 				MyThread t = new MyThread();
