@@ -1,4 +1,4 @@
-package ali.rule.r1.timer;
+package ali.rule.r1.thread.timer;
 
 import java.util.Timer;
 import java.util.TimerTask;

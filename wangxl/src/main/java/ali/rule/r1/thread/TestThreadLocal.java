@@ -8,7 +8,9 @@ public class TestThreadLocal {
 			final Thread t = new Thread() {
 				@Override
 				public void run() {
-					System.out.println("当前线程:" + Thread.currentThread().getName() + ",已分配ID:" + ThreadId.get());
+					System.out.println(
+							"当前线程:" + Thread.currentThread().getName() + 
+							",已分配ID:" + ThreadId.get());  //ThreadId.threadId.get()和get()一样
 				}
 			};
 			t.start();
