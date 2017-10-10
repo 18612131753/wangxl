@@ -15,9 +15,9 @@ public class RibbonMain {
         	"### " + 
         	ConfigurationManager.getConfigInstance().getProperty("sample-client.ribbon.listOfServers")
         );  
-          
+        //获取ribbon的配置，所以名字必须写对sample-client，跟配置文件相对应
         RestClient client = (RestClient)ClientFactory.getNamedClient("sample-client");  
-        HttpRequest request = HttpRequest.newBuilder().uri(new URI("/")).build();  
+        HttpRequest request = HttpRequest.newBuilder().uri(new URI("")).build();  
           
         for(int i = 0; i < 4; i ++) {
             HttpResponse response = client.executeWithLoadBalancer(request);  
