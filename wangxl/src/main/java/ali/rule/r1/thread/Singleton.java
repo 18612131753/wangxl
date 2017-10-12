@@ -6,16 +6,19 @@ public class Singleton{
 
 	private Singleton() {
 		System.out.println("构造函数被调用");
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
-
-	public static Singleton getInstance() {
+	
+	//线程不安全
+	//public static Singleton getInstance() {
+	//线程安全
+	public static synchronized  Singleton getInstance() {
 		if (singleton == null) {
-			//线程不安全
-//			singleton = new Singleton();
-			//线程安全
-			synchronized (Singleton.class) {
-				singleton = new Singleton();
-			}
+			singleton = new Singleton();
 		}
 		return singleton;
 	}

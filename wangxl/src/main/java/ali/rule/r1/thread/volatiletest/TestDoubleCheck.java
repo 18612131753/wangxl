@@ -2,19 +2,40 @@ package ali.rule.r1.thread.volatiletest;
 
 /**
  * 优化后的单例模式
- * */
+ * 双重枷锁 + volatile ，保证效率和单例
+ */
 public class TestDoubleCheck {
 
-	private volatile Integer sing_type ;
-	
-	public Integer getSing_type(){  
-	  if (sing_type == null){   
-	    synchronized(this){   
-	      if (sing_type==null){  
-	    	  sing_type = new Integer(0);    
-	      }     
-	    }    
-	  }  
-	  return sing_type;  
-	} 
+	private static volatile TestDoubleCheck instance = null;
+
+	private TestDoubleCheck() {
+		System.out.println("构造函数被调用");
+	}
+
+	public static TestDoubleCheck getInstance() {
+		if (instance == null) {
+			synchronized (TestDoubleCheck.class) {
+				// 加锁之后，如果注释掉这第二层null的判断，则会出问题
+				if (instance == null) {
+					instance = new TestDoubleCheck();
+				}
+			}
+		}
+		return instance;
+	}
+
+	public static void main(String[] args) {
+        //创建实现了Runnable接口的匿名类
+		Runnable run = new Runnable() {
+			@Override
+			public void run() {
+				TestDoubleCheck.getInstance();
+			}
+		};
+        for(int i = 0; i < 100; i++){
+            Thread thread = new Thread(run);
+            thread.setName("Thread"+i);  //设置名字
+            thread.start();
+        }
+	}
 }
