@@ -41,14 +41,12 @@ public class TestMain {
 				pool.execute(t);
 			}
 
-			// 2.销毁----此处不能销毁,因为任务没有提交执行完,如果销毁线程池,任务也就无法执行了
-			// exec.destory();
-
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			pool.shutdown();
 		}
 }
 class MyThread extends Thread {  

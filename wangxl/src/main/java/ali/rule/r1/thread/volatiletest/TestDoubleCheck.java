@@ -3,6 +3,7 @@ package ali.rule.r1.thread.volatiletest;
 /**
  * 优化后的单例模式
  * 双重枷锁 + volatile ，保证效率和单例
+ * 如果不加volatie，只能保证有时候不出问题，但是当并发量特别大的时候，不能保证安全
  */
 public class TestDoubleCheck {
 
