@@ -2,6 +2,9 @@ package ali.rule.r1.hashmap;
 
 import java.util.HashMap;
 
+/**
+ * 
+ * */
 public class HashMapTest {
 
 	public static void main(String[] args) {
