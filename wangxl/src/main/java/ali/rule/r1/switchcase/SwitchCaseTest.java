@@ -1,4 +1,4 @@
-package ali.rule.r1.control17.switchcase;
+package ali.rule.r1.switchcase;
 
 public class SwitchCaseTest {
 
