@@ -36,12 +36,14 @@ public class OptionalTest {
 		//flatMap()：flatMap方法与map方法类似，区别在于mapping函数的返回值不同。
 		//map方法的mapping函数返回值可以是任何类型T，
 		//而flatMap方法的mapping函数必须是Optional。
+		// 函数对象：Function f = (a) -> {return a+"key";};
+
 		Optional<Optional<String>> str11Optional = optional1.map((a) -> {
 		    return Optional.<String>of("key" + a);  
 		});
 		Optional<String> str22Optional = optional1.flatMap((a) -> {  
 		    return Optional.<String>of("key" + a);  
-		});  
+		});
 		System.out.println( "flatMap:" );
 		System.out.println(str11Optional.get().get());// key1  
 		System.out.println(str22Optional.get());// key1  
