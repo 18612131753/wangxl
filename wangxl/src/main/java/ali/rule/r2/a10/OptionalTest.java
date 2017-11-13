@@ -30,7 +30,8 @@ public class OptionalTest {
 		Optional<String> str2Optional = optional2.map((value) -> "key" + value);
 
 		System.out.println( "map:" );
-		System.out.println(str1Optional.get());// key1  
+		System.out.println(str1Optional.get());// key1
+		//如果值存在则isPresent()方法会返回true,否则返回false
 		System.out.println(str2Optional.isPresent());// false  
 		
 		//flatMap()：flatMap方法与map方法类似，区别在于mapping函数的返回值不同。
