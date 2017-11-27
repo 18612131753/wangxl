@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ray.power.user.dao.UserDataRoleDao">
+	<resultMap type="com.ray.power.menu.model.MenuVO" id="MenuMap_ROLE">
+		<id column="menuid"   property="menuid"/>
+		<result column="name" property="name"/>
+		<result column="url"  property="url"/>
+		<collection property="childMenus" javaType="ArrayList" column="{menuid=menuid,roleid=roleid}" select="findChildMenuByRoleIdAndMenuId"/> 
+	</resultMap>
+	<select id="findMenuByRoleId" resultMap="MenuMap_ROLE">
+		select pm.menuid,pm.name,pm.pmenuid,pm.url,prm.roleid 
+		from power_role_menu prm 
+		left join power_menu pm on pm.menuid = prm.menuid 
+		where prm.roleid = #{roleid} and pm.pmenuid = 0
+		ORDER BY pm.ordernum
+	</select>
+	<select id="findChildMenuByRoleIdAndMenuId" parameterType="HashMap" resultType="com.ray.power.menu.model.MenuVO">
+		SELECT pm.menuid , pm.name , pm.pmenuid , pm.url , prm.roleid 
+		from power_role_menu prm
+		left join power_menu pm on pm.menuid = prm.menuid 
+		WHERE
+			pm.pmenuid = #{menuid} AND prm.roleid = #{roleid}
+		ORDER BY pm.ordernum
+	</select>
+</mapper>

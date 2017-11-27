@@ -1,0 +1,11 @@
+.errorImg{background: url("../images/msg_bg.png") no-repeat scroll 0 0 transparent;height: 16px;width: 16px;cursor: pointer;}
+
+input.error,textarea.error{border: 1px solid red;}
+
+.errorMsg{display: none;position:absolute;margin-top: -16px;margin-left: 18px;}
+
+.header{background: url("../images/head.jpg")}
+
+.footer{background: url("../images/footer.jpg")}
+
+

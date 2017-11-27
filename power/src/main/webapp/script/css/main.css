@@ -1,0 +1,300 @@
+html, body{ 
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+img{
+	border:0;
+}
+/* top页 修改密码 退出系统 a标签样式 */
+.north-panel-a{
+	color:#FFFFFF;
+	cursor:pointer;
+	text-decoration:underline;
+}
+table ,th ,tr,td{
+	font-size: 12px;
+	text-align:center;
+}
+
+.p_menu {
+	padding: 0;
+}
+.p_menu div.c_menu{
+	line-height: 25px;
+	font-size: 12px;
+	font-weight: bold;
+	padding-left: 40px;
+	cursor: pointer;
+	list-style-type: none;
+}
+.p_menu div.c_menu:hover{
+	border: 1px solid #99A8BC;
+	background-color: #C4D6EC;
+	padding-left: 39px;
+	line-height: 23px;
+}
+/* 搜索区域 */
+.grid_search_bg{
+	margin:5px;
+}
+/* 中心区域-tab的搜索区域的样式 */
+.tab_panel_search{
+	padding:5px;
+}
+.tab_panel_search_content{
+	padding:5px;
+}
+/* 搜索选项 - tree */
+.search_tree{
+	position: absolute;
+	overflow: auto;
+	width: 180px; 
+	border: 1px solid;
+	height: 200px;
+	display:none;
+	z-index:99999;
+	background-color:#FFFFFF;
+}
+.search_tree_b{
+	position: absolute;
+	overflow: auto;
+	width: 180px; 
+	border: 1px solid;
+	height: 180px;
+	display:none;
+	z-index:99;
+	background-color:#FFFFFF;
+}
+/* 表单验证框提示信息 */
+label.error{
+	/*
+	background: #fff6bf url(../images/alert.png) center no-repeat;
+	margin-left: 10px;
+	background-position: 5px 50%;
+	*/
+	background-color: #FFF6BF;
+	text-align: left;
+	padding: 2px 5px 2px 5px;
+	border: 1px solid #ffd324;
+	display: none;
+	width: 200px;
+}
+/* 一般文字DIV*/
+.div_language{
+	line-height:25px;
+	height:25px;
+	font-weight:bolder;
+	font-size: 12px;
+	background-color:#F0F3F8;
+	border-width:1px 1px 1px 1px;
+	border-style:solid;
+	border-color:#86A3C4;
+}
+.div_button{
+	line-height:25px;
+	height:50px;
+	font-weight:bolder;
+	font-size: 12px;
+	background-color:#F0F3F8;
+	border-width:1px 1px 1px 1px;
+	border-style:solid;
+	border-color:#86A3C4;
+}
+.table_tr_height_30{
+	height:30px ;
+}
+.td_left {
+	text-align:left;
+}
+.td_right {
+	text-align:right;
+}
+/* 分块显示信息的title样式 */
+.div_title_p{
+	background: url(../../operamasks-ui-2.0/css/default/images/dialog/title-bg.png) repeat-x scroll 0 0 transparent; 
+	width:100%;
+	height: 20px;
+    margin: 2px 0 0 -10px;
+    padding: 2px 0px 0px 10px;
+}
+.div_right_search{
+	background-color:#FFFFFF;
+    border:solid 1px #c2cadd;
+    float:left;
+    display:none;
+}
+.div_right_search_tr_background{
+	background: url(../../script/images/rightsearch/background.png) repeat-x scroll 0 0 transparent; 
+	height:30px;
+	line-height:30px;
+	font-size:12px;
+	padding:0 0 0 5px;
+}
+.color_red {
+	font-size: 10px;
+	font-weight:800;
+	color:red;
+	vertical-align:middle;
+}
+.rightMenuCss{
+	font-size: 12px;
+}
+.diabledClas { 
+	background-color: white; 
+	cursor:default;
+	border:1px solid #f4f4f4;
+}
+.welcome{margin:0 auto; font-size:12px; line-height:24px; background:#fff; color:#444;}
+.welcome a { color:#444444; text-decoration:none;}
+.welcome a:hover { color:#ff3300; text-decoration:underline;}
+.welcome ul,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,p { margin:0; padding:0;}
+.welcome ul { list-style:none;}
+.welcome img { border:0px;}
+.welcome_ind {border: 1px solid #99A8BC; line-height:24px; margin-bottom:1px;}
+.welcome_ind h2 { background: url(../../script/images/buttonbar/buttonbar-bg.png) 0 0 repeat-x; height: 26px;	padding-left:20px; font-size:12px; color:#555;}
+.welcome_ind h2 span { background:url(../../script/images/buttonbar/separtor-bg.png) 0 0 no-repeat; padding-left:10px;}
+.welcome_ind p { padding:2px 20px; background:#e8eef7;}
+.welcome_ind p a { padding:1px 50px; background:url(../../script/images/task.png) 0 0 no-repeat; padding-left:20px; text-decoration:underline; color:blue;}
+.welcome_ind p a i { font-style:normal; color:#f00;}
+.welcome_ind span { width:190px;display:inline-block;}
+.crm_table_detail_css {
+	width:100%;
+	border:1px solid #c9dbe1;
+	border-bottom:none;
+	border-right:none;
+	border:1;
+	border-collapse:collapse;  
+	border-spacing:0;
+}
+.crm_table_detail_css tr td{
+	border:1px solid #c9dbe1;
+	border-top:none;
+	border-left:none;
+	line-height:20px;
+	padding-left:6px;
+}
+.crm_table_detail_css th {
+	border:1px solid #c9dbe1;
+	border-top:none;
+	border-left:none;
+	line-height:20px;
+	padding-left:6px;
+	font-weight :700;
+}
+.crm_table_detail_css tr td {
+	border:1px solid #c9dbe1;
+	border-top:none;
+	border-left:none;
+	line-height:20px;
+	padding-left:6px;
+}
+
+.crm_table_css {
+	width:100%;
+	border:1px solid #c9dbe1;
+	border-bottom:none;
+	border-right:none;
+	border:0;
+	border-collapse:collapse;  
+	border-spacing:0;
+}
+.crm_table_css tr td {
+	border:1px solid #c9dbe1;
+	border-top:none;
+	border-left:none;
+	line-height:20px;
+	padding-left:6px;
+}
+
+.crm_table_css tr td:nth-child(2n) { color:#06C;}
+
+.crm_table_css_tr_title {
+	text-align:left;
+	background:url(../../script/images/td_title_background.png) 0 0 repeat-x ;
+	font-weight :700;
+	color:#000FFF;
+	height:25px;
+	font-size:13px;
+}
+
+.crm_table_css_td_left {
+	text-align:left;
+	background:#fcfdfd;
+}
+.crm_table_css_td_right {
+	text-align:right;
+	background:url(../../script/images/td_background.png) 0 0 repeat-x ;
+}
+
+.crm_table_css_td_right_bz {
+	text-align:right;
+	background:#CEDEE3 ;
+}
+
+
+/* 搜索选项 - tree */
+.search_tree_default_name{
+	position: absolute;
+	overflow: auto;
+	width: 180px; 
+	border: 1px solid #C2D9EF;
+	height: 200px;
+	display:none;
+	z-index:99999;
+	background-color:#FFFFFF;
+}
+.default_name_hover:hover{
+	background-color: #FCEFA1;
+	text-align:left;
+}
+
+.default_name_tr{
+	background-color: #FCEFA1;
+}
+.default_name_hover{
+	text-align:left;
+}
+/** 扫描件样式 */
+.crm-image-custom-nav{
+	background-color: #7B7A7A;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-size: 12px;
+	white-space:nowrap;
+	width: 100%;
+	height: 30px;
+}
+.crm-image-custom-nav li{
+	line-height: 18px;
+	height: 25px;
+	float: left;
+	width: 19%;
+	border-right: 1px solid #DCD6D3;
+	border-top: 4px solid #7B7A7A;
+	background-color: #7B7A7A;
+}
+.crm-image-custom-nav li a{
+	text-decoration: none;
+	color: white;
+}
+.crm-image-custom-nav li a p{
+	margin: 3px 0 0 15px;
+}
+.crm-image-custom-nav li.nav-selected{
+	border-top: 4px solid #C00B0B;
+	font-weight: bold;
+}
+
+.crm_report_bg {  
+    display:none;  
+    background-color: #E6E6E6 ;  
+    filter:alpha(opacity=80);/*IE*/  
+    opacity:0.8;/*FF*/  
+    z-index:99999;  
+    position:absolute;  
+}

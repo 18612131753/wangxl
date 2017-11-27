@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ray.power.user.dao.UserDao">
+
+	<sql id="findUser_SQL">
+		FROM power_user u
+		LEFT JOIN power_role role ON u.roleid = role.roleid
+		where 1=1
+		<if test="form.loginname != null and form.loginname !=''">
+			AND u.loginname like CONCAT('%',#{form.loginname},'%')
+		</if>
+		<if test="form.roleid != null">
+			AND u.roleid = #{form.roleid}
+		</if>
+		<if test="form.state != null">
+			AND u.state = #{form.state}
+		</if>
+	</sql>
+	<select id="query" resultType="com.ray.power.user.model.UserGridModelVO">
+		select u.userid,u.loginname , u.roleid , u.isadmin , u.state , u.cdate,u.udate ,
+		role.name as rolename 
+		<include refid="findUser_SQL" />
+		limit #{form.start},#{form.limit}
+	</select>
+	<select id="queryCount" resultType="Integer">
+		select count(*)
+		<include refid="findUser_SQL" />
+	</select>
+
+</mapper>
