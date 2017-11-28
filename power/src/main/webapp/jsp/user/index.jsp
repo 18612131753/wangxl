@@ -17,7 +17,7 @@
 var tabCode = "${tabCode}";
 $(document).ready(function() {
 	// 计算表格高度
-	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 53 ;
+	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 28 ;
 	
 	//按钮区
 	$('#'+tabCode+'_buttonbar').omButtonbar({
@@ -25,7 +25,9 @@ $(document).ready(function() {
           		label:"新建",
 				id:tabCode+"_buttonbar_save" ,
 				icons:{left:'${buttonAddIcons}'},
-				onClick:create_btn
+				onClick:function(){
+					main_ChangeDivContent("div_for_dialog",'${contextPath}/user/queryforlist');
+				}
 			},{separtor:true},{
           		label:"修改",
 				id:tabCode+"_buttonbar_update" ,
@@ -124,10 +126,6 @@ function doSearch(){
 	});
 }
 
-//新建
-function create_btn(){
-	main_ChangeDivContent("div_for_dialog",'${contextPath}/user/queryforlist');
-}
 //编辑
 function update_btn(){
 	var rowSels = $('#'+tabCode+'_grid').omGrid('getSelections',true);

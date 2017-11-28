@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <div style="float:left;position:absolute;left:5px;top:10px;">
-	<img src="${imagesPath}/title/t_title.png" />
+	<!-- <img src="${imagesPath}/title/t_title.png" />  -->
 </div>
 <div style="float:left;position:absolute;right:15px;top:15px;">
 	<table>
