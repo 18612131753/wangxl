@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ray.power.user.dao.UserDao;
 import com.ray.power.user.form.UserForm;
+import com.ray.power.user.model.UserDO;
 import com.ray.power.user.model.UserGridModelVO;
 import com.ray.power.util.GridDataModel;
 
@@ -23,6 +24,14 @@ public class UserServiceImpl implements UserService {
 		gridmdl.setRows(list);
 		gridmdl.setTotal(dao.queryCount(queryForm));
 		return gridmdl;
+	}
+
+	public UserDO findUserById(Integer userid) {
+		return dao.findUserById(userid);
+	}
+
+	public int saveUser(UserDO user) throws Exception{
+		return dao.saveUser( user );
 	}
 
 }

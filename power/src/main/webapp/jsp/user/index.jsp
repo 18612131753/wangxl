@@ -26,7 +26,7 @@ $(document).ready(function() {
 				id:tabCode+"_buttonbar_save" ,
 				icons:{left:'${buttonAddIcons}'},
 				onClick:function(){
-					main_ChangeDivContent("div_for_dialog",'${contextPath}/user/queryforlist');
+					main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/create');
 				}
 			},{separtor:true},{
           		label:"修改",
@@ -90,7 +90,7 @@ $(document).ready(function() {
 					return '<input type="checkbox" class="'+tabCode+'_checkbox" id="'+tabCode+'_checkbox_'+colValue+'" value="'+colValue+'"/>';
                 }
 			 },
-			 { header:'登录名',name:'loginname',width:120,align:'center'},
+			 { header:'登录名',name:'loginname',width:130,align:'center'},
 			 { header:'用户角色',name:'rolename',width:100,align:'center' },
 			 { header:'是否管理员',name:'isadmin',width:100,align:'center' ,
 			 	renderer:function(colValue,rowData,rowIndex) {
@@ -100,8 +100,8 @@ $(document).ready(function() {
 			 	renderer:function(colValue,rowData,rowIndex) {
 					return (colValue == 1) ? "正常" : "停用";
                 }},
-			 { header:'创建时间',name:'cdate',width:150,align:'center' },
-			 { header:'更新时间',name:'udate',width:150,align:'center' }
+			 { header:'创建时间',name:'cdate',width:160,align:'center',renderer:function(value,rowData,rowIdex){return formatDate(value,"y-m-d h:i:s");} },
+			 { header:'更新时间',name:'udate',width:160,align:'center',renderer:function(value,rowData,rowIdex){return formatDate(value,"y-m-d h:i:s");} }
 		],
 		onRowClick:function(rowIndex,rowData,event){
 			//保存用户的选中状态
@@ -134,7 +134,7 @@ function update_btn(){
 		return false;
 	}
     var rd_id=rowSels[0].id;
-    main_ChangeDivContent("div_for_dialog",'${contextPath}/user/queryforlist' );
+    main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/edit?userid='+rd_id );
 }
 //删除
 function delete_btn(){

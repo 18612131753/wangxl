@@ -2,47 +2,51 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../commons/taglibs.jsp"%>
 <div id="${tabCode}_form_dialog">
-	<form id="${tabCode}_form" method="post">
+	<form id="${tabCode}_form" method="post" >
 		<table>
 			<tr>
 				<td>
 				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>教室名称：</td>
-				<td class="td_left"><input type="text" id="${tabCode}_form_crm_nm" name="crm_nm" value="${mdl.crm_nm}"/></td>
-				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
-			</tr>
-			<tr>
-				<td>
-				</td>
-				<td class="td_right">
-					<span style="color: red;">*</span>大区/中心：</td>
-				<td class="td_left"><INPUT id="${tabCode}_form_crm_center_id" type="text" name="crm_center_id"  value="${mdl.crm_center_id}"/></td>
-				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
-			</tr>
-			<tr>
-				<td>
-				</td>
-				<td class="td_right">
-					<span style="color: red;">*</span>容纳人数：</td>
-				<td class="td_left"><input id="${tabCode}_form_crm_contain_num" name="crm_contain_num" value="${mdl.crm_contain_num}"/></td>
-				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
-			</tr>
-			<tr>
-				<td>
-				</td>
-				<td class="td_right">
-					<span style="color: red;">*</span>地址：</td>
+					<span style="color: red;">*</span>用户名：</td>
 				<td class="td_left">
-				<INPUT id="${tabCode}_form_crm_address" type="text" name="crm_address" value="${mdl.crm_address}"/>
+					<input type="text" id="${tabCode}_form_loginname" name="loginname" value="${euser.loginname}" />
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
 			<tr>
-				<td></td>
-				<td class="td_right">备注： </td>
+				<td>
+				</td>
+				<td class="td_right">
+					<span style="color: red;">*</span>密码：</td>
 				<td class="td_left">
-					<textarea id="${tabCode}_form_crm_remarks" name = "crm_remarks" style="width: 100%">${mdl.crm_remarks}</textarea>
+					<input type="password" id="${tabCode}_form_password" name="password" autocomplete="new-password" value="${euser.password}"/>
+				</td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td class="td_right">
+					<span style="color: red;">*</span>用户角色：</td>
+				<td class="td_left"><INPUT id="${tabCode}_form_roleid" type="text" name="roleid" /></td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td class="td_right">
+					<span style="color:red;">*</span>是否管理员：</td>
+				<td class="td_left"><input id="${tabCode}_form_isadmin" name="isadmin"/></td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td class="td_right">
+					<span style="color: red;">*</span>账号状态：</td>
+				<td class="td_left">
+				<INPUT id="${tabCode}_form_state" type="text" name="state"/>
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
@@ -56,11 +60,10 @@ var FORM_PAGE_CONFIG={
 	FORM_DIALOG:tabCode+"_form_dialog",
 	FORM:tabCode+"_form"
 };
-//var userStateDic = [{text:'有效',value:1},{text:'无效',value:0}];
-//var userGenderDic = [{value:1,text:'男'},{value:0,text:'女'}];
 
 //提交操作
 var saving = false;
+
 function btn_save(){
 	if(saving || !$("#"+FORM_PAGE_CONFIG.FORM).valid())
 		return false;
@@ -78,16 +81,12 @@ function btn_save(){
 					main_messageTip_updateSuccess_show();
 				}else if("create"==new_or_edit){
 					main_messageTip_addSuccess_show();
-				}else{
-					
 				}
 			} else {
 				if("edit"==new_or_edit){
 					main_messageTip_updateError_show();
 				}else if("create"==new_or_edit){
 					main_messageTip_addError_show();
-				}else{
-					
 				}
 				$("#"+FORM_PAGE_CONFIG.FORM_DIALOG+"_error").html(responseText.mess);
 				$("#"+FORM_PAGE_CONFIG.FORM_DIALOG+"_error").css('display','inline');
@@ -108,16 +107,16 @@ $(document).ready(function() {
 	//表单验证
 	$("#"+FORM_PAGE_CONFIG.FORM).validate({
 		rules : {
-			crm_nm : { required : true, maxlength : 20 },
-			crm_center_id : { required : true },
-			crm_contain_num : { required : true, maxlength : 5 },
-			crm_address : { required : true , maxlength : 128 }
+			loginname : { required : true, maxlength : 30 },
+			isadmin : { required : true },
+			state : { required : true },
+			roleid : { required : true  }
 		},
 		messages : {
-			crm_nm : { required : "教室名称必填", maxlength : "长度不超过20个字符" },
-			crm_center_id : { required : "大区/中心必填" },
-			crm_contain_num : { required : "容纳人数必填", maxlength : "长度不超过5个字符" },
-			crm_address : { required : "地址必填", maxlength : "长度不超过64个字符" }
+			loginname : { required : "用户名必填", maxlength : "长度不超过30个字符" },
+			isadmin : { required : "必选" },
+			state : { required : "必选"},
+			roleid : { required : "必选" }
 		},
 		errorPlacement : function(error, element) { 
                if(error.html()){
@@ -163,7 +162,7 @@ $(document).ready(function() {
            $(this).next().css('display','none');
     });
  	
-	var dtitle = (("edit"!=new_or_edit)?"新建":"编辑")+"<label id=\""+FORM_PAGE_CONFIG.FORM_DIALOG+"_error\" class=\"error\" generated=\"true\" style=\"display:none;\"></label>";
+	var dtitle = (("create"==new_or_edit)?"新建":"编辑")+"<label id=\""+FORM_PAGE_CONFIG.FORM_DIALOG+"_error\" class=\"error\" generated=\"true\" style=\"display:none;\"></label>";
 	
 	$("#"+FORM_PAGE_CONFIG.FORM_DIALOG).omDialog({
 		title : dtitle,
@@ -189,7 +188,43 @@ $(document).ready(function() {
 
 	$("#"+tabCode+"_form_submit").omButton({ icons : { left : '${windowSubmitIcons}' } });
 	$("#"+tabCode+"_form_colse").omButton({ icons : { left : '${windowCloseIcons}' } });
-	
+
+	//角色
+	$('#'+tabCode+'_form_roleid').omCombo({
+        dataSource:'${contextPath}/role/findRoleCombo?type=1',
+        optionField:function(data,index){
+            return data.text;
+        },
+        emptyText:'必选',
+        editable:false,
+        lazyLoad:false,
+        value:'${euser.roleid}',
+        listMaxHeight:80
+    });
+    //是否管理员
+    $('#'+tabCode+'_form_isadmin').omCombo({
+       dataSource:[{text:'是',value:'1'},{text:'否',value:'0'}],
+        optionField:function(data,index){
+            return data.text;
+        },
+        emptyText:'必选',
+        editable:false,
+        lazyLoad:false,
+        value:'${euser.isadmin}',
+        listMaxHeight:80
+    });
+    //是否禁用
+    $('#'+tabCode+'_form_state').omCombo({
+       dataSource:[{text:'正常',value:'1'},{text:'停用',value:'0'}],
+        optionField:function(data,index){
+            return data.text;
+        },
+        emptyText:'必选',
+        editable:false,
+        lazyLoad:false,
+        value:'${euser.state}',
+        listMaxHeight:80
+    });
 	//bindUserDeptTree("user_add_department_id",'${crm_menu_id}', '${department.id}',true);
 });
 </script>

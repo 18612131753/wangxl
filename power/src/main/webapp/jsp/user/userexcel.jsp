@@ -17,9 +17,9 @@ response.setHeader("Content-disposition", "attachment; filename=excelname.xls");
 			</tr>
 			<c:forEach var="user" items="${list}">
 				<tr>
-					<td>${user.login_name}</td>
+					<td>${user.loginname}</td>
 					<td>${user.password}</td>
-					<td>${user.create_date}</td>
+					<td>${user.cdate}</td>
 				</tr>
 			</c:forEach>
 		</table>

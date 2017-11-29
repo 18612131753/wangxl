@@ -7,11 +7,12 @@ public class UserDO extends BaseModelDO {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer userid;
-	private String loginname;
-	private String password;
+	private String  loginname;
+	private String  password;
 	private Integer roleid;
 	private Integer isadmin;
 	private Integer state;
+	
 	public Integer getUserid() {
 		return userid;
 	}
