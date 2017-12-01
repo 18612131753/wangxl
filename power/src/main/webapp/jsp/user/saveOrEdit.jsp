@@ -18,7 +18,7 @@
 				<td>
 				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>密码：</td>
+					<span style="color: red;"></span>密码：</td>
 				<td class="td_left">
 					<input type="password" id="${tabCode}_form_password" name="password" autocomplete="new-password" value="${euser.password}"/>
 				</td>

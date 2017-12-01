@@ -12,16 +12,12 @@ import com.ray.power.login.model.UserSession;
 import com.ray.power.user.form.UserForm;
 import com.ray.power.user.model.UserDO;
 import com.ray.power.user.model.UserGridModelVO;
-import com.ray.power.user.model.UserModel;
 
 public interface UserDao {
 
 	@Select("select pu.userid,pu.loginname,pu.password,pu.state,pu.isadmin,pu.roleid from power_user pu "
 			+ "where pu.loginname = #{loginname}")
 	public UserSession getUserSession(@Param("loginname") String loginname);
-
-	@Update("UPDATE base_user SET update_tm=sysdate,update_id=#{mdl.update_id},crm_upwd=#{mdl.crm_upwd},crm_dupwd=#{mdl.crm_dupwd} WHERE id=#{mdl.id} and (crm_upwd=#{oldPwd} or crm_dupwd=#{oldPwd})")
-	public void updatePwd(@Param("mdl") UserModel model, @Param("oldPwd") String oldPwd);
 
 	public List<UserGridModelVO> query(@Param("form") UserForm queryForm);
 
@@ -36,5 +32,14 @@ public interface UserDao {
 		"VALUES( #{user.loginname},#{user.password},#{user.roleid},#{user.isadmin},#{user.state},#{user.cid},now(),#{user.uid},now())")
 	@Options(useGeneratedKeys = true, keyProperty = "user.userid")
 	public int saveUser(@Param("user")UserDO user) throws Exception;
+	
+	@Update(
+		"UPDATE power_user SET loginname=#{user.loginname},roleid=#{user.roleid},isadmin=#{user.isadmin},state=#{user.state},uid=#{user.uid},udate=now() "+
+		"where userid=#{user.userid}"
+	)
+	public int updateUser(@Param("user")UserDO user)throws Exception ;
+	
+	@Update("UPDATE power_user SET password=#{user.password},uid=#{user.uid},udate=now() where userid=#{user.userid}")
+	public void updatePwd( @Param("user")UserDO user );
 
 }

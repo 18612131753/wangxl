@@ -133,7 +133,7 @@ function update_btn(){
 		main_messageBox_pleaseSelectOne_alert();
 		return false;
 	}
-    var rd_id=rowSels[0].id;
+    var rd_id=rowSels[0].userid;
     main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/edit?userid='+rd_id );
 }
 //删除

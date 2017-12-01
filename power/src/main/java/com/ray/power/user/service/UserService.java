@@ -12,4 +12,6 @@ public interface UserService {
 	public UserDO findUserById( Integer userid );
 	
 	public int saveUser(UserDO user) throws Exception;
+	
+	public void updateUser(UserDO user) throws Exception ;
 }

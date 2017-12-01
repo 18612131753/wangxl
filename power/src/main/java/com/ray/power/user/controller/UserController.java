@@ -103,10 +103,7 @@ public class UserController {
 		}
 		return ModelAndViewUtil.Jsp( "user/saveOrEdit" );
 	}
-	/**
-	 * 跳转到添加或编辑页面
-	 * @return
-	 */
+
 	@RequestMapping("save")
 	public ModelAndView save (
 			HttpSession session,
@@ -126,6 +123,28 @@ public class UserController {
 		}
 		return ModelAndViewUtil.Json_ok();
 	}
+	
+	@RequestMapping("edit/{userid}")
+	public ModelAndView edit (
+			HttpSession session,
+			HttpServletRequest request, 
+			HttpServletResponse response, Model model,
+			@PathVariable("userid") Integer userid ,
+			UserDO user
+	){
+		UserSession su = SessionUtil.getUserSession(session);
+		user.setUid( su.getUserid() );
+		user.setUserid( userid );
+		try{
+			userService.updateUser(user) ;
+		} catch (DuplicateKeyException e) {
+			return ModelAndViewUtil.Json_error("用户名重复，添加失败");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ModelAndViewUtil.Json_ok();
+	}
+	
 	
 	//例子：导出excel
 	@RequestMapping("userexcel")
