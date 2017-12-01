@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <title>系统</title>
 	    <link rel="shortcut icon"  href="${imagesPath}/title/s_title.png" type="image/x-icon" /><!-- odmis -->
-	    <link rel="stylesheet"  type="text/css" href="${operamasksPath}/css/default/om-default.css" />
+	    <link rel="stylesheet"  type="text/css" href="${operamasksPath}/css/mycss/om-default.css" />
 	    <link rel="stylesheet"  type="text/css" href="${cssPath}/opera.css" />
 	    <link rel="stylesheet"  type="text/css" href="${cssPath}/main.css" />
 	    <link rel="stylesheet"  type="text/css" href="${cssPath}/style.css" />
