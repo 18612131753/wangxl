@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ray.power.menu.dao.MenuDao">
+
+	<sql id="findMenu_SQL">
+		FROM power_menu m
+		LEFT JOIN power_menu mp ON m.pmenuid = mp.menuid
+		where 1=1
+		<if test="form.name != null and form.name !=''">
+			AND m.name like CONCAT('%',#{form.name},'%')
+		</if>
+		<if test="form.pmenuid != null">
+			AND m.pmenuid = #{form.pmenuid}
+		</if>
+	</sql>
+	<select id="query" resultType="com.ray.power.menu.model.MenuGridModelVO">
+		select m.menuid ,m.name,m.url , m.pmenuid ,mp.name as pmenuname , m.cdate,m.udate 
+		<include refid="findMenu_SQL" />
+		limit #{form.start},#{form.limit}
+	</select>
+	<select id="queryCount" resultType="Integer">
+		select count(*)
+		<include refid="findMenu_SQL" />
+	</select>
+
+</mapper>
