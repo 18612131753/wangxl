@@ -4,32 +4,20 @@ import com.ray.power.base.ServletForm;
 
 public class MenuForm extends ServletForm{
 
-	private String loginname ;
-	private Integer roleid ;
-	private Integer state ;
-
-	public String getLoginname() {
-		return loginname;
-	}
-
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
-	}
-
-	public Integer getRoleid() {
-		return roleid;
-	}
-
-	public void setRoleid(Integer roleid) {
-		this.roleid = roleid;
-	}
-
-	public Integer getState() {
-		return state;
-	}
-
-	public void setState(Integer state) {
-		this.state = state;
-	}
+	private String  name ;
+	private Integer pmenuid ;
 	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Integer getPmenuid() {
+		return pmenuid;
+	}
+	public void setPmenuid(Integer pmenuid) {
+		this.pmenuid = pmenuid;
+	}
+
 }

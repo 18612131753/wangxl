@@ -6,11 +6,12 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.ray.power.base.model.ObejctSelector;
 import com.ray.power.menu.dao.MenuDao;
 import com.ray.power.menu.form.MenuForm;
+import com.ray.power.menu.model.MenuDO;
 import com.ray.power.menu.model.MenuGridModelVO;
 import com.ray.power.menu.model.MenuTree;
-import com.ray.power.user.model.UserGridModelVO;
 import com.ray.power.util.GridDataModel;
 
 @Service("menuService")
@@ -29,6 +30,27 @@ public class MenuServiceImpl implements MenuService {
 		gridmdl.setRows(list);
 		gridmdl.setTotal(dao.queryCount(form));
 		return gridmdl ;
+	}
+
+	public List<ObejctSelector> findMenu1() {
+		List<ObejctSelector> list = dao.findMenu1();
+		return list ;
+	}
+
+	public MenuDO findMenuById(Integer menuid) {
+		return dao.findMenuById(menuid);
+	}
+
+	public int saveMenu(MenuDO menu) {
+		return dao.saveMenu(menu);
+	}
+
+	public int updateMenu(MenuDO menu) {
+		return dao.updateMenu(menu);
+	}
+
+	public void deleteMenu(Integer userid , Integer menuid) {
+		dao.updateMenuState(userid , menuid , 1 );
 	}
 
 }

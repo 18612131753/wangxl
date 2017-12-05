@@ -14,7 +14,6 @@ import com.ray.power.menu.model.MenuVO;
 import com.ray.power.org.dao.DepartmentDao;
 import com.ray.power.user.dao.UserDao;
 import com.ray.power.user.dao.UserDataRoleDao;
-import com.ray.power.user.model.UserModel;
 import com.ray.power.util.MD5Util;
 import com.ray.power.util.SessionUtil;
 

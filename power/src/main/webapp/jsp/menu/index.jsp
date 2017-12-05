@@ -5,9 +5,8 @@
 <div id="${tabCode}_buttonbar"></div>
 <!-- 搜索栏  -->
 <div id="${tabCode}_searchbar" class="grid_search_bg">
-	&nbsp;&nbsp;&nbsp;&nbsp;用户角色：<input type="text" id="${tabCode}_search_role" />
-	&nbsp;&nbsp;&nbsp;&nbsp;登录名：<input type="text" id="${tabCode}_search_loginname" />
-	&nbsp;&nbsp;&nbsp;&nbsp;状态：<input type="text" id="${tabCode}_search_state" />
+	&nbsp;&nbsp;&nbsp;&nbsp;父节点：<input type="text" id="${tabCode}_search_pmenu" />
+	&nbsp;&nbsp;&nbsp;&nbsp;名称：<input type="text" id="${tabCode}_search_name" />
 	<a id="${tabCode}_search_button">搜索</a>
 </div>
 <!-- 数据表格 -->
@@ -26,7 +25,7 @@ $(document).ready(function() {
 				id:tabCode+"_buttonbar_save" ,
 				icons:{left:'${buttonAddIcons}'},
 				onClick:function(){
-					main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/create');
+					main_ChangeDivContent("div_for_dialog",'${contextPath}/menu/toSaveOrEdit/create');
 				}
 			},{separtor:true},{
           		label:"修改",
@@ -41,8 +40,8 @@ $(document).ready(function() {
 			},{separtor:true}]
 	});
 	// 搜索区域
-	$('#'+tabCode+'_search_role').omCombo({
-        dataSource:'${contextPath}/role/findRoleCombo?type=0',
+	$('#'+tabCode+'_search_pmenu').omCombo({
+        dataSource:'${contextPath}/menu/findMenu1/0',
         optionField:function(data,index){
             return data.text;
         },
@@ -66,9 +65,8 @@ $(document).ready(function() {
 		onClick:function(){
 			$('#'+tabCode+'_grid').omGrid({
 				extraData : {
-					loginname:$('#'+tabCode+'_search_loginname').val(),
-					roleid:$('#'+tabCode+'_search_role').omCombo("value"),
-					state:$('#'+tabCode+'_search_state').omCombo("value")
+					name:$('#'+tabCode+'_search_name').val(),
+					pmenuid:$('#'+tabCode+'_search_pmenu').omCombo("value")
 				}
 			});
 		}
@@ -83,30 +81,24 @@ $(document).ready(function() {
 		 singleSelect:true,
 		 loadingMsg:'数据查询中...',
 		 editMode:'insert',
-		 dataSource:'${contextPath}/user/queryforlist',
+		 dataSource:'${contextPath}/menu/queryforlist',
 		 colModel:[
-		 	 { header:'',width:20,name:'userid',align:'center',
+		 	 { header:'',width:20,name:'menuid',align:'center',
 			    renderer:function(colValue,rowData,rowIndex) {
 					return '<input type="checkbox" class="'+tabCode+'_checkbox" id="'+tabCode+'_checkbox_'+colValue+'" value="'+colValue+'"/>';
                 }
 			 },
-			 { header:'登录名',name:'loginname',width:130,align:'center'},
-			 { header:'用户角色',name:'rolename',width:100,align:'center' },
-			 { header:'是否管理员',name:'isadmin',width:100,align:'center' ,
-			 	renderer:function(colValue,rowData,rowIndex) {
-					return (colValue == 1) ? "是" : "否";
-                }},
-			 { header:'账号状态',name:'state',width:100,align:'center' ,
-			 	renderer:function(colValue,rowData,rowIndex) {
-					return (colValue == 1) ? "正常" : "停用";
-                }},
+			 { header:'角色名称',name:'name',width:130,align:'center'},
+			 { header:'URL',name:'url',width:180,align:'center' },
+			 { header:'排序',name:'ordernum',width:70,align:'center' },
+			 { header:'父节点',name:'pmenuname',width:100,align:'center'},
 			 { header:'创建时间',name:'cdate',width:160,align:'center',renderer:function(value,rowData,rowIdex){return formatDate(value,"y-m-d h:i:s");} },
 			 { header:'更新时间',name:'udate',width:160,align:'center',renderer:function(value,rowData,rowIdex){return formatDate(value,"y-m-d h:i:s");} }
 		],
 		onRowClick:function(rowIndex,rowData,event){
 			//保存用户的选中状态
 			$('.'+tabCode+'_checkbox').attr('checked',false);
-			$('#'+tabCode+'_checkbox_'+rowData.userid).attr('checked','checked');
+			$('#'+tabCode+'_checkbox_'+rowData.menuid).attr('checked','checked');
 		},
 		onRowDblClick:function(rowIndex,rowData,event){
 			update_btn();
@@ -133,8 +125,8 @@ function update_btn(){
 		main_messageBox_pleaseSelectOne_alert();
 		return false;
 	}
-    var rd_id=rowSels[0].userid;
-    main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/edit?userid='+rd_id );
+    var rd_id=rowSels[0].menuid;
+    main_ChangeDivContent("div_for_dialog",'${contextPath}/menu/toSaveOrEdit/edit?menuid='+rd_id );
 }
 //删除
 function delete_btn(){
@@ -143,7 +135,7 @@ function delete_btn(){
 		main_messageBox_pleaseSelectOne_alert();
 		return false;
 	}
-    var rd_id=selections[0].id;
-    realDelete(PAGE_CONFIG.GRID,PAGE_CONFIG.DELETE_URL+"/"+rd_id);
+    var rd_id=selections[0].menuid;
+    realDelete(tabCode+'_grid','${contextPath}/menu/delete/'+rd_id);
 }
 </script>

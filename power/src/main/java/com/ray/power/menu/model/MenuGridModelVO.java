@@ -8,7 +8,7 @@ public class MenuGridModelVO extends BaseModelDO {
 	
 	private Integer menuid;
 	private String name;
-	private Integer url;
+	private String url;
 	private String pmenuid;
 	private String pmenuname;
 	private Integer ordernum;
@@ -25,10 +25,10 @@ public class MenuGridModelVO extends BaseModelDO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getUrl() {
+	public String getUrl() {
 		return url;
 	}
-	public void setUrl(Integer url) {
+	public void setUrl(String url) {
 		this.url = url;
 	}
 	public String getPmenuid() {

@@ -6,7 +6,7 @@
 	<sql id="findMenu_SQL">
 		FROM power_menu m
 		LEFT JOIN power_menu mp ON m.pmenuid = mp.menuid
-		where 1=1
+		where m.state=0
 		<if test="form.name != null and form.name !=''">
 			AND m.name like CONCAT('%',#{form.name},'%')
 		</if>
@@ -15,7 +15,7 @@
 		</if>
 	</sql>
 	<select id="query" resultType="com.ray.power.menu.model.MenuGridModelVO">
-		select m.menuid ,m.name,m.url , m.pmenuid ,mp.name as pmenuname , m.cdate,m.udate 
+		select m.menuid ,m.name,m.url , m.pmenuid ,mp.name as pmenuname ,m.ordernum, m.cdate,m.udate 
 		<include refid="findMenu_SQL" />
 		limit #{form.start},#{form.limit}
 	</select>
