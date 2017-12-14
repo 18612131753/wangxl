@@ -16,7 +16,7 @@
 var tabCode = "${tabCode}";
 $(document).ready(function() {
 	// 计算表格高度
-	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 28 ;
+	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 45 ;
 	
 	//按钮区
 	$('#'+tabCode+'_buttonbar').omButtonbar({

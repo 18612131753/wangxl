@@ -17,11 +17,11 @@
 		$('#center_tab').omTabs({
 			onActivate : function(n, event) {
 				var tabId = $('#center_tab').omTabs('getAlter', n);
-				$(".c_menu").css("background-color", "");
+				$(".c_menu").removeClass('left-color-active');
 				$("#c_menu_" + tabId.substring(11)).parent().omPanel({
 					collapsed : false
 				}); //父菜单呈开启状态
-				$("#c_menu_" + tabId.substring(11)).css("background-color", "#F49EA4");
+				$("#c_menu_" + tabId.substring(11)).addClass('left-color-active');
 			}
 		});
 		var left_num = 0;

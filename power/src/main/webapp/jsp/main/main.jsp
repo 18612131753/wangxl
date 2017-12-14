@@ -96,14 +96,14 @@
            	        header:false,
            	        resizable:false,
            	        collapsible:false, //可折叠
-           	        height:60,
+           	        height:47,
            	     	closable: false  //是否允许关闭
            	    },{
            	        id:"south-panel",
            	        region:"south",
            	        resizable:false,
            	        collapsible:true,
-           	        height:18,
+           	        height:0,
            	        header:false
            	    },{
            	        id:"center-panel",
@@ -116,8 +116,8 @@
            	        collapsible:true,
            	        title:"<marquee scrollamount='2' onMouseOut=this.start() onMouseOver=this.stop() id='welcomeInfo'>"+getWelcomeStr(myDate.getHours(),myDate.getMinutes())+"，${loginUser.loginname}，欢迎您使用组织工作系统。</marquee>",
            	        region:"west",
-           	        //expandToBottom : true, //延展到底部
-           	        width:230
+           	        expandToBottom : true, //延展到底部
+           	        width:210
            	    }],
            	    hideCollapsBtn : true,
            	    spacing : 8
