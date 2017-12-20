@@ -4,8 +4,19 @@ input.error,textarea.error{border: 1px solid red;}
 
 .errorMsg{display: none;position:absolute;margin-top: -16px;margin-left: 18px;}
 
-.header{background: url("../images/head.jpg")}
+.om-borderlayout .om-borderlayout-region-body.header{
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -o-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -ms-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+}
 
-.footer{background: url("../images/footer.jpg")}
+.footer{background: #e4e9ec; color: #000;}
 
+.om-borderlayout .om-borderlayout-region-center #center-panel,
+.om-borderlayout .om-borderlayout-region-center #center_tab{
+    background-color: #e4e9ec;
+}
 

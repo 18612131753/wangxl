@@ -10,7 +10,7 @@ img{
 }
 /* top页 修改密码 退出系统 a标签样式 */
 .north-panel-a{
-	color:#FFFFFF;
+	color:#a5a6aa;
 	cursor:pointer;
 	text-decoration:underline;
 }
@@ -23,22 +23,29 @@ table ,th ,tr,td{
 	padding: 0;
 }
 .p_menu div.c_menu{
-	line-height: 25px;
+	height: 30px;
+	line-height: 30px;
 	font-size: 12px;
 	font-weight: bold;
-	padding-left: 40px;
+	/*padding-left: 40px;*/
+	text-indent: 55px;
 	cursor: pointer;
 	list-style-type: none;
+	color: #c2c2c0;
+	background: #2c2b39;
 }
 .p_menu div.c_menu:hover{
-	border: 1px solid #99A8BC;
-	background-color: #C4D6EC;
-	padding-left: 39px;
-	line-height: 23px;
+	/*border: 1px solid #99A8BC;*/
+	background: #2b92d4;
+	color: #fff;
 }
 /* 搜索区域 */
 .grid_search_bg{
-	margin:5px;
+	padding:4px 0;
+	background: #e4e9ec;
+	border: 1px solid #e4e4e4;
+	line-height: 20px;
+	color: #555450;
 }
 /* 中心区域-tab的搜索区域的样式 */
 .tab_panel_search{

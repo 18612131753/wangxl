@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ray.power.org.dao.DepartmentDao">
+
+	<sql id="findDepartment_SQL">
+		from ray_department rd
+		left join ray_department srd on srd.id = rd.parent_id
+		where 1=1 
+		<if test="form.dep_role != ''">
+			AND rd.id like concat(#{form.dep_role},'%')
+		</if>
+		<if test="form.jg3 != ''">
+			AND rd.id=#{form.jg3} 
+		</if>
+		<if test="form.jg3 =='' and form.jg2 != ''">
+			AND rd.id like CONCAT(#{form.jg2},'%')
+		</if>
+		<if test="form.jg3 =='' and form.jg2 =='' and form.jg1 != '' and form.jg1 != '000'">
+			AND rd.id like CONCAT(#{form.jg1},'%')
+		</if>
+		<if test="form.full_name != null and form.full_name !=''" >
+			AND rd.full_name like '%'||#{form.full_name}||'%'
+		</if>
+		<if test="form.short_name != null and form.short_name !=''" >
+			AND rd.short_name like '%'	#{form.short_name}||'%'
+		</if>
+		<if test="form.state != null" >
+			AND rd.state = #{form.state}
+		</if>
+	</sql>
+	<select id="query" resultType="com.ray.power.org.model.OrgDO">
+		select rd.id,rd.full_name,rd.short_name,
+			   srd.full_name as parent_name,rd.create_date,rd.state
+		<include refid="findDepartment_SQL"/>
+		order by rd.create_date desc
+		limit #{form.start},#{form.limit}
+	</select>
+	
+	<select id="queryCount" resultType="Integer">
+		select count(1)
+		<include refid="findDepartment_SQL"/>
+	</select>
+	<insert id="save">
+		INSERT INTO ray_department(
+			id , full_name , short_name,parent_id , state ,
+			create_id , create_date , update_id , update_date
+		)VALUES(
+			#{dep.id},#{dep.full_name},#{dep.short_name},#{dep.parent_id},#{dep.state},
+			#{dep.create_id},#{dep.create_date},#{dep.update_id},#{dep.update_date}
+		)
+	</insert>
+
+	<update id="update">
+		UPDATE ray_department SET
+			full_name=#{dep.full_name},
+			short_name=#{dep.short_name},
+			parent_id=#{dep.parent_id},
+			state=#{dep.state},
+			update_id=#{dep.update_id},
+			update_date=#{dep.update_date}
+		WHERE id= #{dep.id}
+	</update>
+</mapper>
