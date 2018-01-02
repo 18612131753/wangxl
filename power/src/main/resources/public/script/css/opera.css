@@ -1,0 +1,22 @@
+.errorImg{background: url("../images/msg_bg.png") no-repeat scroll 0 0 transparent;height: 16px;width: 16px;cursor: pointer;}
+
+input.error,textarea.error{border: 1px solid red;}
+
+.errorMsg{display: none;position:absolute;margin-top: -16px;margin-left: 18px;}
+
+.om-borderlayout .om-borderlayout-region-body.header{
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -o-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -ms-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+}
+
+.footer{background: #e4e9ec; color: #000;}
+
+.om-borderlayout .om-borderlayout-region-center #center-panel,
+.om-borderlayout .om-borderlayout-region-center #center_tab{
+    background-color: #e4e9ec;
+}
+

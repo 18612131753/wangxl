@@ -176,7 +176,6 @@ public class RoleController {
 			@PathVariable Integer rid , 
 			String menus
 	){
-		System.out.println( menus );
 		roleService.updateRoleMenu(rid , menus);
 		return ModelAndViewUtil.Json_ok( );
 	}

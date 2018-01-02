@@ -43,7 +43,7 @@ public class LoginController {
 	 */
 	@RequestMapping("/pageToLogin")
 	public ModelAndView pageToLogin() {
-		return ModelAndViewUtil.Jsp("login/pageToLogin");
+		return ModelAndViewUtil.Jsp("login/login");
 	}
 
 	private UserSession getUserSession(String loginName, String loginPwd) {

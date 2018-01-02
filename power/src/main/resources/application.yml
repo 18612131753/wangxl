@@ -1,0 +1,25 @@
+# 容器的端口号，localhost:8081
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+# 热部署
+spring:
+  devtools:
+    restart:
+      enabled: true
+      # 设置重启的目录
+      additional-paths: src/main/java
+  mvc:
+    view:
+      prefix: /jsp/
+      suffix: .jsp
+    static-path-pattern: /**
+  # 编码
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+

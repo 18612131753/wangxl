@@ -1,0 +1,9 @@
+{
+	"total":0,
+	"rows":[
+		{"id":1,"type":"校内转接","out_jg":"图书馆一部","in_jg":"历史学院二部","state":"通过","gzz_sp":"通过","zzb_sp":"通过","last_sp_date":"2014-10-01"},
+		{"id":2,"type":"转出","out_jg":"历史学院二部","in_jg":"中粮集团","state":"审批中","gzz_sp":"通过","zzb_sp":"未审批","last_sp_date":"2014-10-02"},
+		{"id":3,"type":"转入","out_jg":"中国航空大学","in_jg":"图书馆一部","state":"不通过","gzz_sp":"通过","zzb_sp":"不通过","last_sp_date":"2014-10-02"},
+		{"id":4,"type":"入党申请","out_jg":"","in_jg":"图书馆一部","state":"不通过","gzz_sp":"通过","zzb_sp":"不通过","last_sp_date":"2014-10-02"}
+	]
+}
