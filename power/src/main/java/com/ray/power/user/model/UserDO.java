@@ -11,7 +11,7 @@ public class UserDO extends BaseModelDO {
 	private String  password;
 	private Integer roleid;
 	private Integer isadmin;
-	private Integer state;
+	private Integer state; //1=正常 0=停用
 	
 	public Integer getUserid() {
 		return userid;

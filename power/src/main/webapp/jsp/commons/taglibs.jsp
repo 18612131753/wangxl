@@ -9,6 +9,11 @@
 	if(user == null){
 		//重定向登录界面
 		System.out.println("重定向登录界面");
+%>
+		<script type="text/javascript">
+			location.href = "<%=basePath %>index";
+		</script>
+<%
 	}else{
 		request.getSession().setAttribute("user",user);
 	}

@@ -116,7 +116,7 @@ public class ModelAndViewUtil {
 
 	public static ModelAndView Json_Array( List<?> list ){
 		ModelAndView mav = new ModelAndView( new ArrayJsonView());
-		mav.addObject("list", list);
+		mav.addObject( list);
 		return mav ;
 	}
 	

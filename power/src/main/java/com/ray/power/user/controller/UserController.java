@@ -144,7 +144,23 @@ public class UserController {
 		}
 		return ModelAndViewUtil.Json_ok();
 	}
-	
+
+	@RequestMapping("delete/{userid}")
+	public ModelAndView delete (
+			HttpSession session,
+			HttpServletRequest request, 
+			HttpServletResponse response, Model model,
+			@PathVariable("userid") Integer userid 
+	){
+		UserSession su = SessionUtil.getUserSession(session);
+		try {
+			userService.stopUser(userid,su.getUserid());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ModelAndViewUtil.Json_error();
+		}
+		return ModelAndViewUtil.Json_ok();
+	}
 	
 	//例子：导出excel
 	@RequestMapping("userexcel")

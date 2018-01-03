@@ -77,12 +77,12 @@ public class MenuController {
 	 * 0=搜索使用 + 全部
 	 * 1=添加使用
 	 * */
-	@RequestMapping(value = "findMenu1/{type}", method = RequestMethod.GET)
+	@RequestMapping(value = "/findMenu1", method = {RequestMethod.GET})
 	public ModelAndView findMenu1(
 			HttpServletRequest request, 
 			HttpServletResponse response, 
 			HttpSession session,
-			@PathVariable("type") int type
+			@RequestParam(value = "type", required = true) int type
 	){
 		List<ObejctSelector> list = menuService.findMenu1();
 		if( type == 0 ){
@@ -162,6 +162,11 @@ public class MenuController {
 			@PathVariable("menuid") Integer menuid
 	){
 		UserSession su = SessionUtil.getUserSession(session);
+		int count = menuService.findMenuByChildId(menuid);
+		//存在级联，不能删除
+		if( count >0 ){
+			return ModelAndViewUtil.Json_error2();
+		}
 		menuService.deleteMenu(su.getUserid() , menuid);
 		return ModelAndViewUtil.Json_ok();
 	}

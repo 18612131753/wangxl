@@ -6,7 +6,7 @@
 	<sql id="findMenu_SQL">
 		FROM power_menu m
 		LEFT JOIN power_menu mp ON m.pmenuid = mp.menuid
-		where m.state=0
+		where m.state=1
 		<if test="form.name != null and form.name !=''">
 			AND m.name like CONCAT('%',#{form.name},'%')
 		</if>

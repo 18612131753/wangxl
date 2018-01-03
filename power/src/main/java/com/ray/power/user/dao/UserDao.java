@@ -41,5 +41,8 @@ public interface UserDao {
 	
 	@Update("UPDATE power_user SET password=#{user.password},uid=#{user.uid},udate=now() where userid=#{user.userid}")
 	public void updatePwd( @Param("user")UserDO user );
+	
+	@Update("UPDATE power_user SET state=0,uid=#{updateuserid},udate=now() where userid=#{userid}")
+	public void stopUser(@Param("userid")Integer userid,@Param("updateuserid")Integer updateuserid);
 
 }

@@ -181,7 +181,7 @@ $(document).ready(function() {
 
 	//父节点
 	$('#'+tabCode+'_form_pmenuid').omCombo({
-        dataSource:'${contextPath}/menu/findMenu1/1',
+        dataSource:'${contextPath}/menu/findMenu1?type=1',
         optionField:function(data,index){
             return data.text;
         },

@@ -13,5 +13,8 @@ public interface UserService {
 	
 	public int saveUser(UserDO user) throws Exception;
 	
+	/** 停用用户 */
+	public void stopUser(Integer userid,Integer updateuserid) throws Exception ;
+	
 	public void updateUser(UserDO user) throws Exception ;
 }

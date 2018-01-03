@@ -46,4 +46,8 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	public void stopUser(Integer userid,Integer updateuserid) throws Exception {
+		dao.stopUser( userid ,updateuserid);
+	}
+
 }

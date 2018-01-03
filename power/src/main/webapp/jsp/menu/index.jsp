@@ -41,7 +41,7 @@ $(document).ready(function() {
 	});
 	// 搜索区域
 	$('#'+tabCode+'_search_pmenu').omCombo({
-        dataSource:'${contextPath}/menu/findMenu1/0',
+        dataSource:'${contextPath}/menu/findMenu1?type=0',
         optionField:function(data,index){
             return data.text;
         },

@@ -23,5 +23,8 @@ public interface MenuService {
 	
 	public int updateMenu(MenuDO menu) ;
 	
+	/** 查找是否存在未删除的子节点 */
+	public int findMenuByChildId (int menuid);
+	
 	public void deleteMenu(Integer userid , Integer menuid);
 }

@@ -50,7 +50,11 @@ public class MenuServiceImpl implements MenuService {
 	}
 
 	public void deleteMenu(Integer userid , Integer menuid) {
-		dao.updateMenuState(userid , menuid , 1 );
+		dao.updateMenuState(userid , menuid , 0 );
+	}
+
+	public int findMenuByChildId(int menuid) {
+		return dao.findMenuByChildId( menuid);
 	}
 
 }

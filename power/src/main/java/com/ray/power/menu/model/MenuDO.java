@@ -11,7 +11,7 @@ public class MenuDO extends BaseModelDO {
 	private String url;
 	private String pmenuid;
 	private Integer ordernum;
-	private Integer state ; //1=删除 0=正常
+	private Integer state ; //1=正常  0=删除
 	
 	public Integer getMenuid() {
 		return menuid;

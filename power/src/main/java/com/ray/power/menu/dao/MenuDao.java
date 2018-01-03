@@ -40,6 +40,9 @@ public interface MenuDao {
 	)
 	public int updateMenu(@Param("menu")MenuDO menu) ;
 	
+	@Select("select count(*) from power_menu where pmenuid=#{menuid} and state=1")
+	public int findMenuByChildId(@Param("menuid")int menuid);
+	
 	@Update(
 		"UPDATE power_menu SET state=#{state},uid=#{userid},udate=now() "+
 		"where menuid=#{menuid}"

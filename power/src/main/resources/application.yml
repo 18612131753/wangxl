@@ -1,6 +1,6 @@
-# 容器的端口号，localhost:8081
+# 容器的端口号
 server:
-  port: 8080
+  port: 8088
   tomcat:
     uri-encoding: UTF-8
 
