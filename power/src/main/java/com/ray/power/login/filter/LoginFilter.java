@@ -25,7 +25,7 @@ public class LoginFilter implements Filter {
 //	private String[] includeUrls = {};
 	
 	// 不需要登陆过滤的地址
-	private String[] excludeUrls = {".*css.*",".*images.*","/login","/logon","/logout","/validateCode","/toMofifyPasswordPage","/mofifyPassword","/pageToLogin","/ajaxCheckCodeValue"};
+	private String[] excludeUrls = {".*css.*",".*images.*","/login","/logon","/logout","/validateCode","/toMofifyPasswordPage","/mofifyPassword","/pageToLogin","/ajaxCheckCodeValue","/swagger-ui.html"};
 	
 	private String defaultLoginPage ="/pageToLogin";
 

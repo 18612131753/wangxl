@@ -61,7 +61,7 @@ public class UserController {
 		return index(request, response, session, model);
 	}
 
-	@RequestMapping("index")
+	@RequestMapping(value="index",method = {RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 			Model model) {
 		logger.info("...用户管理");
@@ -82,7 +82,7 @@ public class UserController {
 	 * 跳转到添加或编辑页面
 	 * @return
 	 */
-	@RequestMapping("toSaveOrEdit/{new_or_edit}")
+	@RequestMapping(value="toSaveOrEdit/{new_or_edit}",method = {RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView toSaveOrEdit (
 			HttpSession session,
 			HttpServletRequest request, 
@@ -104,7 +104,7 @@ public class UserController {
 		return ModelAndViewUtil.Jsp( "user/saveOrEdit" );
 	}
 
-	@RequestMapping("save")
+	@RequestMapping(value="save",method = {RequestMethod.POST})
 	public ModelAndView save (
 			HttpSession session,
 			HttpServletRequest request, 
