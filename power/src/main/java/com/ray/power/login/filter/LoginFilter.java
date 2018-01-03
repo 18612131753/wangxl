@@ -13,18 +13,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.core.annotation.Order;
 
 import com.ray.power.login.model.UserSession;
 import com.ray.power.util.SessionUtil;
 
-// @WebFilter(filterName = "loginFilter", urlPatterns = "/*")
+@Order(1)
+@WebFilter(filterName = "loginFilter", urlPatterns = "/*")
 public class LoginFilter implements Filter {
 	
-	private String[] includeUrls;
+//	private String[] includeUrls = {};
 	
-	private String[] excludeUrls;
+	// 不需要登陆过滤的地址
+	private String[] excludeUrls = {".*css.*",".*images.*","/login","/logon","/logout","/validateCode","/toMofifyPasswordPage","/mofifyPassword","/pageToLogin","/ajaxCheckCodeValue"};
 	
-	private String defaultLoginPage;
+	private String defaultLoginPage ="/pageToLogin";
 
 	public void destroy() {
 		
@@ -34,15 +37,11 @@ public class LoginFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest)req;
 		HttpServletResponse response = (HttpServletResponse) resp;
-		if (hasInIncludes(request)) {
-			if (hasInExcludes(request) == false) {
-				if (hasLogin(request)) {
-					chain.doFilter(req, resp);
-				} else {
-					forwardDefaultPage(request, response);
-				}
-			} else {
+		if (hasInExcludes(request) == false) {
+			if (hasLogin(request)) {
 				chain.doFilter(req, resp);
+			} else {
+				forwardDefaultPage(request, response);
 			}
 		} else {
 			chain.doFilter(req, resp);
@@ -58,24 +57,27 @@ public class LoginFilter implements Filter {
 	}
 
 	public void init(FilterConfig filterConfig) throws ServletException {
-		String includeUrls = filterConfig.getInitParameter("includeUrls");
-		this.includeUrls = toArray(includeUrls);
-		String excludeUrls = filterConfig.getInitParameter("excludeUrls");
-		this.excludeUrls = toArray(excludeUrls);
-		this.defaultLoginPage = filterConfig.getInitParameter("defaultLoginPage");
+//		String includeUrls = filterConfig.getInitParameter("includeUrls");
+//		this.includeUrls = toArray(includeUrls);
+//		String excludeUrls = filterConfig.getInitParameter("excludeUrls");
+//		this.excludeUrls = toArray(excludeUrls);
+//		this.defaultLoginPage = filterConfig.getInitParameter("defaultLoginPage");
 	}
 	
-	private boolean hasInIncludes(HttpServletRequest request) {
-		String url = getRequestUrl(request);
-		if (includeUrls != null) {
-			for (String str: includeUrls) {
-				if (url.matches(str)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+//	private boolean hasInIncludes(HttpServletRequest request) {
+//		String url = getRequestUrl(request);
+//		System.out.println("3## " + url);
+//		
+//		if (includeUrls != null) {
+//			for (String str: includeUrls) {
+//				System.out.println("4## " + url.matches(str));
+//				if (url.matches(str)) {
+//					return true;
+//				}
+//			}
+//		}
+//		return false;
+//	}
 	
 	private boolean hasInExcludes(HttpServletRequest request) {
 		String url = getRequestUrl(request);
@@ -105,18 +107,18 @@ public class LoginFilter implements Filter {
 		}
 	}
 	
-	private String[] toArray(String str) {
-		if (str == null) {
-			return null;
-		}
-		String[] temp = str.split(",");
-		String[] ary = new String[temp.length];
-		int i = 0;
-		for (String s: temp) {
-			s = s.replace("\n", " ");
-			ary[i++] = s.trim();
-		}
-		return ary;
-	}
+//	private String[] toArray(String str) {
+//		if (str == null) {
+//			return null;
+//		}
+//		String[] temp = str.split(",");
+//		String[] ary = new String[temp.length];
+//		int i = 0;
+//		for (String s: temp) {
+//			s = s.replace("\n", " ");
+//			ary[i++] = s.trim();
+//		}
+//		return ary;
+//	}
 
 }

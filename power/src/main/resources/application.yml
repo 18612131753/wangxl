@@ -4,13 +4,15 @@ server:
   tomcat:
     uri-encoding: UTF-8
 
-# 热部署
+
 spring:
+  # 热部署
   devtools:
     restart:
       enabled: true
       # 设置重启的目录
       additional-paths: src/main/java
+  # mvc的jsp路径
   mvc:
     view:
       prefix: /jsp/
