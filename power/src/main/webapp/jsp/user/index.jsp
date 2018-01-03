@@ -34,7 +34,7 @@ $(document).ready(function() {
 				icons:{left:'${buttonEditIcons}'},
 				onClick:update_btn
 			},{separtor:true},{
-          		label:"删除",
+          		label:"停用",
 				id:tabCode+"_buttonbar_delete" ,
 				icons:{left:'${buttonRemoveIcons}'},
 				onClick:delete_btn
@@ -143,7 +143,7 @@ function delete_btn(){
 		main_messageBox_pleaseSelectOne_alert();
 		return false;
 	}
-    var rd_id=selections[0].id;
-    realDelete(PAGE_CONFIG.GRID,PAGE_CONFIG.DELETE_URL+"/"+rd_id);
+    var rd_id=selections[0].userid;
+     realDelete(tabCode+'_grid','${contextPath}/user/delete/'+rd_id);
 }
 </script>
