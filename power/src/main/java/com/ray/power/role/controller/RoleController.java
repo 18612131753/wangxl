@@ -20,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ray.power.base.DateEditor;
 import com.ray.power.base.model.ObejctSelector;
 import com.ray.power.login.model.UserSession;
-import com.ray.power.role.model.Role;
+import com.ray.power.role.model.RoleDO;
 import com.ray.power.role.service.RoleService;
 import com.ray.power.util.GridDataModel;
 import com.ray.power.util.ModelAndViewUtil;
@@ -62,8 +62,8 @@ public class RoleController {
 			HttpServletRequest request,
 			HttpServletResponse response, 
 			HttpSession session){
-		GridDataModel<Role> gdm = new GridDataModel<Role>();
-		List<Role> list = roleService.findAllRole();
+		GridDataModel<RoleDO> gdm = new GridDataModel<RoleDO>();
+		List<RoleDO> list = roleService.findAllRole();
 		gdm.setRows(list);
 		return ModelAndViewUtil.Json_ok(gdm);
 	}
@@ -72,23 +72,23 @@ public class RoleController {
 	 * 跳转到添加或编辑页面
 	 * @return
 	 */
-	@RequestMapping("toSaveOrEditPage")
+	@RequestMapping("toSaveOrEditPage/{new_or_edit}")
 	public ModelAndView toSaveOrEditPage(
 			HttpSession session,
 			HttpServletRequest request, 
 			HttpServletResponse response, Model model,
-			@RequestParam Integer id,
-			@RequestParam String new_or_edit){
-		Role role = null;
+			@PathVariable("new_or_edit") String new_or_edit ,
+			@RequestParam(value="roleid", required=false) Integer roleid){
+		RoleDO role = null;
 		model.addAttribute("tabCode", tabCode);
 		if("create".equalsIgnoreCase(new_or_edit)){
 			model.addAttribute("new_or_edit", "create");
 			model.addAttribute("action", "role/save");
 		} else {
-			role = roleService.findById(id);
+			role = roleService.findById(roleid);
 			model.addAttribute("new_or_edit", "edit");
 			model.addAttribute("role", role);
-			model.addAttribute("action","role/edit/"+role.getId());
+			model.addAttribute("action","role/edit/"+role.getRoleid());
 		}
 		return ModelAndViewUtil.Jsp( "role/saveOrEdit" );
 	}
@@ -103,10 +103,10 @@ public class RoleController {
 	public ModelAndView save(
 			HttpSession session,
 			HttpServletRequest request, HttpServletResponse response,
-			Role role ){
+			RoleDO role ){
 		UserSession user = SessionUtil.getUserSession(session);
-		role.setCreate_id( user.getUserid() );
-		role.setUpdate_id( user.getUserid() );
+		role.setCid( user.getUserid() );
+		role.setUid( user.getUserid() );
 		try {
 			roleService.save( role );
 			return ModelAndViewUtil.Json_ok();
@@ -123,12 +123,16 @@ public class RoleController {
 	 * @param mdl
 	 * @return
 	 */
-	@RequestMapping("edit/{id}")
-	public ModelAndView edit(HttpSession session,HttpServletRequest request, HttpServletResponse response,
-			Role role ,@PathVariable Integer id){
-		role.setId( id );
-		UserSession user = SessionUtil.getUserSession(session);;
-		role.setUpdate_id( user.getUserid() );
+	@RequestMapping("edit/{roleid}")
+	public ModelAndView edit(
+			HttpServletRequest request,
+			HttpServletResponse response,
+			HttpSession session,
+			RoleDO role ,
+			@PathVariable Integer roleid){
+		role.setRoleid( roleid );
+		UserSession user = SessionUtil.getUserSession(session);
+		role.setUid( user.getUserid() );
 		try {
 			roleService.update( role );
 			return ModelAndViewUtil.Json_ok();
@@ -141,14 +145,14 @@ public class RoleController {
 	/**
 	 * @return 0=失败 1=成功 2=存在级联，不得删除
 	 * */
-	@RequestMapping("delete/{id}")
+	@RequestMapping("delete/{roleid}")
 	public ModelAndView delete(HttpServletRequest request, HttpServletResponse response,
-			@PathVariable Integer id){
+			@PathVariable Integer roleid){
 		try {
 			//查询角色下面是否还有人
-			int count = roleService.findUserNumByRoleId( id );
+			int count = roleService.findUserNumByRoleId( roleid );
 			if( count > 0 ) return ModelAndViewUtil.Json_error2();
-			roleService.deleteById(id);
+			roleService.deleteById(roleid);
 			return ModelAndViewUtil.Json_ok();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -160,7 +164,10 @@ public class RoleController {
 	 * 查询角色关联的菜单
 	 * */
 	@RequestMapping("findRoleMenu/{id}")
-	public ModelAndView findRoleMenu(HttpServletRequest request, HttpServletResponse response,
+	public ModelAndView findRoleMenu(
+			HttpServletRequest request, 
+			HttpServletResponse response,
+			HttpSession session,
 			@PathVariable Integer id){
 		List<Integer> list = roleService.findRoleMenuById(id);
 		return ModelAndViewUtil.Json_ok( list );
@@ -173,10 +180,12 @@ public class RoleController {
 	@RequestMapping("updateRoleMenu/{rid}")
 	public ModelAndView updateRoleMenu(
 			HttpServletRequest request, HttpServletResponse response,
+			HttpSession session,
 			@PathVariable Integer rid , 
 			String menus
 	){
-		roleService.updateRoleMenu(rid , menus);
+		UserSession user = SessionUtil.getUserSession(session);
+		roleService.updateRoleMenu(user.getUserid() , rid , menus);
 		return ModelAndViewUtil.Json_ok( );
 	}
 	

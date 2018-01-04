@@ -26,6 +26,11 @@ public class LoginController {
 	@Resource(name = "loginService")
 	private LoginService loginService;
 
+	@RequestMapping("")
+	public String index() {
+		return "redirect:/index";
+	}
+	
 	/**
 	 * 登录页面
 	 * 

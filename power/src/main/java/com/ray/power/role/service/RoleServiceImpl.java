@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ray.power.base.model.ObejctSelector;
 import com.ray.power.role.dao.RoleDao;
-import com.ray.power.role.model.Role;
+import com.ray.power.role.model.RoleDO;
 
 @Service("roleService")
 public class RoleServiceImpl implements RoleService {
@@ -16,7 +16,7 @@ public class RoleServiceImpl implements RoleService {
 	@Resource
 	private RoleDao dao;
 
-	public List<Role> findAllRole() {
+	public List<RoleDO> findAllRole() {
 		return dao.findAllRole();
 	}
 
@@ -29,27 +29,27 @@ public class RoleServiceImpl implements RoleService {
 		dao.deleteRoleMenuByRoleId(id);
 	}
 
-	public Role findById(Integer id) {
+	public RoleDO findById(Integer id) {
 		return dao.findById(id);
 	}
 
-	public void save(Role role) {
+	public void save(RoleDO role) {
 		dao.save(role);
 	}
 
-	public void update(Role role) {
+	public void update(RoleDO role) {
 		dao.update(role);
 	}
 
-	public List<Integer> findRoleMenuById(Integer id) {
-		return dao.findRoleMenuById(id);
+	public List<Integer> findRoleMenuById(Integer roleid) {
+		return dao.findRoleMenuById(roleid);
 	}
 
-	public void updateRoleMenu(Integer rid, String mids) {
+	public void updateRoleMenu(Integer userid ,Integer rid, String mids) {
 		dao.deleteRoleMenuByRoleId(rid);
 		String[] marr = mids.split(",");
 		for (String menuId : marr) {
-			dao.saveRoleMenu(rid, Integer.valueOf(menuId));
+			dao.saveRoleMenu(userid ,rid, Integer.valueOf(menuId));
 		}
 	}
 

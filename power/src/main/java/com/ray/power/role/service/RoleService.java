@@ -3,16 +3,16 @@ package com.ray.power.role.service;
 import java.util.List;
 
 import com.ray.power.base.model.ObejctSelector;
-import com.ray.power.role.model.Role;
+import com.ray.power.role.model.RoleDO;
 
 public interface RoleService {
 	
-	public Role findById( Integer id );
+	public RoleDO findById( Integer id );
 	
-	public void save( Role role );
-	public void update( Role role );
+	public void save( RoleDO role );
+	public void update( RoleDO role );
 	public void deleteById(Integer id );
-	public List<Role> findAllRole();
+	public List<RoleDO> findAllRole();
 	
 	/**
 	 * 根据权限ID查询用户数
@@ -26,10 +26,11 @@ public interface RoleService {
 	
 	/**
 	 * 更新角色和菜单
+	 * @param userid 创建人id
 	 * @param rid  角色ID
 	 * @param mids 菜单ID
 	 * */
-	public void updateRoleMenu(Integer rid ,String mids );
+	public void updateRoleMenu(Integer userid ,Integer rid ,String mids );
 	
 	public List<ObejctSelector>  findAllRoleSelector();
 }

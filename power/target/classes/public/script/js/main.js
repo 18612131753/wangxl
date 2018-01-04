@@ -24,7 +24,7 @@ function main_messageTip_show( content ){
 	$.omMessageTip.show({
 	    title : '提示',
 	    content : content,
-	    timeout : 1500
+	    timeout : 10000000
 	});
 }
 
@@ -148,9 +148,12 @@ document.onkeydown = function() {
 	function SuperMan_show_bg() {  
 		//var de = document.documentElement;  
 		//var size = getPageSizeWithScroll();  
-		$("#bnu_edu_bg").css({left:0, top:0, width:'100%', height:'100%'}).show();   
+		$("#bnu_edu_bg").css({
+			left:0, top:0, width:'100%', height:'100%',
+			background:'rgba(0,0,0,0.3)',zIndex:1000, position: 'fixed'
+		}).show();   
 	}
 	function SuperMan_hide_bg() {
-		$("#bnu_edu_bg").hide(); 
+		var time = setTimeout(function(){$("#bnu_edu_bg").hide()},500);
 	}
 //遮盖层 -结束

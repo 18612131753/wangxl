@@ -1,4 +1,10 @@
-.errorImg{background: url("../images/msg_bg.png") no-repeat scroll 0 0 transparent;height: 16px;width: 16px;cursor: pointer;}
+.errorImg{
+    background: url("../images/msg_bg.png") no-repeat transparent;
+    height: 16px;width: 16px;
+    cursor: pointer;
+    background-size: 20px 20px;
+    background-position: 1px -1px;
+}
 
 input.error,textarea.error{border: 1px solid red;}
 

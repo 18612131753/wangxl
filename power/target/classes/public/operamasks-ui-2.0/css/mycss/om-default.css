@@ -126,7 +126,7 @@
 .om-corner-all, .om-corner-bottom, .om-corner-left, .om-corner-bl { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; -khtml-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
 .om-corner-all, .om-corner-bottom, .om-corner-right, .om-corner-br { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; -khtml-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
 /* Overlays */
-.om-widget-overlay { background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+.om-widget-overlay {     background-color: rgb(0, 0, 0); opacity: .65;filter:Alpha(Opacity=65); }
 .om-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -khtml-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
 
 /* no background */
@@ -1284,9 +1284,15 @@ a.om-btn-only-icon{display: block;}
 	/*background: url(images/button/button-nomal-bg.png);*/
 	background-image: none;
 }
-.om-state-hover .om-btn-bg {background: url(images/button/button-hover-bg.png);}
-.om-state-focus .om-btn-bg {background: url(images/button/button-focus-bg.png);}
-.om-state-active .om-btn-bg {background: url(images/button/button-mousedown-bg.png);}
+.om-state-hover .om-btn-bg {
+	/*background: url(images/button/button-hover-bg.png);*/
+}
+.om-state-focus .om-btn-bg {
+	/*background: url(images/button/button-focus-bg.png);*/
+}
+.om-state-active .om-btn-bg {
+	/*background: url(images/button/button-mousedown-bg.png);*/
+}
 .om-btn .om-btn-left {background-position: 100% 0px;background-repeat: no-repeat;}
 .om-btn {border: none !important;}
 .om-btn .om-btn-center {background-position: 100% -24px;background-repeat: repeat-x;}
@@ -1312,7 +1318,7 @@ a.om-btn-only-icon{display: block;}
 	height: 24px;
 	background-color: #2c92d4;
 }
-.om-buttonbar .om-btn .om-btn-txt{line-height: 27px\9;}
+.om-buttonbar .om-btn .om-btn-txt{line-height: 24px; outline: none}
 .om-buttonbar .om-state-default .om-btn-bg {background: none;}
 .om-buttonbar .om-state-hover{
 	/*background: #edeef0;*/
@@ -1447,7 +1453,7 @@ a.om-btn-only-icon{display: block;}
 	background: none;
 	border: 1px solid #b0b0b2;
 }
-.om-combo input {margin:0px; border: 0px solid;height: 18px;line-height : 20px;vertical-align: top; color: #cfcfc7;
+.om-combo input {margin:0px; border: 0px solid;height: 18px;line-height : 20px;vertical-align: top;
 	padding-left: 3px;}
 .om-combo .om-combo-trigger {cursor: pointer;display: inline-block;height: 20px;vertical-align: top;width: 19px;background-color: #fff;}
 .om-combo-list-row {height: 20px; line-height: 20px; padding: 0 5px; margin : 1px; overflow-x: hidden; white-space: nowrap;cursor:default;}
@@ -1464,21 +1470,46 @@ a.om-btn-only-icon{display: block;}
  * http://ui.operamasks.org/docs/
  */
 .om-dialog { position: absolute; width: 300px; overflow: hidden; }
-.om-dialog .om-dialog-titlebar { height: 29px; position: relative;  background: url("images/dialog/title-bg.png") repeat-x scroll 0 0 transparent; border: none;border-radius: 8px 8px 0 0;border-bottom: 1px solid #86A3C4;}
-.om-dialog .om-dialog-title { float: left; margin: 0.7em 16px 0.1em 0.5em; } 
+.om-dialog .om-dialog-titlebar {
+	height: 29px;
+	position: relative;
+	border: none;
+	border-radius: 8px 8px 0 0;
+	border-bottom: 1px solid #e8e8e8;
+}
+.om-dialog .om-dialog-title {
+	float: left; margin: 0.3em 16px 0.1em 0.5em;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.85);
+	font-size:14px;
+}
 .om-dialog .om-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 25px; margin: -12px 0 0 0; padding: 1px; height: 18px; }
 .om-dialog .om-dialog-titlebar-close span { display: block; margin: 1px; }
 .om-dialog .om-dialog-titlebar-close:hover, .om-dialog .om-dialog-titlebar-close:focus {border:none; color: #222222; background-color: transparent}
 
-.om-dialog .om-icon-closethick {background-image: url("images/ui-toolbar-btn.png") !important;_background-image: url("images/ui-toolbar-btn.gif") !important;background-position: -88px 0!important;width: 22px; height: 18px;text-indent:-9999px}
-.om-dialog .om-icon-closethick:hover{background-position: -88px -36px!important;}
+.om-dialog .om-icon-closethick {
+	/*background-image: url("images/ui-toolbar-btn.png") !important;*/
+	/*_background-image: url("images/ui-toolbar-btn.gif") !important;*/
+	/*background-position: -88px 0!important;*/
+	background-image: url("images/guanbi1.svg") !important;
+	background-size: 22px 18px;
+	width: 22px; height: 18px;text-indent:-9999px
+}
+.om-dialog .om-icon-closethick:hover{
+	background-image: url("images/guanbi2.svg") !important;
+	background-size: 22px 18px;
+}
 
 .om-dialog .om-dialog-content { position: relative; border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
-.om-dialog .om-dialog-buttonpane { text-align: left; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; border-top:1px solid #86A3C4;}
+.om-dialog .om-dialog-buttonpane { text-align: left; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; border-top:1px solid #e8e8e8;}
 .om-dialog .om-dialog-buttonpane .om-dialog-buttonset { float: right; }
 .om-dialog .om-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
 .ui-draggable .om-dialog-titlebar { cursor: move; }
-.om-dialog.om-widget-content {border-radius: 8px 8px 0 0;}
+.om-dialog.om-widget-content {
+	border-radius: 4px;
+	-webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 /*
  * $Id: om-fileupload.css,v 1.5 2012/02/08 06:00:53 licongping Exp $
  * operamasks-ui fileupload 2.0
@@ -1877,18 +1908,43 @@ div.om-messageBox { position: absolute; width: 300px; overflow: hidden; outline:
  * http://ui.operamasks.org/docs/
  */
 body {/*解决IE6不支持position:fixed的问题*/ _background-image: url(about:blank);/*用浏览器空白页面作为背景*/_background-attachment: fixed;     /* prevent screen flash in IE6 确保滚动条滚动时，元素不闪动*/}
-.om-messageTip { position: fixed; right:5px; bottom:5px;width: 200px; overflow: hidden; outline:0; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;_position:absolute;_left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0)-5);_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))-5);}
-.om-messageTip .om-widget-header { height: 29px; position: relative; border-radius: 4px 4px 0 0; border:1px solid #86A3C4;border-bottom-width: 0}
-.om-messageTip-title { float: left; margin: 0.7em 16px 0.1em 0.5em; }
+.om-messageTip {
+	-webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	position: fixed; right:5px; bottom:5px;width: 200px;
+	overflow: hidden; outline:0; border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;_position:absolute;
+	_left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0)-5);_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))-5);
+}
+.om-messageTip .om-widget-header { height: 29px; position: relative; border-radius: 4px 4px 0 0; border:1px solid #b0b0b2;border-bottom-width: 0;background: #fff;}
+.om-messageTip-title {
+	float: left;
+	margin: 0.3em 16px 0.1em 0.5em;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.85);
+	font-size: 14px;
+}
 
 .om-messageTip-titlebar-close { position: absolute; right: .3em; top: 50%; width: 22px; margin: -12px 0 0 0; padding: 1px; height: 18px; }
 .om-messageTip-titlebar-close span { display: block; margin: 1px; }
-.om-messageTip .om-icon-closethick {background-image: url("images/ui-toolbar-btn.png") !important;_background-image: url("images/ui-toolbar-btn.gif") !important;background-position: -88px 0!important;width: 22px; height: 18px;text-indent:-9999px}
+.om-messageTip .om-icon-closethick {
+	/*background-image: url("images/ui-toolbar-btn.png") !important;*/
+	/*_background-image: url("images/ui-toolbar-btn.gif") !important;*/
+	/*background-position: -88px 0!important;*/
+	/*width: 22px;*/
+	/*height: 18px;*/
+	/*text-indent:-9999px*/
+	background-image: url(images/guanbi1.svg) !important;
+	background-size: 22px 18px;
+	width: 22px;
+	height: 18px;
+	text-indent: -9999px;
+}
 .om-messageTip .om-icon-closethick:hover{background-position: -88px -36px!important;}
 .om-messageTip .om-state-mousedown .om-icon-closethick{background-position: -88px -18px!important;}
 .om-messageTip a.om-state-hover,.om-messageTip a.om-state-focus,.om-messageTip a.om-state-mousedown{background-color: transparent;border: none}
 
-.om-messageTip-content { padding: 10px; overflow: auto; zoom: 1; border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}
+.om-messageTip-content { padding: 10px; overflow: auto; zoom: 1; border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;border: 1px solid #b0b0b2;border-top: none}
 .om-messageTip-content-body{ word-wrap: break-word; word-break: break-all;float:left;width:136px;margin-left: 10px;}
 .om-messageTip-image{ background: none no-repeat scroll 0 0 transparent;height: 32px;width: 32px;overflow: hidden;float: left;}
 .om-messageTip-image-alert{ background: url("images/messagebox/messagebox-icons.gif") 0px 0px; }
@@ -2073,7 +2129,7 @@ input.om-numberfield{
  * http://ui.operamasks.org/docs/
  */
 .om-suggestion-list-row {height: 20px; line-height: 20px; padding: 0 5px; margin : 1px;}
-.om-widget .om-droplist {overflow-x: hidden;}
+.om-widget .om-droplist {overflow-x: hidden;border:1px solid #b0b0b2;border-top: none;}
 .om-suggestion{background: white;}/*
  * $Id: om-tabs.css,v 1.22 2012/06/28 06:36:00 chentianzhen Exp $
  * operamasks-ui tabs 2.0
@@ -2351,4 +2407,29 @@ input.om-numberfield{
 .om-panel .p_menu .left-color-active {
 	background: #2b92d4;
 	color: #fff;
+}
+
+.om-dialog-buttonset .om-btn.om-state-focus {
+	background: none;
+}
+
+.om-dialog-buttonset .om-btn .om-btn-icon {
+	/*background-position: left center;*/
+	/*background-repeat: no-repeat;*/
+	/*background-image: url();*/
+	background-size: 20px 20px;
+	color: #666;
+	width: 60px;
+	text-align: center;
+}
+
+.om-dialog-buttonset .om-btn .om-btn-center {
+	border: 1px solid #d9d9d9;
+	padding: 0 3px;
+	border-radius: 4px;
+}
+
+.om-dialog-buttonset .om-btn-right,
+.om-dialog-buttonset .om-btn-left {
+	width: 0px;
 }

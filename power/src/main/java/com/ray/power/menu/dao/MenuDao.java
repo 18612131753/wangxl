@@ -16,7 +16,7 @@ import com.ray.power.menu.model.MenuTree;
 
 public interface MenuDao {
 
-	@Select("select * from ray_menu order by parent_id ,order_num asc")
+	@Select("select menuid,name,url,pmenuid from power_menu order by pmenuid ,ordernum asc")
 	public List<MenuTree> findAllDdMenu();
 	
 	public List<MenuGridModelVO> query(@Param("form") MenuForm form);

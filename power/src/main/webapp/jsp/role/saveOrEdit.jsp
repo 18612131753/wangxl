@@ -60,11 +60,11 @@ $(document).ready(function() {
 		width:'160px',
 		value:'${role.role_type}',
 		dataSource:[
-                {text:'个人',value:'0'},
-                {text:'党支部',value:'1'},
-                {text:'分党委',value:'2'},
-                {text:'党总支',value:'3'},
-                {text:'管理员',value:'4'}
+                {text:'0',value:'0'},
+                {text:'1',value:'1'},
+                {text:'2',value:'2'},
+                {text:'3',value:'3'},
+                {text:'4',value:'4'}
         ]
 	});
 	$("#"+FORM_PAGE_CONFIG.FORM).validate({

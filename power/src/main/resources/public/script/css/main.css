@@ -82,10 +82,11 @@ label.error{
 	margin-left: 10px;
 	background-position: 5px 50%;
 	*/
-	background-color: #FFF6BF;
+	/*background-color: #FFF6BF;*/
 	text-align: left;
 	padding: 2px 5px 2px 5px;
-	border: 1px solid #ffd324;
+	/*border: 1px solid #ffd324;*/
+	color: red;
 	display: none;
 	width: 200px;
 }
