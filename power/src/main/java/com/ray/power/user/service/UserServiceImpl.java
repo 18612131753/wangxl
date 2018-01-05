@@ -6,12 +6,12 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.ray.base.util.GridDataModel;
+import com.ray.base.util.MD5Util;
 import com.ray.power.user.dao.UserDao;
 import com.ray.power.user.form.UserForm;
 import com.ray.power.user.model.UserDO;
 import com.ray.power.user.model.UserGridModelVO;
-import com.ray.power.util.GridDataModel;
-import com.ray.power.util.MD5Util;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {

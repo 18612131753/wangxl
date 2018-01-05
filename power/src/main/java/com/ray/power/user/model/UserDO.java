@@ -1,6 +1,6 @@
 package com.ray.power.user.model;
 
-import com.ray.power.base.model.BaseModelDO;
+import com.ray.base.base.model.BaseModelDO;
 
 public class UserDO extends BaseModelDO {
 

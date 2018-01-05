@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.ray.power.base.model.ObejctSelector;
+import com.ray.base.base.model.ObejctSelector;
 import com.ray.power.role.dao.RoleDao;
 import com.ray.power.role.model.RoleDO;
 

@@ -11,10 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ray.base.util.ModelAndViewUtil;
+import com.ray.base.util.SessionUtil;
 import com.ray.power.login.model.UserSession;
 import com.ray.power.menu.model.MenuVO;
-import com.ray.power.util.ModelAndViewUtil;
-import com.ray.power.util.SessionUtil;
 
 @Controller
 @RequestMapping("/index")

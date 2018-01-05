@@ -1,6 +1,6 @@
 package com.ray.power.menu.form;
 
-import com.ray.power.base.ServletForm;
+import com.ray.base.base.ServletForm;
 
 public class MenuForm extends ServletForm{
 

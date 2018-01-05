@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ray.power.util.RandomValidateCode;
+import com.ray.base.util.RandomValidateCode;
 
 @WebServlet(urlPatterns="/validateCode")  
 public class ValidateCodeServlet extends HttpServlet {

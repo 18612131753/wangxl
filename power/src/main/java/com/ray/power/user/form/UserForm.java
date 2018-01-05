@@ -1,6 +1,6 @@
 package com.ray.power.user.form;
 
-import com.ray.power.base.ServletForm;
+import com.ray.base.base.ServletForm;
 
 public class UserForm extends ServletForm{
 

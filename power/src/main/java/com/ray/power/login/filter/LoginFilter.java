@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.core.annotation.Order;
 
+import com.ray.base.util.SessionUtil;
 import com.ray.power.login.model.UserSession;
-import com.ray.power.util.SessionUtil;
 
 @Order(1)
 @WebFilter(filterName = "loginFilter", urlPatterns = "/*")

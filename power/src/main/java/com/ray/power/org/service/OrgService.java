@@ -1,8 +1,8 @@
 package com.ray.power.org.service;
 
+import com.ray.base.util.GridDataModel;
 import com.ray.power.org.form.DepartmentForm;
 import com.ray.power.org.model.OrgDO;
-import com.ray.power.util.GridDataModel;
 
 public interface OrgService {
 	/**

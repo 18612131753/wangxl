@@ -8,10 +8,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ray.base.util.GridDataModel;
 import com.ray.power.org.dao.DepartmentDao;
 import com.ray.power.org.form.DepartmentForm;
 import com.ray.power.org.model.OrgDO;
-import com.ray.power.util.GridDataModel;
 
 @Service("orgService")
 @Transactional

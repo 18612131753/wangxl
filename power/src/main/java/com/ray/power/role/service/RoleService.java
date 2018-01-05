@@ -2,7 +2,7 @@ package com.ray.power.role.service;
 
 import java.util.List;
 
-import com.ray.power.base.model.ObejctSelector;
+import com.ray.base.base.model.ObejctSelector;
 import com.ray.power.role.model.RoleDO;
 
 public interface RoleService {
