@@ -31,6 +31,7 @@ import com.ray.power.util.SessionUtil;
 public class RoleController {
 	
 	private final String tabCode = "role";//表名标示
+	private final String jspPath = "role";// JSP 包名称
 	
 	@Resource(name = "roleService")
 	private RoleService roleService;
@@ -54,7 +55,7 @@ public class RoleController {
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response,
 			HttpSession session, Model model ){
 		model.addAttribute("tabCode", tabCode);
-		return ModelAndViewUtil.Jsp("role/index");
+		return ModelAndViewUtil.Jsp(jspPath+"/index");
 	}
 	
 	@RequestMapping("findAllRole")
