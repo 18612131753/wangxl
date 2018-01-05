@@ -114,7 +114,7 @@
            	        id:"west-panel",
            	        resizable:true,
            	        collapsible:true,
-           	        title:"<marquee scrollamount='2' onMouseOut=this.start() onMouseOver=this.stop() id='welcomeInfo'>"+getWelcomeStr(myDate.getHours(),myDate.getMinutes())+"，${loginUser.loginname}，欢迎您使用组织工作系统。</marquee>",
+           	        title:"<marquee scrollamount='2' onMouseOut=this.start() onMouseOver=this.stop() id='welcomeInfo'>"+getWelcomeStr(myDate.getHours(),myDate.getMinutes())+"，${loginUser.loginname}，欢迎您使用系统。</marquee>",
            	        region:"west",
            	        expandToBottom : true, //延展到底部
            	        width:210

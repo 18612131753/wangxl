@@ -14,31 +14,32 @@
 <table id="${tabCode}_grid"></table>
 
 <script type="text/javascript">
-var tabCode = "${tabCode}";
+
 $(document).ready(function() {
+	var tabCode = "${tabCode}";
 	// 计算表格高度
 	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 45 ;
 	
 	//按钮区
 	$('#'+tabCode+'_buttonbar').omButtonbar({
-          	btns:[{separtor:true},{
-          		label:"新建",
-				id:tabCode+"_buttonbar_save" ,
-				icons:{left:'${buttonAddIcons}'},
-				onClick:function(){
-					main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/create');
-				}
-			},{separtor:true},{
-          		label:"修改",
-				id:tabCode+"_buttonbar_update" ,
-				icons:{left:'${buttonEditIcons}'},
-				onClick:update_btn
-			},{separtor:true},{
-          		label:"停用",
-				id:tabCode+"_buttonbar_delete" ,
-				icons:{left:'${buttonRemoveIcons}'},
-				onClick:delete_btn
-			},{separtor:true}]
+        	btns:[{separtor:true},{
+			label:"新建",
+			id:tabCode+"_buttonbar_save" ,
+			icons:{left:'${buttonAddIcons}'},
+			onClick:function(){
+				main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/create');
+			}
+		},{separtor:true},{
+			label:"修改",
+			id:tabCode+"_buttonbar_update" ,
+			icons:{left:'${buttonEditIcons}'},
+			onClick:update_btn
+		},{separtor:true},{
+			label:"停用",
+			id:tabCode+"_buttonbar_delete" ,
+			icons:{left:'${buttonRemoveIcons}'},
+			onClick:delete_btn
+		},{separtor:true}]
 	});
 	// 搜索区域
 	$('#'+tabCode+'_search_role').omCombo({
@@ -112,38 +113,28 @@ $(document).ready(function() {
 			update_btn();
 	    }
 	});
-});
-//搜索
-function doSearch(){
-	$('#'+tabCode+'_grid').omGrid({
-		extraData:{
-			crm_nm:$.trim($('#'+tabCode+'_search_crm_nm').val()),
-			create_start_time:$.trim($('#'+tabCode+'_search_create_start_time').val()),
-			create_end_time:$('#'+tabCode+'_search_create_end_time').val(),
-			update_start_time:$('#'+tabCode+'_search_update_start_time').val(),
-			update_end_time:$('#'+tabCode+'_search_update_end_time').val()
+	//编辑
+	function update_btn(){
+		var rowSels = $('#'+tabCode+'_grid').omGrid('getSelections',true);
+		if (rowSels && rowSels.length == 0) {
+			main_messageBox_pleaseSelectOne_alert();
+			return false;
 		}
-	});
-}
+	    var rd_id=rowSels[0].userid;
+	    main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/edit?userid='+rd_id );
+	}
+	//删除
+	function delete_btn(){
+		var selections=$('#'+tabCode+'_grid').omGrid('getSelections',true);
+		if (selections.length == 0) {
+			main_messageBox_pleaseSelectOne_alert();
+			return false;
+		}
+	    var rd_id=selections[0].userid;
+	     realDelete(tabCode+'_grid','${contextPath}/user/delete/'+rd_id);
+	}
+});
 
-//编辑
-function update_btn(){
-	var rowSels = $('#'+tabCode+'_grid').omGrid('getSelections',true);
-	if (rowSels && rowSels.length == 0) {
-		main_messageBox_pleaseSelectOne_alert();
-		return false;
-	}
-    var rd_id=rowSels[0].userid;
-    main_ChangeDivContent("div_for_dialog",'${contextPath}/user/toSaveOrEdit/edit?userid='+rd_id );
-}
-//删除
-function delete_btn(){
-	var selections=$('#'+tabCode+'_grid').omGrid('getSelections',true);
-	if (selections.length == 0) {
-		main_messageBox_pleaseSelectOne_alert();
-		return false;
-	}
-    var rd_id=selections[0].userid;
-     realDelete(tabCode+'_grid','${contextPath}/user/delete/'+rd_id);
-}
+
+
 </script>

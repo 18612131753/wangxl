@@ -23,9 +23,10 @@
 </div>
 
 <script type="text/javascript">
-var tabCode = "${tabCode}";
+
 $(document).ready(function() {
-//角色 
+	var tabCode = "${tabCode}";
+	//角色 
 	$('#'+tabCode+'_role').omPanel({
 		title:'<span style="margin:0 0 0 10px">角色</span>'
 	});
@@ -39,15 +40,7 @@ $(document).ready(function() {
 			},{separtor:true},{
         		label:"修改",
 				icons:{left:'${buttonEditIcons}'},
-				onClick:function(){
-					var rowSels = $('#'+tabCode+'_role_grid').omGrid('getSelections',true);
-					if (rowSels && rowSels.length == 0) {
-						main_messageBox_pleaseSelectOne_alert();
-						return ;
-					}
-				    var rd_id=rowSels[0].roleid;
-					main_ChangeDivContent("div_for_dialog","${contextPath}/role/toSaveOrEditPage/edit?roleid="+rd_id);
-				}
+				onClick: update_btn
 			},{separtor:true},{
         		label:"删除",
 				icons:{left:'${buttonRemoveIcons}'},
@@ -93,8 +86,30 @@ $(document).ready(function() {
 			$('.roleaccess_role_checkbox').attr('checked',false);
 			$('#roleaccess_role_checkbox_'+rowData.roleid).attr('checked','checked');
 			role_ajaxMenu( rowData.roleid ,rowData.name);
-		}
+		},
+		onRowDblClick:function(rowIndex,rowData,event){
+			update_btn();
+	    }
 	});
+	var role_ajaxMenu = function( roleId ,roleName){
+		//AJAX取出关联菜单
+		$.ajax({
+			type:'POST',
+			url:'${contextPath}/role/findRoleMenu/'+roleId ,
+			dataType:'json',
+			success:function(msg){
+				if( msg.result == 1 ){
+					$('#'+tabCode+'_menutree').omTree('checkAll',false);
+					var list_menu = msg.list ;
+					for( var i=0;i<list_menu.length;i++ ){
+						var tar = $('#'+tabCode+'_menutree').omTree('findNode','id',list_menu[i]);
+						$('#'+tabCode+'_menutree').omTree('check',tar);
+					}
+					$('#'+tabCode+'_menu_rolename').html( roleName );
+				}
+			}
+		});
+	}
 //菜单
 	var menu_tree_height = CENTER_HEIGHT - BUTTON_BAR_HEIGHT - 77 ;
 	$('#'+tabCode+'_menu_showtree').css("height",menu_tree_height);
@@ -167,25 +182,16 @@ $(document).ready(function() {
 			}
 		}
 	});
+	function update_btn(){
+		var rowSels = $('#'+tabCode+'_role_grid').omGrid('getSelections',true);
+		if (rowSels && rowSels.length == 0) {
+			main_messageBox_pleaseSelectOne_alert();
+			return ;
+		}
+	    var rd_id=rowSels[0].roleid;
+		main_ChangeDivContent("div_for_dialog","${contextPath}/role/toSaveOrEditPage/edit?roleid="+rd_id);
+	}
 });
 //点击角色栏
-function role_ajaxMenu( roleId ,roleName){
-	//AJAX取出关联菜单
-	$.ajax({
-		type:'POST',
-		url:'${contextPath}/role/findRoleMenu/'+roleId ,
-		dataType:'json',
-		success:function(msg){
-			if( msg.result == 1 ){
-				$('#'+tabCode+'_menutree').omTree('checkAll',false);
-				var list_menu = msg.list ;
-				for( var i=0;i<list_menu.length;i++ ){
-					var tar = $('#'+tabCode+'_menutree').omTree('findNode','id',list_menu[i]);
-					$('#'+tabCode+'_menutree').omTree('check',tar);
-				}
-				$('#'+tabCode+'_menu_rolename').html( roleName );
-			}
-		}
-	});
-}
+
 </script>
