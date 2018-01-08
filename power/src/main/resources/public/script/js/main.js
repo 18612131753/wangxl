@@ -24,7 +24,7 @@ function main_messageTip_show( content ){
 	$.omMessageTip.show({
 	    title : '提示',
 	    content : content,
-	    timeout : 10000000
+	    timeout : 1000
 	});
 }
 
