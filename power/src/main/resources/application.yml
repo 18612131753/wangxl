@@ -24,4 +24,6 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
-
+# 日志配置
+logging:
+  config: classpath:log4j2.yml

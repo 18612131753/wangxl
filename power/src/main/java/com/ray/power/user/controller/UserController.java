@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +39,7 @@ public class UserController {
 	private final String jspPath = "user";// JSP 包名称
 	private final String tabCode = "user";// 表名标示
 
-	private static Logger logger = LogManager.getLogger(UserController.class);
+	private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@Resource(name = "userService")
 	private UserService userService;
@@ -73,7 +73,6 @@ public class UserController {
 	public ModelAndView queryforlist(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 			UserForm queryForm) {
 		logger.info("queryforlist");
-		logger.info(queryForm.getRoleid() +"#"+queryForm.getState()+"#"+queryForm.getLoginname());
 		GridDataModel<UserGridModelVO> gdm = userService.query(queryForm);
 		return ModelAndViewUtil.Json_ok(gdm, "userForm");
 	}

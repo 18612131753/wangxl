@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +35,7 @@ public class MenuController {
 	private final String tabCode = "menu";//表名标示
 	private final String jspPath = "menu";// JSP 包名称
 	
-	private static Logger logger = LogManager.getLogger(MenuController.class);
+	private static Logger logger = LoggerFactory.getLogger(MenuController.class);
 
 	@Resource(name = "menuService")
 	private MenuService menuService;

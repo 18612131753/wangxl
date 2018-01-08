@@ -5,8 +5,9 @@
 <div id="${tabCode}_buttonbar"></div>
 <!-- 搜索栏  -->
 <div id="${tabCode}_searchbar" class="grid_search_bg">
-	&nbsp;&nbsp;&nbsp;&nbsp;父节点：<input type="text" id="${tabCode}_search_pmenu" />
-	&nbsp;&nbsp;&nbsp;&nbsp;名称：<input type="text" id="${tabCode}_search_name" />
+	&nbsp;&nbsp;&nbsp;&nbsp;类型：<input type="text" id="${tabCode}_search_type" />
+	&nbsp;&nbsp;&nbsp;&nbsp;难易级别：<input type="text" id="${tabCode}_search_level" />
+	&nbsp;&nbsp;&nbsp;&nbsp;题目：<input type="text" id="${tabCode}_search_title" />
 	<a id="${tabCode}_search_button">搜索</a>
 </div>
 <!-- 数据表格 -->
@@ -26,7 +27,7 @@ $(document).ready(function() {
 				id:tabCode+"_buttonbar_save" ,
 				icons:{left:'${buttonAddIcons}'},
 				onClick:function(){
-					main_ChangeDivContent("div_for_dialog",'${contextPath}/menu/toSaveOrEdit/create');
+					main_ChangeDivContent("div_for_dialog",'${contextPath}/question/toSaveOrEdit/create');
 				}
 			},{separtor:true},{
           		label:"修改",
@@ -41,25 +42,28 @@ $(document).ready(function() {
 			},{separtor:true}]
 	});
 	// 搜索区域
-	$('#'+tabCode+'_search_pmenu').omCombo({
-        dataSource:'${contextPath}/menu/findMenu1?type=0',
+	$('#'+tabCode+'_search_type').omCombo({
+        dataSource: [ {text : '全部', value : ''}, 
+					  {text : '单选题', value : '1'}, 
+					  {text : '多选题', value : '2'}, 
+					  {text : '问答题', value : '3'} ],
         optionField:function(data,index){
             return data.text;
         },
         emptyText:'全部',
         editable:false,
         lazyLoad:true,
-        listMaxHeight:80
+        listMaxHeight:90
     });
-    $('#'+tabCode+'_search_state').omCombo({
-        dataSource:[{text:'全部',value:''},{text:'正常',value:'1'},{text:'停用',value:'0'}],
+    $('#'+tabCode+'_search_level').omCombo({
+        dataSource:[{text:'全部',value:''},{text:'容易',value:'1'},{text:'中等',value:'2'},{text:'困难',value:'3'}],
         optionField:function(data,index){
             return data.text;
         },
         emptyText:'全部',
         editable:false,
         lazyLoad:false,
-        listMaxHeight:80
+        listMaxHeight:90
     });
     $('#'+tabCode+'_search_button').omButton({
 		icons:{left:'${buttonSearchIcons}'},
@@ -82,18 +86,38 @@ $(document).ready(function() {
 		 singleSelect:true,
 		 loadingMsg:'数据查询中...',
 		 editMode:'insert',
-		 dataSource:'${contextPath}/menu/queryforlist',
+		 dataSource:'${contextPath}/question/queryforlist',
 		 colModel:[
-		 	 { header:'',width:20,name:'menuid',align:'center',
+		 	 { header:'',width:20,name:'qid',align:'center',
 			    renderer:function(colValue,rowData,rowIndex) {
 					return '<input type="checkbox" class="'+tabCode+'_checkbox" id="'+tabCode+'_checkbox_'+colValue+'" value="'+colValue+'"/>';
                 }
 			 },
-			 { header:'角色名称',name:'name',width:130,align:'center'},
-			 { header:'URL',name:'url',width:180,align:'center' },
-			 { header:'排序',name:'ordernum',width:70,align:'center' },
-			 { header:'父节点',name:'pmenuname',width:100,align:'center'},
-			 { header:'创建时间',name:'cdate',width:160,align:'center',renderer:function(value,rowData,rowIdex){return formatDate(value,"y-m-d h:i:s");} },
+			 { header:'类型',name:'type',width:130,align:'center',renderer:function(value,rowData,rowIdex){
+			 	var v = ''; 
+			 	switch(value){
+					case 1: v = '单选题';break;
+					case 2: v = '多选题';break;
+					case 3: v = '问答题';break;
+				}
+			 	return v;}},
+			 { header:'难易级别',name:'level',width:180,align:'center',renderer:function(value,rowData,rowIdex){
+			 	var v = ''; 
+			 	switch(value){
+					case 1: v = '容易';break;
+					case 2: v = '中等';break;
+					case 3: v = '困难';break;
+				}
+			 	return v;}},
+			 { header:'题目',name:'title',width:200,align:'center' },
+			 { header:'选项',width:200,align:'center' ,renderer:function(value,rowData,rowIdex){
+			 	return 
+			 		rowData.opt_a+" "+rowData.opt_b+" "+rowData.opt_c+" "+rowData.opt_d+" "+ 
+			 		rowData.opt_e+" "+rowData.opt_f+" "+rowData.opt_g+" "+rowData.opt_h ;
+			 }},
+			 { header:'正确答案',name:'answer',width:100,align:'center',renderer:function(value,rowData,rowIdex){
+			 	if( rowData.type == 3 ) return rowData.opt_a; //问答题
+			 	return value;}},
 			 { header:'更新时间',name:'udate',width:160,align:'center',renderer:function(value,rowData,rowIdex){return formatDate(value,"y-m-d h:i:s");} }
 		],
 		onRowClick:function(rowIndex,rowData,event){

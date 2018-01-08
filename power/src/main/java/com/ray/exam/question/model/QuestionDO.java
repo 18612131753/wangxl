@@ -18,6 +18,8 @@ public class QuestionDO extends BaseModelDO {
 	private String  opt_d ;
 	private String  opt_e;
 	private String  opt_f;
+	private String  opt_g;
+	private String  opt_h;
 	private Integer owner;
 	
 	public Integer getQid() {
@@ -98,5 +100,17 @@ public class QuestionDO extends BaseModelDO {
 	public void setOwner(Integer owner) {
 		this.owner = owner;
 	}
-
+	public String getOpt_g() {
+		return opt_g;
+	}
+	public void setOpt_g(String opt_g) {
+		this.opt_g = opt_g;
+	}
+	public String getOpt_h() {
+		return opt_h;
+	}
+	public void setOpt_h(String opt_h) {
+		this.opt_h = opt_h;
+	}
+	
 }

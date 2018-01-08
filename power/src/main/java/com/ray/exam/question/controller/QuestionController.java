@@ -15,11 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ray.base.util.GridDataModel;
 import com.ray.base.util.ModelAndViewUtil;
+import com.ray.exam.question.form.QuestionForm;
 import com.ray.exam.question.model.QuestionDO;
 import com.ray.exam.question.service.QuestionService;
 import com.ray.power.menu.form.MenuForm;
 import com.ray.power.menu.model.MenuGridModelVO;
-import com.ray.power.menu.model.MenuTree;
+
+import io.swagger.annotations.ApiOperation;
 
 @Controller
 @RequestMapping("/question")
@@ -34,28 +36,26 @@ public class QuestionController {
 	private QuestionService questionService;
 
 	@RequestMapping("index")
-	public ModelAndView index(HttpServletRequest request, HttpServletResponse response, HttpSession session,
-			Model model) {
+	public ModelAndView index(
+		HttpServletRequest request, 
+		HttpServletResponse response, 
+		HttpSession session,
+		Model model
+	) {
 		model.addAttribute("tabCode", tabCode);
 		return ModelAndViewUtil.Jsp(jspPath + "/index");
 	}
 	
-	@RequestMapping("findAllQuestion")
-	public ModelAndView findAllQuestion(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
-		GridDataModel<QuestionDO> gdm = new GridDataModel<QuestionDO>();
-//		List<MenuTree> list = questionService.findAllDdMenu();
-//		gdm.setRows(list);
+	@ApiOperation(value = "题库查询分页", httpMethod = "POST", response = String.class, notes = "")
+	@RequestMapping(value="queryforlist", method = RequestMethod.POST)
+	public ModelAndView queryforlist(
+		HttpServletRequest request, 
+		HttpServletResponse response, 
+		HttpSession session,
+		QuestionForm form
+	) {
+		GridDataModel<QuestionDO> gdm = questionService.query(form);
 		return ModelAndViewUtil.Json_ok(gdm);
 	}
-
-
-
-	@RequestMapping(value = "queryforlist", method = RequestMethod.POST)
-	public ModelAndView queryforlist(HttpServletRequest request, HttpServletResponse response, HttpSession session,
-			MenuForm form) {
-		GridDataModel<MenuGridModelVO> gdm = null;//questionService.query(form);
-		return ModelAndViewUtil.Json_ok(gdm, "form");
-	}
-
 
 }
