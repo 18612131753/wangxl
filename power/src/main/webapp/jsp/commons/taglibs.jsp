@@ -5,7 +5,7 @@
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 	String basePath1 = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
-	UserSession user = com.ray.power.util.SessionUtil.getUserSession(request.getSession());
+	UserSession user = com.ray.base.util.SessionUtil.getUserSession(request.getSession());
 	if(user == null){
 		//重定向登录界面
 		System.out.println("重定向登录界面");

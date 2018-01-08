@@ -76,7 +76,9 @@
 .om-state-default a, .om-state-default a:link, .om-state-default a:visited { color: #555555; text-decoration: none; }
 .om-state-hover {}
 .om-widget-content .om-state-hover {}
-.om-widget-header .om-state-hover, .om-state-focus, .om-widget-content .om-state-focus, .om-widget-header .om-state-focus { background: #6C99DD; font-weight: normal; color: #ffffff; }
+.om-widget-header .om-state-hover, .om-state-focus, .om-widget-content .om-state-focus, .om-widget-header .om-state-focus { 
+	/* background: #6C99DD; font-weight: normal; color: #ffffff;  */
+}
 .om-state-hover a, .om-state-hover a:hover {
 	color: #212121;
 	text-decoration: none;
@@ -1865,20 +1867,50 @@ a.om-btn-only-icon{display: block;}
  *
  * http://ui.operamasks.org/docs/
  */
-div.om-messageBox { position: absolute; width: 300px; overflow: hidden; outline:0; border: 1px solid #86A3C4; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
-.om-messageBox .om-messageBox-titlebar { height: 29px; position: relative; border-radius: 4px 4px 0 0; background: url("images/messagebox/title-bg.png") repeat-x scroll 0 0 transparent; border: none; border-bottom: 1px solid #86A3C4;}
-.om-messageBox .om-messageBox-title { float: left; margin: 0.7em 16px 0.1em 0.5em; }
+div.om-messageBox { 
+	position: absolute; width: 300px; overflow: hidden; 
+	outline:0; 
+	/* border: 1px solid #86A3C4;  */
+	/* border-bottom-right-radius: 0px; 
+	border-bottom-left-radius: 0px; */
+	border-radius: 4px;
+    -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+.om-messageBox .om-messageBox-titlebar { 
+	height: 29px; position: relative; 
+	border-radius: 4px 4px 0 0; 
+	/*background: url("images/messagebox/title-bg.png") repeat-x scroll 0 0 transparent; */
+	border: none; border-bottom: 1px solid #e8e8e8;
+	}
+.om-messageBox .om-messageBox-title { 
+	float: left;
+    margin: 0.3em 16px 0.1em 0.5em;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+}
 
 .om-messageBox .om-messageBox-titlebar-close { position: absolute; right: .3em; top: 50%; width: 22px; margin: -12px 0 0 0; padding: 1px; height: 18px; }
 .om-messageBox .om-messageBox-titlebar-close span { display: block; margin: 1px; }
 .om-messageBox .om-messageBox-titlebar-close:hover, .om-messageBox .om-messageBox-titlebar-close:focus { border:none; color: #222222; background-color: transparent }
-.om-messageBox .om-icon-closethick {background-image: url("images/ui-toolbar-btn.png") !important;_background-image: url("images/ui-toolbar-btn.gif") !important;background-position: -88px 0!important;width: 22px; height: 18px;}
-.om-messageBox .om-icon-closethick:hover{background-position: -88px -36px!important;}
+.om-messageBox .om-icon-closethick {
+	/* background-image: url("images/ui-toolbar-btn.png") !important;
+	_background-image: url("images/ui-toolbar-btn.gif") !important; */
+	background-image: url(images/guanbi1.svg) !important;
+	/* background-position: -88px 0!important; */
+	background-size: 22px 18px;
+	width: 22px; 
+	height: 18px;
+}
+.om-messageBox .om-icon-closethick:hover{
+	background-image: url(images/guanbi2.svg) !important;
+	}
 .om-messageBox .om-state-mousedown .om-icon-closethick{background-position: -88px -18px!important;}
 
 .om-messageBox .om-messageBox-content { position: relative; border:none; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
 .om-messageBox .om-messageBox-buttonpane { text-align: center; border-width: 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; border-color: #86A3C4; }
-.om-messageBox .om-messageBox-buttonpane button { cursor: pointer; }
+.om-messageBox .om-messageBox-buttonpane button { cursor: pointer; outline: none;}
 .om-messageBox .om-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
 .ui-draggable .om-messageBox-titlebar { cursor: move; }
 
@@ -2191,8 +2223,8 @@ input.om-numberfield{
 .om-tabs .om-tabs-headers ul {
     width: 5000px;
     font-size: 12px;
-    margin: 0 ;
-    padding: 0 0 0 30px;
+    margin: 0 0 0 -3px ;
+    padding: 0 0 0 0;
     /*border-bottom: 1px solid #86A3C4;*/
 }
 .om-tabs .om-tabs-headers ul.om-tabs-scrollable {
@@ -2432,4 +2464,14 @@ input.om-numberfield{
 .om-dialog-buttonset .om-btn-right,
 .om-dialog-buttonset .om-btn-left {
 	width: 0px;
+}
+
+.om-messageBox .om-messageBox-buttonset .om-btn-center {
+	border: 1px solid #d9d9d9;
+    padding: 0 3px;
+    border-radius: 4px;
+}
+
+.om-messageBox .om-messageBox-buttonset .om-btn-center button {
+	color: #666;
 }

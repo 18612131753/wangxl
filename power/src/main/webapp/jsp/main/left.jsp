@@ -1,5 +1,8 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ include file="../commons/taglibs.jsp"%>
+<div style="height:55px;background:#002140">
+	<img style="height:40px;margin:7px 0 0 5px" src="${imagesPath}/title/logo.svg" />
+</div>
 
 <c:forEach items="${menuList}" var="pMenu">
 	<div id="p_menu_${pMenu.menuid}" name="${pMenu.name}" class="p_menu">

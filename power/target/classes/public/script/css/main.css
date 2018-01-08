@@ -13,6 +13,8 @@ img{
 	color:#a5a6aa;
 	cursor:pointer;
 	text-decoration:underline;
+	font-size: 14px;
+	margin-right: 2px;
 }
 table ,th ,tr,td{
 	font-size: 12px;
