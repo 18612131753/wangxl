@@ -18,11 +18,11 @@
 $(document).ready(function() {
 	var tabCode = "${tabCode}";
 	// 计算表格高度
-	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 45 ;
+	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 30 ;
 	
 	//按钮区
 	$('#'+tabCode+'_buttonbar').omButtonbar({
-        	btns:[{separtor:true},{
+        	btns:[{
 			label:"新建",
 			id:tabCode+"_buttonbar_save" ,
 			icons:{left:'${buttonAddIcons}'},

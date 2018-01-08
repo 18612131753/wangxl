@@ -168,6 +168,7 @@ public class MenuController {
 			return ModelAndViewUtil.Json_error2();
 		}
 		menuService.deleteMenu(su.getUserid() , menuid);
+		logger.info( su.getUserid() +" delete menu " + menuid );
 		return ModelAndViewUtil.Json_ok();
 	}
 }

@@ -1,14 +1,3 @@
-/*
- * $Id: om-theme.css,v 1.36 2012/06/26 08:57:31 chentianzhen Exp $
- * operamasks-ui CSS Framework 2.0
- *
- * Copyright 2011, AUTHORS.txt (http://ui.operamasks.org/about)
- * Dual licensed under the MIT or LGPL Version 2 licenses.
- * http://ui.operamasks.org/license
- *
- * http://ui.operamasks.org/docs/F
- */
-
 .om-helper-hidden { display: none; }
 .om-helper-position-absolute { position: absolute; }
 .om-helper-hidden-accessible { left:-20000px; top:-20000px; position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); }
@@ -106,7 +95,7 @@
 .om-icon { width: 16px; height: 16px; background-image: url(images/om-icons-default.png); }
 .om-state-default .om-icon {
 	background-image: url(images/om-icons-default.png);
-	background-size: 100px 25px;
+	background-size: 102px 22px;
 }
 .om-state-hover .om-icon, .om-state-focus .om-icon {background-image: url(images/om-icons-hover.png); }
 .om-state-active .om-icon {background-image: url(images/om-icons-hover.png); }
@@ -777,7 +766,7 @@ div.colCopy {
 }
 
 .om-grid div.pDiv div.pDiv2 {
-	margin :4px 4px 4px -1px;
+	margin :2px 2px 2px -1px;
 	text-align:center;
 	float: left;
 	width: 1024px;
@@ -941,11 +930,11 @@ div.pGroup {
 	border-top: none;
 }
 
-.om-grid .pFirst {background-position: -2px -3px;}
-.om-grid .pLast {background-position: -19px -3px;}
-.om-grid .pPrev {background-position: -81px -3px;}
-.om-grid .pNext {background-position: 0px -3px;}
-.om-grid .pReload {background-position: -40px -3px;}
+.om-grid .pFirst {background-position:-83px -1px;}
+.om-grid .pPrev {background-position: -1px -1px;}
+.om-grid .pNext {background-position: -60px -1px;}
+.om-grid .pLast {background-position: -19px -1px;}
+.om-grid .pReload {background-position: -41px -1px;}
 
 .om-widget-content .bDiv .om-state-hover, .om-widget-content .bDiv .om-state-highlight {color: #000000;}
 .om-widget-content .bDiv .om-state-hover {background-color:#D9EBF5}
@@ -1299,18 +1288,11 @@ a.om-btn-only-icon{display: block;}
 .om-btn {border: none !important;}
 .om-btn .om-btn-center {background-position: 100% -24px;background-repeat: repeat-x;}
 .om-btn .om-btn-right {background-position: 100% -48px;background-repeat: no-repeat;}
- /*
- * operamasks-ui buttonbar 2.0
- *
- * Copyright 2011, AUTHORS.txt (http://ui.operamasks.org/about)
- * Dual licensed under the MIT or LGPL Version 2 licenses.
- * http://ui.operamasks.org/license
- *
- * http://ui.operamasks.org/docs/
- */
+
 .om-buttonbar {
 	height: 26px;
-	margin-bottom: 6px;
+	line-height: 28px;
+	margin-bottom: 1px;
 	/*border: 1px solid #99A8BC;*/
 	/*background: url("images/buttonbar/buttonbar-bg.png");*/
 }
@@ -2174,7 +2156,7 @@ input.om-numberfield{
  */
 .om-tabs .om-tabs-headers {
     overflow: hidden;
-    padding: 2px 0 0 2px;
+    padding: 0 0 0 2px;
     position: relative;
     _width: 100%;
     /*border:1px solid #86A3C4;*/
@@ -2221,9 +2203,9 @@ input.om-numberfield{
     opacity: 0.5;
 }
 .om-tabs .om-tabs-headers ul {
-    width: 5000px;
+    /* width: 5000px; */
     font-size: 12px;
-    margin: 0 0 0 -3px ;
+    margin: 0 0 0 -2px ;
     padding: 0 0 0 0;
     /*border-bottom: 1px solid #86A3C4;*/
 }
@@ -2286,7 +2268,7 @@ input.om-numberfield{
     border-width: 0;
     position: relative;
 	/* margin-left: 0px; */
-	padding: 10px;
+	padding: 3px 3px;
 }
 .om-tabs{
 	padding:1px;

@@ -119,7 +119,7 @@
            	        expandToBottom : true, //延展到底部
            	        expandToTop:true,//延展到头部
            	        width:220,
-           	        header:false
+           	        header:false,  //在组件创建时是否要渲染其头部。
            	    }],
            	    hideCollapsBtn : true,
            	    spacing : 8

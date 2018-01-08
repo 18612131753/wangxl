@@ -31,7 +31,7 @@ $(document).ready(function() {
 		title:'<span style="margin:0 0 0 10px">角色</span>'
 	});
 	$('#'+tabCode+'_role_buttonbar').omButtonbar({
-		btns:[{separtor:true},{
+		btns:[{
         		label:"新建",
 				icons:{left:'${buttonAddIcons}'},
 				onClick:function(){
@@ -62,7 +62,7 @@ $(document).ready(function() {
 				}
 			},{separtor:true}]
 	});
-	var role_grid_height = CENTER_HEIGHT - BUTTON_BAR_HEIGHT - 50 ;
+	var role_grid_height = CENTER_HEIGHT - BUTTON_BAR_HEIGHT - 60 ;
 	$('#'+tabCode+'_role_grid').omGrid({
 		method:'POST',
 		loadingMsg:'数据查询中...',
@@ -111,13 +111,13 @@ $(document).ready(function() {
 		});
 	}
 //菜单
-	var menu_tree_height = CENTER_HEIGHT - BUTTON_BAR_HEIGHT - 77 ;
+	var menu_tree_height = CENTER_HEIGHT - BUTTON_BAR_HEIGHT - 80 ;
 	$('#'+tabCode+'_menu_showtree').css("height",menu_tree_height);
 	$('#'+tabCode+'_menu').omPanel({
 		title:'菜单'
 	});
 	$('#'+tabCode+'_menu_buttonbar').omButtonbar({
-		btns:[{separtor:true},{
+		btns:[{
         		label:"保存",
 				icons:{left:'${windowSubmitIcons}'},
 				onClick:function(){

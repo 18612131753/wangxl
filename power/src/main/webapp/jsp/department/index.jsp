@@ -97,7 +97,7 @@ $(document).ready(function() {
 	var grid_height = CENTER_TAB_HEIGHT - BUTTON_BAR_HEIGHT - 28 ;
 	//按钮区
 	$('#'+tabCode+'_buttonbar').omButtonbar({
-          	btns : [{separtor:true},{
+          	btns : [{
 	          	label:"高级搜索",
 				id:tabCode+"_buttonbar_search",
 				icons : {left : '${buttonSearchIcons}'},
