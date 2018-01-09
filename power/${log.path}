@@ -1,0 +1,232 @@
+2018-01-09 11:40:13,634:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: deleteUsingPATCH_3
+2018-01-09 11:40:13,739:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: deleteUsingDELETE_3
+2018-01-09 11:40:13,743:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: deleteUsingOPTIONS_3
+2018-01-09 11:40:13,746:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: deleteUsingTRACE_3
+2018-01-09 11:40:13,750:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingGET_3
+2018-01-09 11:40:13,751:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingHEAD_3
+2018-01-09 11:40:13,754:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingPOST_3
+2018-01-09 11:40:13,756:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingPUT_3
+2018-01-09 11:40:13,761:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingPATCH_3
+2018-01-09 11:40:13,763:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingDELETE_3
+2018-01-09 11:40:13,765:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingOPTIONS_3
+2018-01-09 11:40:13,766:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: editUsingTRACE_3
+2018-01-09 11:40:13,770:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: indexUsingPOST_5
+2018-01-09 11:40:13,775:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: indexUsingGET_5
+2018-01-09 11:40:13,779:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: queryforlistUsingPOST_2
+2018-01-09 11:40:13,783:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: saveUsingPOST_3
+2018-01-09 11:40:13,786:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: toSaveOrEditUsingPOST_1
+2018-01-09 11:40:13,788:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: toSaveOrEditUsingGET_1
+2018-01-09 11:40:13,814:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingGET_2
+2018-01-09 11:40:13,818:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingHEAD_2
+2018-01-09 11:40:13,826:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingPOST_2
+2018-01-09 11:40:13,828:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingPUT_2
+2018-01-09 11:40:13,830:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingPATCH_2
+2018-01-09 11:40:13,832:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingDELETE_2
+2018-01-09 11:40:13,835:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingOPTIONS_2
+2018-01-09 11:40:13,837:INFO main (CachingOperationNameGenerator.java:40) - Generating unique operation named: welcomeUsingTRACE_2
+2018-01-09 11:40:14,037:INFO main (DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-auto-1"]
+2018-01-09 11:40:14,181:INFO main (DirectJDKLog.java:179) - Starting ProtocolHandler [http-nio-auto-1]
+2018-01-09 11:40:14,269:INFO main (DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+2018-01-09 11:40:14,473:INFO main (TomcatEmbeddedServletContainer.java:185) - Tomcat started on port(s): 57985 (http)
+2018-01-09 11:40:14,490:INFO main (StartupInfoLogger.java:57) - Started ApplicationTests in 26.245 seconds (JVM running for 29.274)
+2018-01-09 11:40:14,611:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,611:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,612:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,612:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,613:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,613:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,613:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,613:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,613:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,614:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,614:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,614:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,614:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,614:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,615:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,615:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,615:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,615:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,615:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,616:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,616:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,616:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,616:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,616:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,617:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,617:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,617:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,617:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,617:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,618:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,618:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,618:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,618:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,618:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,620:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,621:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,621:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,621:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,621:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,622:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,622:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,622:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,623:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,623:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,623:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,623:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,623:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,623:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,624:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,624:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,624:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,626:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,626:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,626:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,627:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,627:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,627:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,627:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,627:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,628:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,628:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,628:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,628:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,628:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,629:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,629:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,629:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,630:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,630:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,630:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,630:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,630:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,631:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,631:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,631:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,631:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,631:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,632:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,632:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,632:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,632:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,632:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,633:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,633:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,633:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,633:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,633:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,634:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,634:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,634:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,634:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,634:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,635:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,635:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,636:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,636:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,636:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,636:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,636:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,636:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,637:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,637:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,637:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,637:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,722:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,723:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,724:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,724:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,724:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,724:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,733:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,733:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,733:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,734:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,734:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,734:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,735:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,735:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,735:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,737:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,737:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,738:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,738:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,739:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,739:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,739:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,739:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,740:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,740:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,740:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,740:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,740:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,741:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,741:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,741:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,741:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,742:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,742:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,742:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,742:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,742:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,743:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,743:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,743:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,743:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,743:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,744:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,744:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,744:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,744:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,744:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,745:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,745:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,745:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,746:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,746:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,746:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,746:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,747:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,747:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,747:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,747:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,748:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,748:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,748:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,749:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,749:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,749:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,749:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,749:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,750:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,750:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,750:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,750:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,751:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,751:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,751:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,751:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,753:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,754:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,762:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,762:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,762:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,762:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,763:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,763:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,763:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,763:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,763:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,764:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,764:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,776:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,776:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,776:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,777:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,777:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,777:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,777:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,777:WARN main (ApplicationTests.java:21) - I am warn log.
+2018-01-09 11:40:14,777:ERROR main (ApplicationTests.java:22) - I am error log.
+2018-01-09 11:40:14,793:INFO Thread-3 (AbstractApplicationContext.java:987) - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@253d9f73: startup date [Tue Jan 09 11:39:48 CST 2018]; root of context hierarchy

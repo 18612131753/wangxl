@@ -75,10 +75,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
-		<dependency>  <!-- 加上这个才能辨认到log4j2.yml文件 -->
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-yaml</artifactId>
-		</dependency>
+		<dependency>  <!-- logger async 用的是无锁并发技术，必须引入Disruptor  -->
+            <groupId>com.lmax</groupId>  
+            <artifactId>disruptor</artifactId>  
+            <version>3.3.4</version>  
+        </dependency>
 		<!-- log4j -->
 
 		<!-- swagger start -->
