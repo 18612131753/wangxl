@@ -8,9 +8,9 @@
 				<td>
 				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>父节点：</td>
+					<span style="color: red;">*</span>题目：</td>
 				<td class="td_left">
-					<input type="text" id="${tabCode}_form_pmenuid" name="pmenuid"/>
+					<input type="text" id="${tabCode}_form_title" name="title"/>
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
@@ -18,7 +18,7 @@
 				<td>
 				</td>
 				<td class="td_right">
-					<span style="color: red;"></span>名称：</td>
+					<span style="color: red;"></span>类型：</td>
 				<td class="td_left">
 					<input type="text" id="${tabCode}_form_name" name="name"  value="${menu.name}"/>
 				</td>
@@ -44,55 +44,55 @@
 	</form>
 </div>
 <script type="text/javascript">
+var new_or_edit = "${new_or_edit}";
+var tabCode = "${tabCode}";
+var FORM_PAGE_CONFIG={
+	FORM_DIALOG:tabCode+"_form_dialog",
+	FORM:tabCode+"_form"
+};
 
+//提交操作
+var saving = false;
+
+function btn_save(){
+	if(saving || !$("#"+FORM_PAGE_CONFIG.FORM).valid())
+		return false;
+	saving=true;
+	$('#'+tabCode+'_submit').omButton('disable');
+	$("#"+FORM_PAGE_CONFIG.FORM).omAjaxSubmit({
+		method : 'POST',
+		url : '${contextPath}/${action}',
+		dataType : 'json',
+		success : function( responseText, jqForm, options) {
+			if (responseText.result == 1) {
+				$("#"+FORM_PAGE_CONFIG.FORM_DIALOG).omDialog('close');
+				$('#'+tabCode+'_grid').omGrid('reload');
+				if("edit"==new_or_edit){
+					main_messageTip_updateSuccess_show();
+				}else if("create"==new_or_edit){
+					main_messageTip_addSuccess_show();
+				}
+			} else {
+				if("edit"==new_or_edit){
+					main_messageTip_updateError_show();
+				}else if("create"==new_or_edit){
+					main_messageTip_addError_show();
+				}
+				$("#"+FORM_PAGE_CONFIG.FORM_DIALOG+"_error").html(responseText.mess);
+				$("#"+FORM_PAGE_CONFIG.FORM_DIALOG+"_error").css('display','inline');
+				$('#'+tabCode+'_form_submit').omButton('enable');
+			}
+			saving=false;
+		},
+	  	error:function(){
+	  		main_messageTip_systemError_show();
+	  		saving=false;
+	  	}
+	});
+}
     
 $(document).ready(function() {
-	var new_or_edit = "${new_or_edit}";
-	var tabCode = "${tabCode}";
-	var FORM_PAGE_CONFIG={
-		FORM_DIALOG:tabCode+"_form_dialog",
-		FORM:tabCode+"_form"
-	};
-	
-	//提交操作
-	var saving = false;
-	
-	function btn_save(){
-		if(saving || !$("#"+FORM_PAGE_CONFIG.FORM).valid())
-			return false;
-		saving=true;
-		$('#'+tabCode+'_submit').omButton('disable');
-		$("#"+FORM_PAGE_CONFIG.FORM).omAjaxSubmit({
-			method : 'POST',
-			url : '${contextPath}/${action}',
-			dataType : 'json',
-			success : function( responseText, jqForm, options) {
-				if (responseText.result == 1) {
-					$("#"+FORM_PAGE_CONFIG.FORM_DIALOG).omDialog('close');
-					$('#'+tabCode+'_grid').omGrid('reload');
-					if("edit"==new_or_edit){
-						main_messageTip_updateSuccess_show();
-					}else if("create"==new_or_edit){
-						main_messageTip_addSuccess_show();
-					}
-				} else {
-					if("edit"==new_or_edit){
-						main_messageTip_updateError_show();
-					}else if("create"==new_or_edit){
-						main_messageTip_addError_show();
-					}
-					$("#"+FORM_PAGE_CONFIG.FORM_DIALOG+"_error").html(responseText.mess);
-					$("#"+FORM_PAGE_CONFIG.FORM_DIALOG+"_error").css('display','inline');
-					$('#'+tabCode+'_form_submit').omButton('enable');
-				}
-				saving=false;
-			},
-		  	error:function(){
-		  		main_messageTip_systemError_show();
-		  		saving=false;
-		  	}
-		});
-	}
+	// 自定义组件
 	
 	//表单验证
 	$("#"+FORM_PAGE_CONFIG.FORM).validate({

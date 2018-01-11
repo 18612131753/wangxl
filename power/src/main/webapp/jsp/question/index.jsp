@@ -23,11 +23,25 @@ $(document).ready(function() {
 	//按钮区
 	$('#'+tabCode+'_buttonbar').omButtonbar({
           	btns:[{
-          		label:"新建",
+          		label:"新建单选题",
 				id:tabCode+"_buttonbar_save" ,
 				icons:{left:'${buttonAddIcons}'},
 				onClick:function(){
-					main_ChangeDivContent("div_for_dialog",'${contextPath}/question/toSaveOrEdit/create');
+					main_ChangeDivContent("div_for_dialog",'${contextPath}/question/toSaveOrEdit/create?type=1');
+				}
+			},{separtor:true},{
+          		label:"新建多选题",
+				id:tabCode+"_buttonbar_save" ,
+				icons:{left:'${buttonAddIcons}'},
+				onClick:function(){
+					main_ChangeDivContent("div_for_dialog",'${contextPath}/question/toSaveOrEdit/create?type=2');
+				}
+			},{separtor:true},{
+          		label:"新建问答题",
+				id:tabCode+"_buttonbar_save" ,
+				icons:{left:'${buttonAddIcons}'},
+				onClick:function(){
+					main_ChangeDivContent("div_for_dialog",'${contextPath}/question/toSaveOrEdit/create?type=3');
 				}
 			},{separtor:true},{
           		label:"修改",
@@ -129,20 +143,7 @@ $(document).ready(function() {
 			update_btn();
 	    }
 	});
-	
-	//搜索
-/* 	function doSearch(){
-		$('#'+tabCode+'_grid').omGrid({
-			extraData:{
-				crm_nm:$.trim($('#'+tabCode+'_search_crm_nm').val()),
-				create_start_time:$.trim($('#'+tabCode+'_search_create_start_time').val()),
-				create_end_time:$('#'+tabCode+'_search_create_end_time').val(),
-				update_start_time:$('#'+tabCode+'_search_update_start_time').val(),
-				update_end_time:$('#'+tabCode+'_search_update_end_time').val()
-			}
-		});
-	} */
-	
+		
 	//编辑
 	function update_btn(){
 		var rowSels = $('#'+tabCode+'_grid').omGrid('getSelections',true);

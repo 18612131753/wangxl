@@ -22,38 +22,38 @@
 </div>
 <div id="${tabCode}_choose_panel_dialog"></div>
 <script type="text/javascript">
-var new_or_edit = "${new_or_edit}";
-var tabCode = "${tabCode}";
-var FORM_PAGE_CONFIG={
-	FORM_DIALOG:tabCode+"_saveOrEdit_dialog",
-	FORM:tabCode+"_saveOrEdit_form"
-};
-//提交操作
-function role_save(){
-	if( !$("#"+FORM_PAGE_CONFIG.FORM).valid())
-		return false;
-	$("#"+tabCode+"_saveOrEdit_form_submit").omButton('disable');
-	$("#"+FORM_PAGE_CONFIG.FORM).omAjaxSubmit({
-		method : 'POST',
-		url : '${contextPath}/${action}',
-		dataType : 'json',
-		success : function( responseText, jqForm, options) {
-			if (responseText.result == 1) {
-				$("#"+FORM_PAGE_CONFIG.FORM_DIALOG).omDialog('close');
-				$('#'+tabCode+'_role_grid').omGrid('reload');
-				main_messageTip_show('操作成功');
-			} else {
-				main_messageTip_show('操作失败，请重新再试');
-				$("#"+tabCode+"_saveOrEdit_form_submit").omButton('enable');
-			}
-		},
-	  	error:function(){
-			$("#"+tabCode+"_saveOrEdit_form_submit").omButton('enable');
-	  		main_messageTip_systemError_show();
-	  	}
-	});
-}
 $(document).ready(function() {
+	var new_or_edit = "${new_or_edit}";
+	var tabCode = "${tabCode}";
+	var FORM_PAGE_CONFIG={
+		FORM_DIALOG:tabCode+"_saveOrEdit_dialog",
+		FORM:tabCode+"_saveOrEdit_form"
+	};
+	//提交操作
+	function role_save(){
+		if( !$("#"+FORM_PAGE_CONFIG.FORM).valid())
+			return false;
+		$("#"+tabCode+"_saveOrEdit_form_submit").omButton('disable');
+		$("#"+FORM_PAGE_CONFIG.FORM).omAjaxSubmit({
+			method : 'POST',
+			url : '${contextPath}/${action}',
+			dataType : 'json',
+			success : function( responseText, jqForm, options) {
+				if (responseText.result == 1) {
+					$("#"+FORM_PAGE_CONFIG.FORM_DIALOG).omDialog('close');
+					$('#'+tabCode+'_role_grid').omGrid('reload');
+					main_messageTip_show('操作成功');
+				} else {
+					main_messageTip_show('操作失败，请重新再试');
+					$("#"+tabCode+"_saveOrEdit_form_submit").omButton('enable');
+				}
+			},
+		  	error:function(){
+				$("#"+tabCode+"_saveOrEdit_form_submit").omButton('enable');
+		  		main_messageTip_systemError_show();
+		  	}
+		});
+	}
 	$("#"+tabCode+"_saveOrEdit_form_type").omCombo({
 		emptyText:'请选择角色类型',
 		editable:false,

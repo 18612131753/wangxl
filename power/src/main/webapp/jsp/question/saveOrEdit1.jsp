@@ -3,22 +3,13 @@
 <%@ include file="../commons/taglibs.jsp"%>
 <div id="${tabCode}_form_dialog">
 	<form id="${tabCode}_form" method="post" >
+		<input type="text" disabled="disabled" style="display:none;" name="type" value="1"/>
 		<table>
 			<tr>
 				<td>
 				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>父节点：</td>
-				<td class="td_left">
-					<input type="text" id="${tabCode}_form_pmenuid" name="pmenuid"/>
-				</td>
-				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
-			</tr>
-			<tr>
-				<td>
-				</td>
-				<td class="td_right">
-					<span style="color: red;"></span>名称：</td>
+					<span style="color: red;"></span>难度：</td>
 				<td class="td_left">
 					<input type="text" id="${tabCode}_form_name" name="name"  value="${menu.name}"/>
 				</td>
@@ -28,24 +19,56 @@
 				<td>
 				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>排序：</td>
-				<td class="td_left"><INPUT id="${tabCode}_form_ordernum" type="text" name="ordernum" value="${menu.ordernum}"/></td>
+					<span style="color: red;">*</span>题目：</td>
+				<td class="td_left">
+					<input type="text" id="${tabCode}_form_title" name="title" style="width:380px"/>
+				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
 			<tr>
 				<td>
 				</td>
 				<td class="td_right">
-					<span style="color:red;">*</span>URL：</td>
-				<td class="td_left"><input id="${tabCode}_form_url" name="url" style="width:200px" value="${menu.url}"/></td>
+					<span style="color: red;">*</span>选项A：</td>
+				<td class="td_left">
+					<INPUT id="${tabCode}_form_opt_a" type="text" style="width:380px" name="opt_a" value="${q.opt_a}"/>
+				</td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td class="td_right">
+					<span style="color: red;">*</span>选项B：</td>
+				<td class="td_left">
+					<INPUT id="${tabCode}_form_opt_b" type="text" style="width:380px" name="opt_b" value="${q.opt_b}"/>
+				</td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td class="td_right">
+					<span style="color: red;">*</span>选项C：</td>
+				<td class="td_left">
+					<INPUT id="${tabCode}_form_opt_c" type="text" style="width:380px" name="opt_c" value="${q.opt_c}"/>
+				</td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td class="td_right">
+					<span style="color: red;">*</span>选项D：</td>
+				<td class="td_left">
+					<INPUT id="${tabCode}_form_opt_d" type="text" style="width:380px" name="opt_d" value="${q.opt_d}"/>
+				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
 		</table>
 	</form>
 </div>
-<script type="text/javascript">
-
-    
+<script type="text/javascript">    
 $(document).ready(function() {
 	var new_or_edit = "${new_or_edit}";
 	var tabCode = "${tabCode}";
@@ -56,7 +79,6 @@ $(document).ready(function() {
 	
 	//提交操作
 	var saving = false;
-	
 	function btn_save(){
 		if(saving || !$("#"+FORM_PAGE_CONFIG.FORM).valid())
 			return false;
@@ -152,13 +174,13 @@ $(document).ready(function() {
            $(this).next().css('display','none');
     });
  	
-	var dtitle = (("create"==new_or_edit)?"新建":"编辑")+"<label id=\""+FORM_PAGE_CONFIG.FORM_DIALOG+"_error\" class=\"error\" generated=\"true\" style=\"display:none;\"></label>";
+	var dtitle = (("create"==new_or_edit)?"新建-单选题":"编辑-单选题")+"<label id=\""+FORM_PAGE_CONFIG.FORM_DIALOG+"_error\" class=\"error\" generated=\"true\" style=\"display:none;\"></label>";
 	
 	$("#"+FORM_PAGE_CONFIG.FORM_DIALOG).omDialog({
 		title : dtitle,
 		autoOpen : true,
 		height : 'auto',
-		width : 450,
+		width : 550,
 		modal : true,
 		resizable : false,
 		onClose : function() {

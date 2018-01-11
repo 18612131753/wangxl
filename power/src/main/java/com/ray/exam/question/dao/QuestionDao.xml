@@ -5,7 +5,7 @@
 
 	<sql id="findQuestion_SQL">
 		FROM exam_question q
-		where 1=1
+		where q.state=1 
 		<if test="form.type != null and form.type !=''">
 			AND q.type=#{form.type}
 		</if>

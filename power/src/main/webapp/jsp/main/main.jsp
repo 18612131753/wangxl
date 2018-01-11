@@ -44,8 +44,6 @@
 		<iframe src="about:blank" name="crm_excel_iframe" id="crm_excel_iframe" style="display:none;"></iframe>
 	</body>
 	<script type="text/javascript">
-		//树的节点
-		var DepartmentTreeList ;
 		/* 随时捕获窗口变化 ，修改TAB大小*/
 		$(window).resize(function(){
 			function changeCenteHeight(){
@@ -57,26 +55,15 @@
 			}
 			window.setTimeout(changeCenteHeight , 10);
 		});
-		$(document).ready(function() {  
-//			$.ajax({
-//				url:'${contextPath}/department/findDepartmentTree',
-//				type:'POST',
-//				dataType:'json',
-//				async:false,
-//				success:function(msg){
-//					DepartmentTreeList = msg;
-//				}
-//			});
-			
+		$(document).ready(function() {
 			//屏蔽左侧菜单的右击事件
-        	document.getElementById("west-panel").oncontextmenu=function(event) {
-			    if (document.all){
-			    	window.event.returnValue = false;//for IE
-			    }else {
-			    	event.preventDefault();
-			    } 
+			document.getElementById("west-panel").oncontextmenu = function(event) {
+				if (document.all) {
+					window.event.returnValue = false; //for IE
+				} else {
+					event.preventDefault();
+				}
 			};
-           var myDate = new Date();
            // 修改密码框
            $("#modifyPasswordBtn").click(function(){
            		main_ChangeDivContent("div_for_dialog","${contextPath}/toMofifyPasswordPage/");
@@ -97,7 +84,7 @@
            	        resizable:false,
            	        collapsible:false, //可折叠
            	        height:55,
-           	     	closable: false  //是否允许关闭
+           	     	closable: true  //是否允许关闭
            	    },{
            	        id:"south-panel",
            	        region:"south",
@@ -153,20 +140,5 @@
            CENTER_HEIGHT = CENTER_HEIGHT.substring(0,CENTER_HEIGHT.length-2);
            CENTER_TAB_HEIGHT = CENTER_HEIGHT-TAB_TITLE_HEIGHT;
         });
-		function getWelcomeStr(hours,minute){
-        	if(hours>=0 && hours<5){
-        		return "凌晨好";
-        	}else if(hours>=5 && hours<9){
-        		return "早晨好";
-        	}else if((hours>=9 && hours<11)||(hours==11 && minute <=30)){
-        		return "上午好";
-        	}else if((hours==11 && minute >30)||(hours==12 && minute <=30)){
-        		return "中午好";
-        	}else if((hours==12 && minute >30)||(hours>12 && hours <18)){
-        		return "下午好";
-        	}else if(hours>=18 && hours<24){
-        		return "晚上好";
-        	}
-        }
     </script>
 </html>

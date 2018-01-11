@@ -24,5 +24,27 @@ public class QuestionServiceImpl implements QuestionService {
 		gridmdl.setTotal(dao.queryCount(form));
 		return gridmdl ;
 	}
+
+	public QuestionDO findQuestionById(Integer qid) {
+		return dao.findQuestionById(qid);
+	}
+
+	public void saveQuestion(QuestionDO question) {
+		dao.saveQuestion(question);
+	}
+
+	public void updateQuestion(QuestionDO question) {
+		dao.updateQuestion(question);
+		
+	}
+
+	public int findPaperByQuestionId(Integer qid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void deleteQuestion(Integer userid, Integer qid) {
+		dao.deleteQuestion(userid,qid);
+	}
 	
 }

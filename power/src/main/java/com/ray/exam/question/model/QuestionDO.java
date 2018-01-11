@@ -21,6 +21,7 @@ public class QuestionDO extends BaseModelDO {
 	private String  opt_g;
 	private String  opt_h;
 	private Integer owner;
+	private Integer state ; //1=正常 0=删除
 	
 	public Integer getQid() {
 		return qid;
@@ -112,5 +113,10 @@ public class QuestionDO extends BaseModelDO {
 	public void setOpt_h(String opt_h) {
 		this.opt_h = opt_h;
 	}
-	
+	public Integer getState() {
+		return state;
+	}
+	public void setState(Integer state) {
+		this.state = state;
+	}
 }
