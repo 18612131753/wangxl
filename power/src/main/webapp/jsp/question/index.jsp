@@ -84,8 +84,9 @@ $(document).ready(function() {
 		onClick:function(){
 			$('#'+tabCode+'_grid').omGrid({
 				extraData : {
-					name:$('#'+tabCode+'_search_name').val(),
-					pmenuid:$('#'+tabCode+'_search_pmenu').omCombo("value")
+					type:$('#'+tabCode+'_search_type').omCombo("value"),
+					level:$('#'+tabCode+'_search_level').omCombo("value"),
+					title:$('#'+tabCode+'_search_title').val()
 				}
 			});
 		}
@@ -107,7 +108,7 @@ $(document).ready(function() {
 					return '<input type="checkbox" class="'+tabCode+'_checkbox" id="'+tabCode+'_checkbox_'+colValue+'" value="'+colValue+'"/>';
                 }
 			 },
-			 { header:'类型',name:'type',width:130,align:'center',renderer:function(value,rowData,rowIdex){
+			 { header:'类型',name:'type',width:70,align:'center',renderer:function(value,rowData,rowIdex){
 			 	var v = ''; 
 			 	switch(value){
 					case 1: v = '单选题';break;
@@ -115,7 +116,7 @@ $(document).ready(function() {
 					case 3: v = '问答题';break;
 				}
 			 	return v;}},
-			 { header:'难易级别',name:'level',width:180,align:'center',renderer:function(value,rowData,rowIdex){
+			 { header:'难易级别',name:'level',width:70,align:'center',renderer:function(value,rowData,rowIdex){
 			 	var v = ''; 
 			 	switch(value){
 					case 1: v = '容易';break;
@@ -123,21 +124,16 @@ $(document).ready(function() {
 					case 3: v = '困难';break;
 				}
 			 	return v;}},
-			 { header:'题目',name:'title',width:200,align:'center' },
-			 { header:'选项',width:200,align:'center' ,renderer:function(value,rowData,rowIdex){
-			 	return 
-			 		rowData.opt_a+" "+rowData.opt_b+" "+rowData.opt_c+" "+rowData.opt_d+" "+ 
-			 		rowData.opt_e+" "+rowData.opt_f+" "+rowData.opt_g+" "+rowData.opt_h ;
-			 }},
-			 { header:'正确答案',name:'answer',width:100,align:'center',renderer:function(value,rowData,rowIdex){
+			 { header:'正确答案',name:'answer',width:70,align:'center',renderer:function(value,rowData,rowIdex){
 			 	if( rowData.type == 3 ) return rowData.opt_a; //问答题
 			 	return value;}},
+			 { header:'题目',name:'title',width:500,align:'left' },
 			 { header:'更新时间',name:'udate',width:160,align:'center',renderer:function(value,rowData,rowIdex){return formatDate(value,"y-m-d h:i:s");} }
 		],
 		onRowClick:function(rowIndex,rowData,event){
 			//保存用户的选中状态
 			$('.'+tabCode+'_checkbox').attr('checked',false);
-			$('#'+tabCode+'_checkbox_'+rowData.menuid).attr('checked','checked');
+			$('#'+tabCode+'_checkbox_'+rowData.qid).attr('checked','checked');
 		},
 		onRowDblClick:function(rowIndex,rowData,event){
 			update_btn();
@@ -151,8 +147,8 @@ $(document).ready(function() {
 			main_messageBox_pleaseSelectOne_alert();
 			return false;
 		}
-	    var rd_id=rowSels[0].menuid;
-	    main_ChangeDivContent("div_for_dialog",'${contextPath}/menu/toSaveOrEdit/edit?menuid='+rd_id );
+	    var rd_id=rowSels[0].qid;
+	    main_ChangeDivContent("div_for_dialog",'${contextPath}/question/toSaveOrEdit/edit?qid='+rd_id );
 	}
 	//删除
 	function delete_btn(){

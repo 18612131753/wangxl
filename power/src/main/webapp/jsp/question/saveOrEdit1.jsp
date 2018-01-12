@@ -3,65 +3,66 @@
 <%@ include file="../commons/taglibs.jsp"%>
 <div id="${tabCode}_form_dialog">
 	<form id="${tabCode}_form" method="post" >
-		<input type="text" disabled="disabled" style="display:none;" name="type" value="1"/>
+		<input type="text" style="display:none;" name="type" value="1"/>
 		<table>
 			<tr>
-				<td>
-				</td>
 				<td class="td_right">
-					<span style="color: red;"></span>难度：</td>
-				<td class="td_left">
-					<input type="text" id="${tabCode}_form_name" name="name"  value="${menu.name}"/>
-				</td>
-				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
-			</tr>
-			<tr>
-				<td>
-				</td>
-				<td class="td_right">
-					<span style="color: red;">*</span>题目：</td>
+					<span style="color:red;">*</span>题目：</td>
 				<td class="td_left">
 					<input type="text" id="${tabCode}_form_title" name="title" style="width:380px"/>
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
 			<tr>
-				<td>
-				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>选项A：</td>
+					<span style="color:red;">*</span>难度：</td>
+				<td class="td_left">
+					<input type="text" id="${tabCode}_form_level" name="level"/>
+				</td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td class="td_right">
+					<span style="color:red;">*</span><input type="radio" name="answer" value="A" checked/>选项A：
+				</td>
 				<td class="td_left">
 					<INPUT id="${tabCode}_form_opt_a" type="text" style="width:380px" name="opt_a" value="${q.opt_a}"/>
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
 			<tr>
-				<td>
-				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>选项B：</td>
+					<span style="color:red;">*</span><input type="radio" name="answer" value="B"/>选项B：
+				</td>
 				<td class="td_left">
 					<INPUT id="${tabCode}_form_opt_b" type="text" style="width:380px" name="opt_b" value="${q.opt_b}"/>
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
 			<tr>
-				<td>
-				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>选项C：</td>
+					<span style="color:red;">*</span><input type="radio" name="answer" value="C"/>选项C：
+				</td>
 				<td class="td_left">
 					<INPUT id="${tabCode}_form_opt_c" type="text" style="width:380px" name="opt_c" value="${q.opt_c}"/>
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
 			<tr>
-				<td>
-				</td>
 				<td class="td_right">
-					<span style="color: red;">*</span>选项D：</td>
+					<span style="color:red;">*</span><input type="radio" name="answer" value="D"/>选项D：
+				</td>
 				<td class="td_left">
 					<INPUT id="${tabCode}_form_opt_d" type="text" style="width:380px" name="opt_d" value="${q.opt_d}"/>
+				</td>
+				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
+			</tr>
+			<tr>
+				<td class="td_right">
+					正确答案：
+				</td>
+				<td class="td_left">
+					<span style="color:red;" id="${tabCode}_form_answer">${q==null || q.answer==null ?"A":q.answer}</span>
 				</td>
 				<td width="50"><span class="errorImg"></span><span class="errorMsg"></span></td>
 			</tr>
@@ -115,20 +116,40 @@ $(document).ready(function() {
 		  	}
 		});
 	}
-	
+	// 难度
+	$('#'+tabCode+'_form_level').omCombo({
+        dataSource:[
+			{text:'容易',value:'1'},
+			{text:'中等',value:'2'},
+			{text:'困难',value:'3'}
+        ],
+        optionField:function(data,index){
+            return data.text;
+        },
+        emptyText:'必选',
+        editable:false,
+        lazyLoad:true,
+        value:'${q.level}',
+        listMaxHeight:80
+    });
+    
 	//表单验证
 	$("#"+FORM_PAGE_CONFIG.FORM).validate({
 		rules : {
-			pmenuid : { required : true },
-			name : { required : true , maxlength : 20},
-			ordernum : { required : true ,digits:true},
-			url: { required : true , maxlength : 40}
+			title : { required : true },
+			level : { required : true },
+			opt_a : { required : true , maxlength : 200},
+			opt_b : { required : true , maxlength : 200},
+			opt_c : { required : true , maxlength : 200},
+			opt_d : { required : true , maxlength : 200}
 		},
 		messages : {
-			pmenuid : { required : "父节点必填" },
-			name : { required : "必填" , maxlength :"长度不超过20个字符"},
-			ordernum : { required : "必填",digits:"请输入数字"},
-			url: { required : "必填" , maxlength : 40}
+			title : { required : "题目必填" },
+			level : { required : "难度必选"},
+			opt_a : { required : "内容必填" ,maxlength : "不得超过200字"},
+			opt_b : { required : "内容必填" ,maxlength : "不得超过200字"},
+			opt_c : { required : "内容必填" ,maxlength : "不得超过200字"},
+			opt_d : { required : "内容必填" ,maxlength : "不得超过200字"}
 		},
 		errorPlacement : function(error, element) { 
                if(error.html()){
@@ -173,14 +194,17 @@ $(document).ready(function() {
        }).bind('mouseout',function(){
            $(this).next().css('display','none');
     });
- 	
+ 	// 选择正确答案
+	$("input[name='answer']").click(function(){
+		$('#'+tabCode+'_form_answer').html($(this).val());
+	});
 	var dtitle = (("create"==new_or_edit)?"新建-单选题":"编辑-单选题")+"<label id=\""+FORM_PAGE_CONFIG.FORM_DIALOG+"_error\" class=\"error\" generated=\"true\" style=\"display:none;\"></label>";
 	
 	$("#"+FORM_PAGE_CONFIG.FORM_DIALOG).omDialog({
 		title : dtitle,
 		autoOpen : true,
 		height : 'auto',
-		width : 550,
+		width : 600,
 		modal : true,
 		resizable : false,
 		onClose : function() {
@@ -201,17 +225,5 @@ $(document).ready(function() {
 	$("#"+tabCode+"_form_submit").omButton({ icons : { left : '${windowSubmitIcons}' } });
 	$("#"+tabCode+"_form_colse").omButton({ icons : { left : '${windowCloseIcons}' } });
 
-	//父节点
-	$('#'+tabCode+'_form_pmenuid').omCombo({
-        dataSource:'${contextPath}/menu/findMenu1?type=1',
-        optionField:function(data,index){
-            return data.text;
-        },
-        emptyText:'必选',
-        editable:false,
-        lazyLoad:false,
-        value:'${menu.pmenuid}',
-        listMaxHeight:80
-    });
 });
 </script>
