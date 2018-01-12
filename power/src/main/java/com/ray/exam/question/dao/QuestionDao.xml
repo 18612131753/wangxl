@@ -20,7 +20,7 @@
 		</if>
 	</sql>
 	<select id="query" resultType="com.ray.exam.question.model.QuestionDO">
-		select * 
+		select qid,type,level,title,answer,opt_a,uid,udate 
 		<include refid="findQuestion_SQL" />
 		limit #{form.start},#{form.limit}
 	</select>

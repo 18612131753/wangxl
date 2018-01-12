@@ -57,7 +57,7 @@ public class QuestionController {
 		QuestionForm form
 	) {
 		GridDataModel<QuestionDO> gdm = questionService.query(form);
-		return ModelAndViewUtil.Json_ok(gdm);
+		return ModelAndViewUtil.Json_ok(gdm,"questionForm");
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class QuestionController {
 			question = questionService.findQuestionById( qid );
 			type = question.getType();
 			model.addAttribute("new_or_edit", "edit");
-			model.addAttribute("question", question);
+			model.addAttribute("q", question);
 			model.addAttribute("action","question/edit/"+question.getQid());
 		}
 		return ModelAndViewUtil.Jsp( "question/saveOrEdit"+type );
@@ -95,6 +95,7 @@ public class QuestionController {
 			QuestionDO question
 	){
 		UserSession su = SessionUtil.getUserSession(session);
+		question.setState(1);
 		question.setCid( su.getUserid() );
 		question.setUid( su.getUserid() );
 		questionService.saveQuestion(question) ;
