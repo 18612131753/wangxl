@@ -27,7 +27,7 @@ public class TestVolatile {
 			}.start();
 		}
 		while (Thread.activeCount() > 1) // 保证前面的线程都执行完
-			Thread.yield();
+			Thread.yield(); //线程让步
 		System.out.println(TestVolatile.num);
 	}
 }
