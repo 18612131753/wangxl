@@ -1,6 +1,6 @@
 package design.ray.a1_yuanze.aa4_isp.a2;
 
-class D implements I1, I3 {
+class D implements I3 {
     public void method1() {
         System.out.println("类D实现接口I1的方法1");
     }
