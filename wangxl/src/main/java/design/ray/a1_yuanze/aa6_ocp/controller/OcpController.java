@@ -11,9 +11,8 @@ import design.ray.a1_yuanze.aa6_ocp.service.OcpService;
 @RequestMapping("/ocp")
 public class OcpController {
 
-    @Resource(name="ocpService")
-    //@Resource(name="ocpService2")
-    private OcpService ocpService ;
-    
-    
+    @Resource(name = "ocpService")
+    // @Resource(name="ocpService2")
+    private OcpService ocpService;
+
 }
