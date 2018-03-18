@@ -1,7 +1,12 @@
-import framework.*;
+package gof.ray.Prototype.Sample;
+
+import gof.ray.Prototype.Sample.framework.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        Object s;
+        
         // 准备
         Manager manager = new Manager();
         UnderlinePen upen = new UnderlinePen('~');
@@ -15,8 +20,8 @@ public class Main {
         Product p1 = manager.create("strong message");
         p1.use("Hello, world.");
         Product p2 = manager.create("warning box");
-        p2.use("Hello, world.");
+        p2.use("Hello, world1.");
         Product p3 = manager.create("slash box");
-        p3.use("Hello, world.");
+        p3.use("Hello, world2.");
     }
 }

@@ -1,3 +1,5 @@
+package gof.ray.Builder.A3;
+
 import javax.swing.*;
 
 public class Main {

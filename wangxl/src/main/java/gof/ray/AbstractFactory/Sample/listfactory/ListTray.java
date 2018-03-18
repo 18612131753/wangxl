@@ -1,11 +1,13 @@
-package listfactory;
-import factory.*;
+package gof.ray.AbstractFactory.Sample.listfactory;
+import gof.ray.AbstractFactory.Sample.factory.*;
 import java.util.Iterator;
 
 public class ListTray extends Tray {
     public ListTray(String caption) {
         super(caption);
     }
+    
+    @Override
     public String makeHTML() {
         StringBuffer buffer = new StringBuffer();
         buffer.append("<li>\n");

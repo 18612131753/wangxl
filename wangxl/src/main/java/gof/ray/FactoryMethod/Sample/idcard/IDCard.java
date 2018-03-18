@@ -1,5 +1,5 @@
-package idcard;
-import framework.*;
+package gof.ray.FactoryMethod.Sample.idcard;
+import gof.ray.FactoryMethod.Sample.framework.Product;
 
 public class IDCard extends Product {
     private String owner;

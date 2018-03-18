@@ -1,5 +1,5 @@
-package tablefactory;
-import factory.*;
+package gof.ray.AbstractFactory.Sample.tablefactory;
+import gof.ray.AbstractFactory.Sample.factory.*;
 import java.util.Iterator;
 
 public class TablePage extends Page {

@@ -1,3 +1,5 @@
+package gof.ray.Singleton.A2;
+
 public class Triple {
     private static Triple[] triple = new Triple[]{
         new Triple(0),

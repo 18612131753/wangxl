@@ -1,3 +1,5 @@
+package gof.ray.Builder.A2;
+
 import java.io.*;
 
 public class HTMLBuilder extends Builder {

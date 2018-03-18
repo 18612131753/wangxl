@@ -1,3 +1,5 @@
+package gof.ray.Singleton.Sample;
+
 public class Singleton {
     private static Singleton singleton = new Singleton();
     private Singleton() {                                 

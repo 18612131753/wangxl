@@ -1,14 +1,14 @@
-import factory.*;
+package gof.ray.AbstractFactory.Sample;
+
+import gof.ray.AbstractFactory.Sample.factory.*;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.out.println("Usage: java Main class.name.of.ConcreteFactory");
-            System.out.println("Example 1: java Main listfactory.ListFactory");
-            System.out.println("Example 2: java Main tablefactory.TableFactory");
-            System.exit(0);
-        }
-        Factory factory = Factory.getFactory(args[0]);
+        
+        String factoryname = "gof.ray.AbstractFactory.Sample.listfactory.ListFactory";
+        // String factoryname = "gof.ray.AbstractFactory.Sample.tablefactory.TableFactory";
+        
+        Factory factory = Factory.getFactory( factoryname );
 
         Link people = factory.createLink("人民日报", "http://www.people.com.cn/");
         Link gmw = factory.createLink("光明日报", "http://www.gmw.cn/");

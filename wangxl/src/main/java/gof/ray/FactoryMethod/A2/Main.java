@@ -1,5 +1,7 @@
-import framework.*;
-import idcard.*;
+package gof.ray.FactoryMethod.A2;
+
+import gof.ray.FactoryMethod.A2.framework.*;
+import gof.ray.FactoryMethod.A2.idcard.*;
 
 public class Main {
     public static void main(String[] args) {

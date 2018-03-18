@@ -1,4 +1,4 @@
-package factory;
+package gof.ray.AbstractFactory.A2.factory;
 import java.util.ArrayList;
 
 public abstract class Tray extends Item {

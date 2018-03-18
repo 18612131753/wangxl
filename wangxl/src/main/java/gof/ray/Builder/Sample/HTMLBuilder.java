@@ -1,10 +1,13 @@
+package gof.ray.Builder.Sample;
+
 import java.io.*;
 
 public class HTMLBuilder extends Builder {
     private String filename;                                                        // 文件名
     private PrintWriter writer;                                                     // 用于编写文件的PrintWriter
     public void makeTitle(String title) {                                           // HTML文件的标题
-        filename = title + ".html";                                                 // 将标题作为文件名
+        filename = "D:\\work\\gitspace\\wangxl\\wangxl\\src\\main\\java\\gof\\ray\\Builder\\Sample"+
+                        title + ".html";                                                 // 将标题作为文件名
         try {
             writer = new PrintWriter(new FileWriter(filename));                     // 生成 PrintWriter
         } catch (IOException e) {

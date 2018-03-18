@@ -1,4 +1,5 @@
-import factory.*;
+package gof.ray.AbstractFactory.A2;
+import gof.ray.AbstractFactory.A2.factory.*;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package gof.ray.Builder.Sample;
+
 public class TextBuilder extends Builder {
     private StringBuffer buffer = new StringBuffer();           // 文档内容保存在该字段中
     public void makeTitle(String title) {                       // 纯文本的标题

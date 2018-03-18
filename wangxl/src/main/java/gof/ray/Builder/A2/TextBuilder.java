@@ -1,3 +1,4 @@
+package gof.ray.Builder.A2;
 public class TextBuilder extends Builder {
     private StringBuffer buffer = new StringBuffer();           // 文档内容保存在该字段中 
     protected void buildTitle(String title) {                       // 纯文本的标题

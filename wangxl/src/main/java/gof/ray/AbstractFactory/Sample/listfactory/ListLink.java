@@ -1,5 +1,5 @@
-package listfactory;
-import factory.*;
+package gof.ray.AbstractFactory.Sample.listfactory;
+import gof.ray.AbstractFactory.Sample.factory.*;
 
 public class ListLink extends Link {
     public ListLink(String caption, String url) {

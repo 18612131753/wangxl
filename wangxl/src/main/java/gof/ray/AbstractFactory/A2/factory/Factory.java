@@ -1,4 +1,4 @@
-package factory;
+package gof.ray.AbstractFactory.A2.factory;
 
 public abstract class Factory {
     public static Factory getFactory(String classname) {

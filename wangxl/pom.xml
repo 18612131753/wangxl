@@ -347,7 +347,7 @@
 			<artifactId>ribbon-httpclient</artifactId>
 			<version>2.2.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -355,33 +355,40 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>1.0-rc5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-		    <groupId>org.apache.ignite</groupId>
-		    <artifactId>ignite-core</artifactId>
-		    <version>${ignite.version}</version>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.0-rc5</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.ignite</groupId>
-		    <artifactId>ignite-spring</artifactId>
-		    <version>${ignite.version}</version>
+			<groupId>org.apache.ignite</groupId>
+			<artifactId>ignite-core</artifactId>
+			<version>${ignite.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.ignite</groupId>
-		    <artifactId>ignite-indexing</artifactId>
-		    <version>${ignite.version}</version>
+			<groupId>org.apache.ignite</groupId>
+			<artifactId>ignite-spring</artifactId>
+			<version>${ignite.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ignite</groupId>
+			<artifactId>ignite-indexing</artifactId>
+			<version>${ignite.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
 		<dependency>
-		    <groupId>org.apache.velocity</groupId>
-		    <artifactId>velocity</artifactId>
-		    <version>1.7</version>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
 		</dependency>
-		
+
+		<!-- hibernate -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>4.3.0.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>wangxl</finalName>

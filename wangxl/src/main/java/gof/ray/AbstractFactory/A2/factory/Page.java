@@ -1,4 +1,4 @@
-package factory;
+package gof.ray.AbstractFactory.A2.factory;
 import java.io.*;
 import java.util.*;
 

@@ -1,5 +1,5 @@
-package tablefactory;
-import factory.*;
+package gof.ray.AbstractFactory.Sample.tablefactory;
+import gof.ray.AbstractFactory.Sample.factory.*;
 
 public class TableLink extends Link {
     public TableLink(String caption, String url) {

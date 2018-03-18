@@ -1,3 +1,5 @@
+package gof.ray.Singleton.Q3;
+
 public class Singleton {
     private static Singleton singleton = null;
     private Singleton() {

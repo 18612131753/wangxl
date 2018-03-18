@@ -1,5 +1,11 @@
-import framework.*;
-import idcard.*;
+package gof.ray.FactoryMethod.Sample;
+
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+
+import gof.ray.FactoryMethod.Sample.framework.Factory;
+import gof.ray.FactoryMethod.Sample.framework.Product;
+import gof.ray.FactoryMethod.Sample.idcard.IDCardFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,5 +16,8 @@ public class Main {
         card1.use();
         card2.use();
         card3.use();
+        
+        LocalSessionFactoryBean lsb ; //hibernate
+        SqlSessionFactoryBean ssf ; //mybatis
     }
 }

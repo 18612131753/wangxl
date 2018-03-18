@@ -1,3 +1,5 @@
+package gof.ray.Builder.A4;
+
 public class Director {
     private Builder builder;
     public Director(Builder builder) {              // 因为接收的参数是Builder类的子类

@@ -1,4 +1,4 @@
-package factory;
+package gof.ray.AbstractFactory.A2.factory;
 
 public abstract class Link extends Item {
     protected String url;

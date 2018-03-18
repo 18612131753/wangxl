@@ -1,5 +1,5 @@
-package listfactory;
-import factory.*;
+package gof.ray.AbstractFactory.Sample.listfactory;
+import gof.ray.AbstractFactory.Sample.factory.*;
 import java.util.Iterator;
 
 public class ListPage extends Page {
