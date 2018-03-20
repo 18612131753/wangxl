@@ -1,3 +1,5 @@
+package gof.ray.Strategy.A1;
+
 import java.util.Random;
 
 public class ProbStrategy implements Strategy {

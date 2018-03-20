@@ -1,3 +1,5 @@
+package gof.ray.Strategy.Q4;
+
 public class SortAndPrint {
     Comparable[] data;
     Sorter sorter;

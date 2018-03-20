@@ -1,3 +1,5 @@
+package gof.ray.Strategy.Q4;
+
 public class SelectionSorter implements Sorter {
     public void sort(Comparable[] data) {
         for (int i = 0; i < data.length - 1; i++) {

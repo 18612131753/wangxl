@@ -1,4 +1,10 @@
+package gof.ray.Strategy.Sample;
+
+/**
+ * 出拳的手势类
+ * */
 public class Hand {
+    
     public static final int HANDVALUE_GUU = 0;  // 表示石头的值
     public static final int HANDVALUE_CHO = 1;  // 表示剪刀的值
     public static final int HANDVALUE_PAA = 2;  // 表示布的值
@@ -11,6 +17,7 @@ public class Hand {
         "石头", "剪刀", "布",
     };
     private int handvalue;                      // 表示猜拳中出的手势的值
+    
     private Hand(int handvalue) {
         this.handvalue = handvalue;
     }
@@ -23,10 +30,12 @@ public class Hand {
     public boolean isWeakerThan(Hand h) {       // 如果this输给了h则返回true
         return fight(h) == -1;
     }
+    
+    //判断胜负的算法
     private int fight(Hand h) {                 // 计分：平0, 胜1, 负-1
         if (this == h) {
             return 0;
-        } else if ((this.handvalue + 1) % 3 == h.handvalue) {
+        } else if ((this.handvalue + 1) % 3 == h.handvalue) { //表示胜利
             return 1;
         } else {
             return -1;

@@ -1,3 +1,5 @@
+package gof.ray.Strategy.A1;
+
 public class Player {
     private String name;
     private Strategy strategy;

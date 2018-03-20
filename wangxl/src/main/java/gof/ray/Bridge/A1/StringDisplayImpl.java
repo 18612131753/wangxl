@@ -1,3 +1,5 @@
+package gof.ray.Bridge.A1;
+
 public class StringDisplayImpl extends DisplayImpl {
     private String string;                              // 要显示的字符串
     private int width;                                  // 以字节单位计算出的字符串的宽度

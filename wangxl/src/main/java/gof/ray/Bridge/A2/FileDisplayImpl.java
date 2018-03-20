@@ -1,3 +1,5 @@
+package gof.ray.Bridge.A2;
+
 import java.io.*;
 
 public class FileDisplayImpl extends DisplayImpl {

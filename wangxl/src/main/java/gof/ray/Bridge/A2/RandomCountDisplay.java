@@ -1,3 +1,5 @@
+package gof.ray.Bridge.A2;
+
 import java.util.Random;
 
 public class RandomCountDisplay extends CountDisplay {

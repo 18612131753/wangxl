@@ -1,3 +1,5 @@
+package gof.ray.Bridge.A1;
+
 public class CountDisplay extends Display {
     public CountDisplay(DisplayImpl impl) {
         super(impl);

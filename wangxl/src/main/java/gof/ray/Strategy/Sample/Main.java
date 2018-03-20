@@ -1,27 +1,26 @@
+package gof.ray.Strategy.Sample;
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("Usage: java Main randomseed1 randomseed2");
-            System.out.println("Example: java Main 314 15");
-            System.exit(0);
-        }
-        int seed1 = Integer.parseInt(args[0]);
-        int seed2 = Integer.parseInt(args[1]);
-        Player player1 = new Player("Taro", new WinningStrategy(seed1));
-        Player player2 = new Player("Hana", new ProbStrategy(seed2));
-        for (int i = 0; i < 10000; i++) {
+        
+        int seed1 = 314; //随机数的种子
+        int seed2 = 15;  //随机数的种子
+        
+        Player player1 = new Player("player_1", new WinningStrategy(seed1));
+        Player player2 = new Player("player_2", new ProbStrategy(seed2));
+        
+        for (int i = 0; i < 100; i++) {
             Hand nextHand1 = player1.nextHand();
             Hand nextHand2 = player2.nextHand();
             if (nextHand1.isStrongerThan(nextHand2)) {
-                System.out.println("Winner:" + player1);
                 player1.win();
                 player2.lose();
+                System.out.println("胜利者:" + player1);
             } else if (nextHand2.isStrongerThan(nextHand1)) {
-                System.out.println("Winner:" + player2);
                 player1.lose();
                 player2.win();
+                System.out.println("胜利者:" + player2);
             } else {
-                System.out.println("Even...");
+                System.out.println("平局...");
                 player1.even();
                 player2.even();
             }

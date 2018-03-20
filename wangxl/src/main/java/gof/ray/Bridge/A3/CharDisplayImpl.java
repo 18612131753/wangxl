@@ -1,3 +1,5 @@
+package gof.ray.Bridge.A3;
+
 public class CharDisplayImpl extends DisplayImpl {
     private char head;
     private char body;

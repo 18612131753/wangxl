@@ -1,3 +1,5 @@
+package gof.ray.Bridge.A3;
+
 public class IncreaseDisplay extends CountDisplay {
     private int step; // 递增步长
     public IncreaseDisplay(DisplayImpl impl, int step) {

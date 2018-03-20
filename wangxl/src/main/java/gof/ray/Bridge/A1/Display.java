@@ -1,3 +1,5 @@
+package gof.ray.Bridge.A1;
+
 public class Display {
     private DisplayImpl impl;
     public Display(DisplayImpl impl) {
