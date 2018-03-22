@@ -1,3 +1,10 @@
+package gof.ray.Decorator.Q2;
+
+import gof.ray.Decorator.A2.Display;
+import gof.ray.Decorator.A2.FullBorder;
+import gof.ray.Decorator.A2.MultiStringDisplay;
+import gof.ray.Decorator.A2.SideBorder;
+
 public class Main {
     public static void main(String[] args) {
         MultiStringDisplay md = new MultiStringDisplay();

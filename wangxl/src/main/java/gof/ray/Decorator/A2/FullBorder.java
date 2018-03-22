@@ -1,3 +1,5 @@
+package gof.ray.Decorator.A2;
+
 public class FullBorder extends Border {
     public FullBorder(Display display) {
         super(display);

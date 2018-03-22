@@ -1,3 +1,5 @@
+package gof.ray.Composite.A2;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 

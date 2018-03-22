@@ -1,3 +1,5 @@
+package gof.ray.Decorator.A2;
+
 import java.util.ArrayList;
 
 public class MultiStringDisplay extends Display {

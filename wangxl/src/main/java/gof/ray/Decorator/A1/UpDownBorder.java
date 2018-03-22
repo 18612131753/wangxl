@@ -1,3 +1,5 @@
+package gof.ray.Decorator.A1;
+
 public class UpDownBorder extends Border {
     private char borderChar;                         // 表示装饰边框的字符 
     public UpDownBorder(Display display, char ch) {  // 通过构造函数指定Display和装饰边框字符

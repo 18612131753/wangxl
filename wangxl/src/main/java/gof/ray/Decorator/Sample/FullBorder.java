@@ -1,3 +1,8 @@
+package gof.ray.Decorator.Sample;
+
+/**
+ * 全包裹
+ * */
 public class FullBorder extends Border {
     public FullBorder(Display display) {
         super(display);
@@ -6,7 +11,7 @@ public class FullBorder extends Border {
         return 1 + display.getColumns() + 1;
     }
     public int getRows() {                      // 行数为被装饰物的行数加上上下边框的行数
-        return 1 + display.getRows() + 1;
+        return 1 + display.getRows() + 1;       // 形成递推
     }
     public String getRowText(int row) {         // 指定的那一行的字符串
         if (row == 0) {                                                 // 上边框

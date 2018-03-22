@@ -1,3 +1,5 @@
+package gof.ray.Composite.A2;
+
 public class File extends Entry {
     private String name;
     private int size;

@@ -1,3 +1,11 @@
+package gof.ray.Decorator.Q1;
+
+import gof.ray.Decorator.A1.Display;
+import gof.ray.Decorator.A1.FullBorder;
+import gof.ray.Decorator.A1.SideBorder;
+import gof.ray.Decorator.A1.StringDisplay;
+import gof.ray.Decorator.A1.UpDownBorder;
+
 public class Main {
     public static void main(String[] args) {
         Display b1 = new StringDisplay("Hello, world.");
