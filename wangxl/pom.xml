@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>wangxl Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-
+	
 	<properties>
 		<spring.version>4.1.7.RELEASE</spring.version>
 		<mybatis.version>3.3.0</mybatis.version>

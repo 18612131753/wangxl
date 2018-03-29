@@ -1,4 +1,10 @@
-import java.util.Iterator;
+package gof.ray.Visitor.Q3;
+
+import gof.ray.Visitor.A3.Directory;
+import gof.ray.Visitor.A3.File;
+import gof.ray.Visitor.A3.FileTreatmentException;
+import gof.ray.Visitor.A3.ListVisitor;
+import gof.ray.Visitor.A3.ElementArrayList;
 
 public class Main {
     public static void main(String[] args) {

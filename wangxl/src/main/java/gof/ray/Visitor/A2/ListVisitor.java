@@ -1,3 +1,5 @@
+package gof.ray.Visitor.A2;
+
 import java.util.Iterator;
 
 public class ListVisitor extends Visitor {

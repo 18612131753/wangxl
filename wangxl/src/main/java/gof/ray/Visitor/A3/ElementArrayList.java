@@ -1,7 +1,11 @@
+package gof.ray.Visitor.A3;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
-class ElementArrayList extends ArrayList implements Element {
+public class ElementArrayList extends ArrayList implements Element {
+    public ElementArrayList(){
+    }
     public void accept(Visitor v) {
         Iterator it = iterator();
         while (it.hasNext()) {

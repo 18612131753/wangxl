@@ -1,3 +1,4 @@
+package gof.ray.Visitor.A1;
 import java.util.Iterator;
 
 public abstract class Entry implements Element {
