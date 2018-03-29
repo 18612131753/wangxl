@@ -17,7 +17,7 @@ public class Main {
             bindir.add(new File("vi", 10000));
             bindir.add(new File("latex", 20000));
             rootdir.printList();
-        } catch (FileTreatmentException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

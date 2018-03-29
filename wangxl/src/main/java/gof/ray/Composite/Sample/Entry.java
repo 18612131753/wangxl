@@ -6,8 +6,9 @@ package gof.ray.Composite.Sample;
 public abstract class Entry {
     public abstract String getName();                               // 获取名字
     public abstract int getSize();                                  // 获取大小
-    public Entry add(Entry entry) throws FileTreatmentException {   // 加入目录条目
-        throw new FileTreatmentException();
+    
+    public Entry add(Entry entry) throws Exception {   // 加入目录条目
+        throw new Exception("父类方法，不实现，直接异常");
     }
     public void printList() {                                       // 为一览加上前缀并显示目录条目一览
         printList("");

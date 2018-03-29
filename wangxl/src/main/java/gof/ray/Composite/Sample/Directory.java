@@ -7,8 +7,10 @@ import java.util.ArrayList;
  * 文件夹类（目录类）
  * */
 public class Directory extends Entry {
+    
     private String name;                    // 文件夹的名字
     private ArrayList<Entry> directory = new ArrayList<Entry>();      // 文件夹中目录条目的集合
+    
     public Directory(String name) {         // 构造函数
         this.name = name;
     }
