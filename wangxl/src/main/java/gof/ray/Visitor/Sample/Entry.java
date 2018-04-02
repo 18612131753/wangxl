@@ -7,12 +7,13 @@ public abstract class Entry implements Element {
 
     public abstract int getSize(); // 获取大小
 
-    public Entry add(Entry entry) throws FileTreatmentException { // 增加目录条目
-        throw new FileTreatmentException();
+    public Entry add(Entry entry) throws Exception { // 增加目录条目
+        throw new Exception("父类方法，不实现，直接异常");
     }
 
-    public Iterator<Entry> iterator() throws FileTreatmentException { // 生成Iterator
-        throw new FileTreatmentException();
+    // 生成Iterator - 新增
+    public Iterator<Entry> iterator() throws Exception { 
+        throw new Exception("父类方法，不实现，直接异常");
     }
 
     public String toString() { // 显示字符串
