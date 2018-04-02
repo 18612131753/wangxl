@@ -1,3 +1,5 @@
+package gof.ray.ChainOfResponsibility.A4;
+
 public class OddSupport extends Support {
     public OddSupport(String name) {                // 构造函数
         super(name);

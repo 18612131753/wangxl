@@ -1,3 +1,5 @@
+package gof.ray.ChainOfResponsibility.A4;
+
 public class NoSupport extends Support {
     public NoSupport(String name) {
         super(name);
