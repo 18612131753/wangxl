@@ -37,7 +37,7 @@ public class Main {
                 File file = (File)it.next();                        
                 System.out.println(file.toString());
             }                                                       
-        } catch (FileTreatmentException e) {
+        } catch ( Exception e) {
             e.printStackTrace();
         }
     }

@@ -4,7 +4,6 @@ import java.util.Iterator;
 import gof.ray.Visitor.A1.Directory;
 import gof.ray.Visitor.A1.File;
 import gof.ray.Visitor.A1.FileFindVisitor;
-import gof.ray.Visitor.A1.FileTreatmentException;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,7 +40,7 @@ public class Main {
                 File file = (File)it.next();                        
                 System.out.println(file.toString());
             }                                                       
-        } catch (FileTreatmentException e) {
+        } catch ( Exception e) {
             e.printStackTrace();
         }
     }
