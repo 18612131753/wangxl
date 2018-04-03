@@ -1,4 +1,6 @@
-import pagemaker.PageMaker;
+package gof.ray.Facade.A2;
+
+import gof.ray.Facade.A2.pagemaker.PageMaker;
 
 public class Main {
     public static void main(String[] args) {

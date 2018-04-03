@@ -1,4 +1,5 @@
-package pagemaker;
+package gof.ray.Facade.Sample.pagemaker;
+
 
 import java.io.FileWriter;
 import java.io.IOException;

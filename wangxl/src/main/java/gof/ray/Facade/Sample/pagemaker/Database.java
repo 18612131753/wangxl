@@ -1,4 +1,4 @@
-package pagemaker;
+package gof.ray.Facade.Sample.pagemaker;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,7 +8,8 @@ public class Database {
     private Database() {    // 防止外部new出Database的实例，所以声明为private方法
     }
     public static Properties getProperties(String dbname) { // 根据数据库名获取Properties
-        String filename = dbname + ".txt";
+        String filename = "D:\\work\\gitspace\\wangxl\\wangxl\\src\\main\\java\\gof\\ray\\Facade\\Sample\\"+
+                    dbname + ".txt";
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(filename));

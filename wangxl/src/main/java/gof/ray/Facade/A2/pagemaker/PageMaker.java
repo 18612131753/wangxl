@@ -1,13 +1,14 @@
-package pagemaker;
+package gof.ray.Facade.A2.pagemaker;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Properties;
 import java.util.Enumeration;
+import java.util.Properties;
 
 public class PageMaker {
-    private PageMaker() {   // 不允许生成PageMaker类的实例，因此将构造函数设为private
+    private PageMaker() { // 不允许生成PageMaker类的实例，因此将构造函数设为private
     }
+
     public static void makeWelcomePage(String mailaddr, String filename) {
         try {
             Properties mailprop = Database.getProperties("maildata");
@@ -23,14 +24,15 @@ public class PageMaker {
             e.printStackTrace();
         }
     }
-    public static void makeLinkPage(String filename) {          
+
+    public static void makeLinkPage(String filename) {
         try {
             HtmlWriter writer = new HtmlWriter(new FileWriter(filename));
             writer.title("Link page");
             Properties mailprop = Database.getProperties("maildata");
             Enumeration en = mailprop.propertyNames();
             while (en.hasMoreElements()) {
-                String mailaddr = (String)en.nextElement();
+                String mailaddr = (String) en.nextElement();
                 String username = mailprop.getProperty(mailaddr, "(unknown)");
                 writer.mailto(mailaddr, username);
             }

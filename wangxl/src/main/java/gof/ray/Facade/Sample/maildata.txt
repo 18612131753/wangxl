@@ -1,4 +1,4 @@
-hyuki@hyuki.com=Hiroshi Yuki
+ray@163.com=Ray Wang
 hanako@hyuki.com=Hanako Sato
 tomura@hyuki.com=Tomura
 mamoru@hyuki.com=Mamoru Takahashi
