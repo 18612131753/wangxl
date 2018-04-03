@@ -1,16 +1,23 @@
 package gof.ray.ChainOfResponsibility.Sample;
 
+/**
+ * 解决问题的抽象类
+ */
 public abstract class Support {
-    private String name;                    // 解决问题的实例的名字
-    private Support next;                   // 要推卸给的对象
-    public Support(String name) {           // 生成解决问题的实例
+    private String name; // 解决问题的实例的名字
+    private Support next; // 要推卸给的对象
+
+    public Support(String name) { // 生成解决问题的实例
         this.name = name;
     }
-    public Support setNext(Support next) {  // 设置要推卸给的对象
+
+    public Support setNext(Support next) { // 设置要推卸给的对象
         this.next = next;
         return next;
     }
-    public void support(Trouble trouble) {  // 解决问题的步骤
+
+    // 解决问题的步骤
+    public void support(Trouble trouble) {
         if (resolve(trouble)) {
             done(trouble);
         } else if (next != null) {
@@ -19,14 +26,22 @@ public abstract class Support {
             fail(trouble);
         }
     }
-    public String toString() {              // 显示字符串
+
+    @Override
+    public String toString() { // 显示字符串
         return "[" + name + "]";
     }
-    protected abstract boolean resolve(Trouble trouble); // 解决问题的方法
-    protected void done(Trouble trouble) {  // 解决
+
+    // 解决问题的方法
+    protected abstract boolean resolve(Trouble trouble);
+
+    // 解决
+    protected void done(Trouble trouble) {
         System.out.println(trouble + " is resolved by " + this + ".");
     }
-    protected void fail(Trouble trouble) {  // 未解决
+
+    // 未解决
+    protected void fail(Trouble trouble) {
         System.out.println(trouble + " cannot be resolved.");
     }
 }

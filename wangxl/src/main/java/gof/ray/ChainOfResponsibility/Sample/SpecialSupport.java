@@ -6,6 +6,8 @@ public class SpecialSupport extends Support {
         super(name);
         this.number = number;
     }
+    
+    @Override
     protected boolean resolve(Trouble trouble) {        // 解决问题的方法
         if (trouble.getNumber() == number) {
             return true;
