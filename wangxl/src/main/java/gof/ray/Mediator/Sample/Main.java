@@ -1,8 +1,7 @@
-import java.awt.*;
-import java.awt.event.*;
+package gof.ray.Mediator.Sample;
 
 public class Main {
-    static public void main(String args[]) {
+    static public void main(String[] args) {
         new LoginFrame("Mediator Sample");
     }
 }
