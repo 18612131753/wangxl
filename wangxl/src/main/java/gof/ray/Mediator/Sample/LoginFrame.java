@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 
 /**
  * javase
+ * 仲裁者的实现
  */
 public class LoginFrame extends Frame implements ActionListener, Mediator {
 
