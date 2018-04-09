@@ -1,4 +1,10 @@
+package gof.ray.Observer.Sample;
+
+/**
+ * 图形观察者
+ */
 public class GraphObserver implements Observer {
+    @Override
     public void update(NumberGenerator generator) {
         System.out.print("GraphObserver:");
         int count = generator.getNumber();

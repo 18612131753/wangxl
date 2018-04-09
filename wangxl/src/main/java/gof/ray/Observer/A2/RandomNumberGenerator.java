@@ -1,3 +1,5 @@
+package gof.ray.Observer.A2;
+
 import java.util.Random;
 
 public class RandomNumberGenerator extends NumberGenerator {

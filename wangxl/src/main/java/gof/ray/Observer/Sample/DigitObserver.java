@@ -1,4 +1,10 @@
+package gof.ray.Observer.Sample;
+
+/**
+ * 数字观察者
+ */
 public class DigitObserver implements Observer {
+    @Override
     public void update(NumberGenerator generator) {
         System.out.println("DigitObserver:" + generator.getNumber());
         try {
