@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /**
  * 表示生成数值的对象的抽象类
- * */
+ */
 public abstract class NumberGenerator {
     private ArrayList<Observer> observers = new ArrayList<Observer>(); // 保存Observer们
 
