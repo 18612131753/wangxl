@@ -5,8 +5,6 @@ import gof.ray.Prototype.Sample.framework.*;
 public class Main {
     public static void main(String[] args) {
 
-        Object s;
-        
         // 准备
         Manager manager = new Manager();
         UnderlinePen upen = new UnderlinePen('~');

@@ -1,4 +1,4 @@
-package game;
+package gof.ray.Memento.A4.game;
 import java.io.*;
 import java.util.*;
 
