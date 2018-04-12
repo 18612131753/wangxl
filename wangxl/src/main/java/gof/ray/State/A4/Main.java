@@ -1,3 +1,5 @@
+package gof.ray.State.A4;
+
 public class Main {
     public static void main(String[] args) {
         SafeFrame frame = new SafeFrame("State Sample");

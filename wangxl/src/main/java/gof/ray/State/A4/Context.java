@@ -1,3 +1,5 @@
+package gof.ray.State.A4;
+
 public interface Context {
 
     public abstract void setClock(int hour);                // 设置时间

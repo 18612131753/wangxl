@@ -1,3 +1,5 @@
+package gof.ray.State.A4;
+
 public class DayState implements State {
     private static DayState singleton = new DayState();
     private DayState() {                                // 构造函数的可见性是private

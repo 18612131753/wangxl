@@ -1,7 +1,7 @@
 package gof.ray.State.Sample;
 
 public interface State {
-    // 设置时间
+    // 设置时间，切换内部State实例
     public abstract void doClock(Context context, int hour);
 
     // 使用金库

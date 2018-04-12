@@ -1,3 +1,4 @@
+package gof.ray.State.A3;
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.Color;

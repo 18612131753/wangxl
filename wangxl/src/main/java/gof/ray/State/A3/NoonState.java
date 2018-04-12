@@ -1,3 +1,4 @@
+package gof.ray.State.A3;
 public class NoonState implements State {
     private static NoonState singleton = new NoonState();
     private NoonState() {                               // 构造函数的可见性是private

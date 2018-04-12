@@ -1,3 +1,5 @@
+package gof.ray.State.A4;
+
 public class UrgentState implements State {
     private static UrgentState singleton = new UrgentState();
     private UrgentState() {                             // 构造函数的可见性是private
