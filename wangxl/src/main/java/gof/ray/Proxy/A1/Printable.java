@@ -1,3 +1,5 @@
+package gof.ray.Proxy.A1;
+
 public interface Printable {
     public abstract void setPrinterName(String name);   // 设置名字
     public abstract String getPrinterName();            // 获取名字

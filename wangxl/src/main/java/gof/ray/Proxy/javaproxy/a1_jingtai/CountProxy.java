@@ -1,19 +1,18 @@
-package com.ray.proxy.jingtai;
+package gof.ray.Proxy.javaproxy.a1_jingtai;
 
 /**
  * 这是一个代理类（增强CountImpl实现类）
  * 
  */
 public class CountProxy implements Count {
-    private CountImpl countImpl;
+    private CountImpl countImpl = new CountImpl();;
 
     /**
      * 覆盖默认构造器
      * 
      * @param countImpl
      */
-    public CountProxy(CountImpl countImpl) {
-        this.countImpl = countImpl;
+    public CountProxy( ) {
     }
 
     @Override

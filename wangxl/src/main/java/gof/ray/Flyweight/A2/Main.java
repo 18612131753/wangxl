@@ -1,3 +1,5 @@
+package gof.ray.Flyweight.A2;
+
 public class Main {
     private static BigString[] bsarray = new BigString[1000];
     public static void main(String[] args) {

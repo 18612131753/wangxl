@@ -1,4 +1,4 @@
-package com.ray.proxy.jingtai;
+package gof.ray.Proxy.javaproxy.a1_jingtai;
 
 /**
  * 静态代理 由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
@@ -17,8 +17,7 @@ package com.ray.proxy.jingtai;
 public class TestCount {
 
 	public static void main(String[] args) {
-		CountImpl countImpl = new CountImpl();
-		CountProxy countProxy = new CountProxy(countImpl);
+		CountProxy countProxy = new CountProxy( );
 		countProxy.updateCount();
 		countProxy.queryCount();
 	}

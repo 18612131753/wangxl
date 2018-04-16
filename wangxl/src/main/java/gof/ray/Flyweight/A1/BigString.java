@@ -1,3 +1,5 @@
+package gof.ray.Flyweight.A1;
+
 public class BigString {
     // 大型文字的数组
     private BigChar[] bigchars;

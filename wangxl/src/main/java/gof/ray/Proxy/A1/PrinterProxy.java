@@ -1,3 +1,5 @@
+package gof.ray.Proxy.A1;
+
 public class PrinterProxy implements Printable {
     private String name;            // 名字
     private Printable real;         // “本人”                 
