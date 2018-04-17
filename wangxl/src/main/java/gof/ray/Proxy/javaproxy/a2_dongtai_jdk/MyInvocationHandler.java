@@ -32,7 +32,7 @@ public class MyInvocationHandler implements InvocationHandler {
 
 		// 在目标方法执行前简单打印一下
 		System.out.println("代理：----------before----------");
-
+		
 		// 执行目标方法对象
 		Object result = method.invoke(target, args);
 

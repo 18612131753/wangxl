@@ -4,7 +4,7 @@ public class ProxyTest {
 
 	public static void main(String[] args) {
 		// 实例化目标对象
-	    UserServiceImpl userService = new UserServiceImpl();
+	    UserService userService = new UserServiceImpl();
 
 		// 实例化Invocation
 		MyInvocationHandler invocationHandler = new MyInvocationHandler(userService);
