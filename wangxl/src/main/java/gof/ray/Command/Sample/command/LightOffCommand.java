@@ -3,7 +3,7 @@ package gof.ray.Command.Sample.command;
 import gof.ray.Command.Sample.receiver.Receiver;
 
 //关灯命令
-public class LightOffCommand extends Command {
+public class LightOffCommand implements Command {
 
     // 对哪个Receiver类进行命令处理
     private Receiver receiver;
@@ -14,6 +14,7 @@ public class LightOffCommand extends Command {
     }
 
     // 必须实现一个命令
+    @Override
     public void execute() {
         // 业务处理
         this.receiver.turnOFF();
