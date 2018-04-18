@@ -1,12 +1,16 @@
+package gof.ray.Interpreter.A;
+
 import java.util.ArrayList;
 
 // <command list> ::= <command>* end
 public class CommandListNode extends Node {
-    private ArrayList list = new ArrayList();
-    public void parse(Context context) throws ParseException {
+    
+    private ArrayList<Node> list = new ArrayList<Node>();
+
+    public void parse(Context context) throws Exception {
         while (true) {
             if (context.currentToken() == null) {
-                throw new ParseException("Missing 'end'");
+                throw new Exception("Missing 'end'");
             } else if (context.currentToken().equals("end")) {
                 context.skipToken("end");
                 break;
@@ -17,6 +21,7 @@ public class CommandListNode extends Node {
             }
         }
     }
+
     public String toString() {
         return list.toString();
     }

@@ -1,7 +1,11 @@
+package gof.ray.Interpreter.A;
+
 // <command> ::= <repeat command> | <primitive command>
 public class CommandNode extends Node {
+    
     private Node node;
-    public void parse(Context context) throws ParseException {
+
+    public void parse(Context context) throws Exception {
         if (context.currentToken().equals("repeat")) {
             node = new RepeatCommandNode();
             node.parse(context);
@@ -10,6 +14,7 @@ public class CommandNode extends Node {
             node.parse(context);
         }
     }
+
     public String toString() {
         return node.toString();
     }

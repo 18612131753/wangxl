@@ -1,16 +1,16 @@
-package language;
+package gof.ray.Interpreter.A;
 
 // <program> ::= program <command list>
 public class ProgramNode extends Node {
+    
     private Node commandListNode;
-    public void parse(Context context) throws ParseException {
+
+    public void parse(Context context) throws Exception {
         context.skipToken("program");
         commandListNode = new CommandListNode();
         commandListNode.parse(context);
     }
-    public void execute() throws ExecuteException {
-        commandListNode.execute();
-    }
+
     public String toString() {
         return "[program " + commandListNode + "]";
     }

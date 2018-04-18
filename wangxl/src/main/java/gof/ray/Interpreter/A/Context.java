@@ -1,15 +1,17 @@
-package language;
+package gof.ray.Interpreter.A;
 
 import java.util.*;
 
-public class Context implements ExecutorFactory {
-    private ExecutorFactory factory;
+public class Context {
+
     private StringTokenizer tokenizer;
     private String currentToken;
+
     public Context(String text) {
         tokenizer = new StringTokenizer(text);
         nextToken();
     }
+
     public String nextToken() {
         if (tokenizer.hasMoreTokens()) {
             currentToken = tokenizer.nextToken();
@@ -18,28 +20,25 @@ public class Context implements ExecutorFactory {
         }
         return currentToken;
     }
+
     public String currentToken() {
         return currentToken;
     }
-    public void skipToken(String token) throws ParseException {
+
+    public void skipToken(String token) throws Exception {
         if (!token.equals(currentToken)) {
-            throw new ParseException("Warning: " + token + " is expected, but " + currentToken + " is found.");
+            throw new Exception("Warning: " + token + " is expected, but " + currentToken + " is found.");
         }
         nextToken();
     }
-    public int currentNumber() throws ParseException {
+
+    public int currentNumber() throws Exception {
         int number = 0;
         try {
             number = Integer.parseInt(currentToken);
         } catch (NumberFormatException e) {
-            throw new ParseException("Warning: " + e);
+            throw new NumberFormatException("Warning: " + e);
         }
         return number;
-    }
-    public void setExecutorFactory(ExecutorFactory factory) {
-        this.factory = factory;
-    }
-    public Executor createExecutor(String name) {
-        return factory.createExecutor(name);
     }
 }
