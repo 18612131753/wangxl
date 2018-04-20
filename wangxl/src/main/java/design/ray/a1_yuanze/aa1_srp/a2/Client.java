@@ -12,7 +12,7 @@ public class Client {
        animal.eat( "狼");
        
        Animal2 animal2 = new Animal2();
-       animal2.eat("狗");
+       animal2.eat("羊");
     }
 
 }

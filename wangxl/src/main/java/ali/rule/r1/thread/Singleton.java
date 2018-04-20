@@ -14,9 +14,9 @@ public class Singleton{
 	}
 	
 	//线程不安全
-	public static Singleton getInstance() {
+	//public static Singleton getInstance() {
 	//线程安全
-	//public static synchronized Singleton getInstance() {
+	public static synchronized Singleton getInstance() {
 		if (singleton == null) {
 			singleton = new Singleton();
 		}
