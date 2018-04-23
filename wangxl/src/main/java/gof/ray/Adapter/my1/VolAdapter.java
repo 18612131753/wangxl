@@ -1,11 +1,14 @@
 package gof.ray.Adapter.my1;
 
-public class VolAdapter extends ChinaVoltage implements VolAdapterInterface{
+/**
+ * 适配器的核心类
+ */
+public class VolAdapter extends ChinaVoltage implements VolAdapterInterface {
 
-    public VolAdapter( int num ){
-        super( num );
+    public VolAdapter() {
+        super();
     }
-    
+
     @Override
     public int getJapanVol() {
         return this.getNum() - 110;
@@ -13,7 +16,7 @@ public class VolAdapter extends ChinaVoltage implements VolAdapterInterface{
 
     @Override
     public int getEnglandVol() {
-        return  this.getNum() + 20;
+        return this.getNum() + 20;
     }
 
 }
