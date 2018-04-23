@@ -6,7 +6,7 @@ public class Client {
         People people = new People();
         Pizza pizza = new Pizza();
         people.eat(pizza);
-        
+
         Cake cake = new Cake();
         people.eat(cake);
     }

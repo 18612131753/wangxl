@@ -5,10 +5,13 @@ package design.ray.a1_yuanze.aa5_dp.a2;
  */
 public class Lesson {
 
+    //所属阶段
     private Stage stage;
 
+    //所属课程
     private Course course;
 
+    //专业
     private Magor magor;
 
     public Course getCourse() {

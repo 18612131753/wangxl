@@ -1,4 +1,4 @@
-package design.ray.a1_yuanze.aa4_isp.a3;
+package design.ray.a1_yuanze.aa3_dip.a3;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -23,13 +23,13 @@ public class MyServletContextListener implements ServletContextListener{
 	 * 容器关闭时被调用
 	 * */
 	public void contextDestroyed(ServletContextEvent arg0) {
-		logger.info("容器关闭.......");
+		logger.info("servlet关闭.......");
 		
 	}
 
 	/**容器服务器启动时被调用
 	 * */
 	public void contextInitialized(ServletContextEvent arg0) {
-		logger.info("容器启动.......");
+		logger.info("servlet启动.......");
 	}
 }
