@@ -8,7 +8,8 @@ public abstract class Factory {
         return p;
     }
 
+    //创建产品
     protected abstract Product createProduct(String owner);
-
+    //注册产品
     protected abstract void registerProduct(Product product);
 }

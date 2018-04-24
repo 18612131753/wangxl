@@ -9,7 +9,7 @@ public class Main {
                                                                  // world."的StringDisplay类的实例
         d1.display(); // 由于d1、d2和d3都是AbstractDisplay类的子类
         d2.display(); // 可以调用继承的display方法
-        
-        InputStream is ;
+
+        InputStream is;
     }
 }

@@ -2,7 +2,7 @@ package gof.ray.Iterator.Sample;
 
 public class BookShelf implements Aggregate {
     private Book[] books;
-    private int last = 0;
+    private int last = 0; // 记录坐标
 
     public BookShelf(int maxsize) {
         this.books = new Book[maxsize];
@@ -21,6 +21,7 @@ public class BookShelf implements Aggregate {
         return last;
     }
 
+    @Override
     public Iterator iterator() {
         return new BookShelfIterator(this);
     }

@@ -16,8 +16,8 @@ public class Main {
         card1.use();
         card2.use();
         card3.use();
-        
-        LocalSessionFactoryBean lsb ; //hibernate
-        SqlSessionFactoryBean ssf ; //mybatis
+        // IDCard i = new IDCard();
+        LocalSessionFactoryBean lsb; // hibernate
+        SqlSessionFactoryBean ssf;   // mybatis
     }
 }
