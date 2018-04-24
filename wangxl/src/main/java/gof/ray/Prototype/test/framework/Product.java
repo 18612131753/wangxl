@@ -1,4 +1,4 @@
-package gof.test.prototype.framework;
+package gof.ray.Prototype.test.framework;
 
 public interface Product extends Cloneable {
 

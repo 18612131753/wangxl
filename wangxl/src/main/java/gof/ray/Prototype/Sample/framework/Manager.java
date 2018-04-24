@@ -2,6 +2,9 @@ package gof.ray.Prototype.Sample.framework;
 
 import java.util.*;
 
+/**
+ * 实现注册类，生成类
+ * */
 public class Manager {
     private HashMap<String, Product> showcase = new HashMap<String, Product>();
 

@@ -2,6 +2,9 @@ package gof.ray.Prototype.Sample;
 
 import gof.ray.Prototype.Sample.framework.*;
 
+/**
+ * 方框
+ * */
 public class MessageBox implements Product {
     private char decochar;
 

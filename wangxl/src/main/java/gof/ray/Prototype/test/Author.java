@@ -1,4 +1,4 @@
-package gof.test.prototype;
+package gof.ray.Prototype.test;
 
 public class Author implements Cloneable {
 

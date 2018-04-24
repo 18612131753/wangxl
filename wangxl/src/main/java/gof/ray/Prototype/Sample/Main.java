@@ -10,16 +10,16 @@ public class Main {
         UnderlinePen upen = new UnderlinePen('~');
         MessageBox mbox = new MessageBox('*');
         MessageBox sbox = new MessageBox('/');
-        manager.register("strong message", upen);
-        manager.register("warning box", mbox);
-        manager.register("slash box", sbox);
+        manager.register("upen", upen); //强信息
+        manager.register("mbox", mbox); //星号箱
+        manager.register("sbox", sbox);  //斜线箱
 
         // 生成
-        Product p1 = manager.create("strong message");
+        Product p1 = manager.create("upen");
         p1.use("Hello, world.");
-        Product p2 = manager.create("warning box");
+        Product p2 = manager.create("mbox");
         p2.use("Hello, world1.");
-        Product p3 = manager.create("slash box");
+        Product p3 = manager.create("sbox");
         p3.use("Hello, world2.");
     }
 }

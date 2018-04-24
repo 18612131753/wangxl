@@ -1,6 +1,6 @@
-package gof.test.prototype;
+package gof.ray.Prototype.test;
 
-import gof.test.prototype.framework.Product;
+import gof.ray.Prototype.test.framework.Product;
 
 public class Book implements Product {
 
