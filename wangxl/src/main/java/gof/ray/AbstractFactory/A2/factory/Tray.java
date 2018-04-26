@@ -2,7 +2,7 @@ package gof.ray.AbstractFactory.A2.factory;
 import java.util.ArrayList;
 
 public abstract class Tray extends Item {
-    protected ArrayList tray = new ArrayList();
+    protected ArrayList<Item> tray = new ArrayList<Item>();
     public Tray(String caption) {
         super(caption);
     }

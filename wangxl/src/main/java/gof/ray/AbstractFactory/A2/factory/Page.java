@@ -5,7 +5,7 @@ import java.util.*;
 public abstract class Page {
     protected String title;
     protected String author;
-    protected ArrayList content = new ArrayList();
+    protected ArrayList<Item> content = new ArrayList<Item>();
     public Page(String title, String author) {
         this.title = title;
         this.author = author;
