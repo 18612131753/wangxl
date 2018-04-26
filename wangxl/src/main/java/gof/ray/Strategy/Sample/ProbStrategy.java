@@ -8,12 +8,12 @@ import java.util.Random;
 public class ProbStrategy implements Strategy {
     
     private Random random;
-    private int prevHandValue = 0;    //上一句手势
+    private int prevHandValue = 0;    //上一局手势
     private int currentHandValue = 0; //当前手势
     private int[][] history = { { 1, 1, 1, }, { 1, 1, 1, }, { 1, 1, 1, } } ;
 
-    public ProbStrategy(int seed) {
-        random = new Random(seed);
+    public ProbStrategy() {
+        random = new Random();
     }
 
     @Override

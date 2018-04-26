@@ -1,14 +1,12 @@
 package gof.ray.Strategy.Sample;
 public class Main {
     public static void main(String[] args) {
+       
         
-        int seed1 = 314; //随机数的种子
-        int seed2 = 15;  //随机数的种子
+        Player player1 = new Player("player_1", new WinningStrategy());
+        Player player2 = new Player("player_2", new ProbStrategy());
         
-        Player player1 = new Player("player_1", new WinningStrategy(seed1));
-        Player player2 = new Player("player_2", new ProbStrategy(seed2));
-        
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Hand nextHand1 = player1.nextHand();
             Hand nextHand2 = player2.nextHand();
             if (nextHand1.isStrongerThan(nextHand2)) {

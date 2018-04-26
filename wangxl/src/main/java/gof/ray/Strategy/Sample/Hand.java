@@ -31,7 +31,7 @@ public class Hand {
         return fight(h) == -1;
     }
     
-    //判断胜负的算法
+    //判断胜负的算法,0>1,1>2,2>0
     private int fight(Hand h) {                 // 计分：平0, 胜1, 负-1
         if (this == h) {
             return 0;

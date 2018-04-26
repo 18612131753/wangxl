@@ -8,11 +8,11 @@ import java.util.Random;
 public class WinningStrategy implements Strategy {
     
     private Random random;
-    private boolean won = false; // 上一局是否胜利
-    private Hand prevHand;  //之前的手势
+    private boolean won = false; // 上一局是否胜利，false=输
+    private Hand prevHand;  //上一局手势
 
-    public WinningStrategy(int seed) {
-        random = new Random(seed);
+    public WinningStrategy() {
+        random = new Random();
     }
 
     @Override
