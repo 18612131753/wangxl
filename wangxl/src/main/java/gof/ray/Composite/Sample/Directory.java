@@ -43,7 +43,7 @@ public class Directory extends Entry {
         Iterator<Entry> it = directory.iterator();
         while (it.hasNext()) {
             Entry entry = (Entry)it.next();
-            entry.printList(prefix + "/" + name);
+            entry.printList(prefix + "/" + this.name);
         }
     }
 }

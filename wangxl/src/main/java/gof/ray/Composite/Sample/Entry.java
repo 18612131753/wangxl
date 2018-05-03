@@ -17,7 +17,8 @@ public abstract class Entry {
         printList("");
     }
 
-    protected abstract void printList(String prefix); // 为一览加上前缀
+    // 为一览加上前缀
+    protected abstract void printList(String prefix);
 
     public String toString() { // 显示代表类的文字
         return getName() + " (" + getSize() + ")";
