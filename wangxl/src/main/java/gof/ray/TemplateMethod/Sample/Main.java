@@ -10,6 +10,7 @@ public class Main {
         d1.display(); // 由于d1、d2和d3都是AbstractDisplay类的子类
         d2.display(); // 可以调用继承的display方法
 
+        @SuppressWarnings("unused")
         InputStream is;
     }
 }

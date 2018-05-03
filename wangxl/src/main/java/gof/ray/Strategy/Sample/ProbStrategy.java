@@ -19,7 +19,7 @@ public class ProbStrategy implements Strategy {
     @Override
     public Hand nextHand() {
         //出固定手势，一共胜利的次数
-        int bet = random.nextInt(getSum(currentHandValue));
+        int bet = random.nextInt(getSum(currentHandValue)); //在总次数中随机一个数，然后根据数的大小来决定出什么（概率）
         int handvalue = 0;
         if (bet < history[currentHandValue][0]) {
             handvalue = 0;
@@ -46,6 +46,7 @@ public class ProbStrategy implements Strategy {
         if (win) {
             history[prevHandValue][currentHandValue]++;
         } else {
+            //这么做，是为了在输之后，另外两个手势的概率更大
             history[prevHandValue][(currentHandValue + 1) % 3]++;
             history[prevHandValue][(currentHandValue + 2) % 3]++;
         }
