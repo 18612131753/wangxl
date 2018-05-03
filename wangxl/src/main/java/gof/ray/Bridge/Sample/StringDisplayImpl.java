@@ -26,6 +26,7 @@ public class StringDisplayImpl extends DisplayImpl {
     public void rawPrint() {
         System.out.println("|" + string + "|");         // 前后加上"|"并显示
     }
+    
     @Override
     public void rawClose() {
         printLine();
