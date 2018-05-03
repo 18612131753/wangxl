@@ -3,6 +3,7 @@ package gof.ray.Visitor.Sample;
 import java.util.Iterator;
 
 public abstract class Entry implements Element {
+
     public abstract String getName(); // 获取名字
 
     public abstract int getSize(); // 获取大小
@@ -12,11 +13,11 @@ public abstract class Entry implements Element {
     }
 
     // 生成Iterator - 新增
-    public Iterator<Entry> iterator() throws Exception { 
+    public Iterator<Entry> iterator() throws Exception {
         throw new Exception("父类方法，不实现，直接异常");
     }
 
     public String toString() { // 显示字符串
-        return getName() + " (" + getSize() + ")";
+        return this.getName() + " (" + this.getSize() + ")";
     }
 }

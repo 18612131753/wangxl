@@ -3,12 +3,15 @@ package gof.ray.Visitor.Sample;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-//文件夹类
+/**
+ * 文件夹类
+ */
 public class Directory extends Entry {
+    
     private String name; // 文件夹名字
     private ArrayList<Entry> dir = new ArrayList<Entry>(); // 目录条目集合
 
-    public Directory(String name) { // 构造函数
+    public Directory(String name) {
         this.name = name;
     }
 
