@@ -1,8 +1,7 @@
 package gof.ray.Visitor.A3;
 
-import java.util.Iterator;
-
 public class Main {
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         try {
             Directory root1 = new Directory("root1");

@@ -37,7 +37,8 @@ public class IO {
         }
         bufferReader.close();
         
-        LineNumberReader lineNumberReader = new LineNumberReader( new BufferedReader( new FileReader( file ) ) );
+        //LineNumberReader lineNumberReader = new LineNumberReader( new BufferedReader( new FileReader( file ) ) );
+        LineNumberReader lineNumberReader = new LineNumberReader(  new FileReader( file ) );
         // Reader lineNumberReader = new LineNumberReader( new BufferedReader( new FileReader( file ) ) );
         String line ;
         while((line = lineNumberReader.readLine()) != null ){

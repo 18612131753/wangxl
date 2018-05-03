@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Directory extends Entry {
     private String name;                    // 文件夹名字
-    private ArrayList dir = new ArrayList();      // 目录条目的集合
+    private ArrayList<Entry> dir = new ArrayList<Entry>();      // 目录条目的集合
     public Directory(String name) {         // 构造函数
         this.name = name;
     }
@@ -21,7 +21,7 @@ public class Directory extends Entry {
         dir.add(entry);
         return this;
     }
-    public Iterator iterator() {
+    public Iterator<Entry> iterator() {
         return dir.iterator();
     }
     public void accept(Visitor v) {

@@ -7,7 +7,7 @@ public abstract class Entry implements Element {
     public Entry add(Entry entry) throws Exception {       // 增加目录条目
         throw new Exception();
     }
-    public Iterator iterator() throws Exception {    // 生成Iterator
+    public Iterator<Entry> iterator() throws Exception {    // 生成Iterator
         throw new Exception();
     }
     public String toString() {                                          // 显示字符串

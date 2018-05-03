@@ -1,11 +1,14 @@
 package gof.ray.Visitor.A3;
 
 import java.util.Iterator;
+
+import gof.ray.Visitor.A3.Entry;
+
 import java.util.ArrayList;
 
 public class Directory extends Entry {
     private String name;                    // 文件夹名字
-    private ArrayList dir = new ArrayList();      // 目录条目集合
+    private ArrayList<Entry> dir = new ArrayList<Entry>();      // 目录条目集合
     public Directory(String name) {         // 构造函数
         this.name = name;
     }
@@ -14,7 +17,7 @@ public class Directory extends Entry {
     }
     public int getSize() {                  // 获取大小
         int size = 0;
-        Iterator it = dir.iterator();
+        Iterator<Entry> it = dir.iterator();
         while (it.hasNext()) {
             Entry entry = (Entry)it.next();
             size += entry.getSize();
@@ -25,7 +28,7 @@ public class Directory extends Entry {
         dir.add(entry);
         return this;
     }
-    public Iterator iterator() {      // 生成Iterator
+    public Iterator<Entry> iterator() {      // 生成Iterator
         return dir.iterator();
     }
     public void accept(Visitor v) {         // 接受访问者的访问

@@ -11,9 +11,9 @@ public class SizeVisitor extends Visitor {
         size += file.getSize();
     }
     public void visit(Directory directory) {
-        Iterator it = directory.iterator();
+        Iterator<Entry> it = directory.iterator();
         while (it.hasNext()) {
-            Entry entry = (Entry)it.next();
+            Entry entry = it.next();
             entry.accept(this);
         }
     }

@@ -4,25 +4,30 @@ package gof.ray.Decorator.Sample;
  * 全包裹
  */
 public class FullBorder extends Border {
+
     public FullBorder(Display display) {
         super(display);
     }
 
+    // 字符数为被装饰物的字符数加上两侧边框字符数
     @Override
-    public int getColumns() { // 字符数为被装饰物的字符数加上两侧边框字符数
+    public int getColumns() {
         return 1 + display.getColumns() + 1;
     }
 
+    // 行数为被装饰物的行数加上上下边框的行数
     @Override
-    public int getRows() { // 行数为被装饰物的行数加上上下边框的行数
+    public int getRows() {
         return 1 + display.getRows() + 1; // 形成递推
     }
 
     @Override
     public String getRowText(int row) { // 指定的那一行的字符串
-        if (row == 0) { // 上边框
+        // 上边框
+        if (row == 0) {
             return "+" + makeLine('-', display.getColumns()) + "+";
-        } else if (row == display.getRows() + 1) { // 下边框
+        // 下边框
+        } else if (row == display.getRows() + 1) {
             return "+" + makeLine('-', display.getColumns()) + "+";
         } else { // 其他边框
             return "|" + display.getRowText(row - 1) + "|";

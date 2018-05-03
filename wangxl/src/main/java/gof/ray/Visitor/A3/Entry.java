@@ -8,6 +8,7 @@ public abstract class Entry implements Element {
     public Entry add(Entry entry) throws FileTreatmentException {       // 增加目录条目
         throw new FileTreatmentException();
     }
+    @SuppressWarnings("rawtypes")
     public Iterator iterator() throws FileTreatmentException {    // 生成Iterator
         throw new FileTreatmentException();
     }

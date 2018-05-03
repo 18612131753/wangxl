@@ -6,6 +6,7 @@ import gof.ray.Visitor.A1.File;
 import gof.ray.Visitor.A1.FileFindVisitor;
 
 public class Main {
+    @SuppressWarnings("rawtypes")
     public static void main(String[] args) {
         try {
             Directory rootdir = new Directory("root");

@@ -11,7 +11,7 @@ public class ListVisitor extends Visitor {
         System.out.println(currentdir + "/" + directory);
         String savedir = currentdir;
         currentdir = currentdir + "/" + directory.getName();
-        Iterator it = directory.iterator();
+        Iterator<Entry> it = directory.iterator();
         while (it.hasNext()) {
             Entry entry = (Entry)it.next();
             entry.accept(this);
