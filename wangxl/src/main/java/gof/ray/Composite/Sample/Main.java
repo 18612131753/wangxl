@@ -14,8 +14,8 @@ public class Main {
             rootdir.add(usrdir);
             usrdir.add(yuki);
             yuki.add(new File("diary.html", 100));
-            bindir.add(new File("vi", 10000));
-            bindir.add(new File("latex", 20000));
+            bindir.add(new File("vi.txt", 10000));
+            bindir.add(new File("latex.txt", 20000));
             rootdir.printList();
         } catch (Exception e) {
             e.printStackTrace();
