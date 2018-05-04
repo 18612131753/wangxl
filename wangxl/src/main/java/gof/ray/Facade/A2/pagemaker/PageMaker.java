@@ -30,7 +30,7 @@ public class PageMaker {
             HtmlWriter writer = new HtmlWriter(new FileWriter(filename));
             writer.title("Link page");
             Properties mailprop = Database.getProperties("maildata");
-            Enumeration en = mailprop.propertyNames();
+            Enumeration<?> en = mailprop.propertyNames();
             while (en.hasMoreElements()) {
                 String mailaddr = (String) en.nextElement();
                 String username = mailprop.getProperty(mailaddr, "(unknown)");
