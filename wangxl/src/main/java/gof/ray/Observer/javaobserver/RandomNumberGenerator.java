@@ -1,7 +1,6 @@
 package gof.ray.Observer.javaobserver;
 
 import java.util.Observable;
-import java.util.Observer;
 import java.util.Random;
 
 /**
