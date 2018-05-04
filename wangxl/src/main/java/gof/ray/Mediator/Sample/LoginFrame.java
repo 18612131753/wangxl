@@ -9,8 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /**
- * javase
- * 仲裁者的实现
+ * javase 仲裁者的实现
  */
 public class LoginFrame extends Frame implements ActionListener, Mediator {
 
@@ -30,7 +29,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         // 使用布局管理器生成4×2窗格，4行2列
         this.setLayout(new GridLayout(4, 2));
         // 初始化各个Colleague（自定义方法）
-        createColleagues();
+        this.createColleagues();
         // 配置，顺序装配，一行一行来
         this.add(checkGuest);
         this.add(checkLogin);
@@ -43,7 +42,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         // 设置初始的启用起用/禁用状态
         this.colleagueChanged();
         this.pack(); // 打包、包装
-        this.setVisible(true); //设置可见,底层是this.show()方法
+        this.setVisible(true); // 设置可见,底层是this.show()方法
     }
 
     // 生成各个Colleague。
@@ -85,23 +84,18 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
             buttonOk.setColleagueEnabled(true);
         } else { // Login mode
             textUser.setColleagueEnabled(true);
-            userpassChanged();
-        }
-    }
-
-    // 当textUser或是textPass文本输入框中的文字发生变化时
-    // 判断各Colleage的启用/禁用状态
-    private void userpassChanged() {
-        if (textUser.getText().length() > 0) {
-            textPass.setColleagueEnabled(true);
-            if (textPass.getText().length() > 0) {
-                buttonOk.setColleagueEnabled(true);
+            // 当textUser或是textPass文本输入框中的文字发生变化时，判断各Colleage的启用/禁用状态
+            if (textUser.getText().length() > 0) {
+                textPass.setColleagueEnabled(true);
+                if (textPass.getText().length() > 0) {
+                    buttonOk.setColleagueEnabled(true);
+                } else {
+                    buttonOk.setColleagueEnabled(false);
+                }
             } else {
+                textPass.setColleagueEnabled(false);
                 buttonOk.setColleagueEnabled(false);
             }
-        } else {
-            textPass.setColleagueEnabled(false);
-            buttonOk.setColleagueEnabled(false);
         }
     }
 
@@ -110,6 +104,6 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     public void actionPerformed(ActionEvent e) {
         // 点击按钮式，打印
         System.out.println(e.toString());
-        System.exit(0);//结束
+        System.exit(0);// 结束
     }
 }

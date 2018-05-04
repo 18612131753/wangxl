@@ -15,16 +15,18 @@ public class ColleagueCheckbox extends Checkbox implements ItemListener, Colleag
         super(caption, group, state);
     }
 
+    @Override
     public void setMediator(Mediator mediator) { // 保存Mediator
         this.mediator = mediator;
     }
 
+    @Override
     public void setColleagueEnabled(boolean enabled) { // Mediator下达启用/禁用指示
         this.setEnabled(enabled);
     }
 
     // 当状态发生变化时通知Mediator
-    //ItemListener
+    // ItemListener
     @Override
     public void itemStateChanged(ItemEvent e) {
         mediator.colleagueChanged();
