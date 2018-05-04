@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class LoginFrame extends Frame implements ActionListener, Mediator {
+
+    private static final long serialVersionUID = 1L;
     private ColleagueCheckbox checkGuest;
     private ColleagueCheckbox checkLogin;
     private ColleagueTextField textUser;
@@ -38,7 +40,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         colleagueChanged();
         // 显示
         pack();
-        show();
+        this.setVisible(true); //设置可见,底层是this.show()方法
     }
 
     // 生成各个Colleague。
@@ -79,12 +81,13 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
             userpassChanged();
         }
     }
+
     // 当textUser或是textPass文本输入框中的文字发生变化时。
     // 判断各Colleage的可启用/禁用状态。
     private void userpassChanged() {
         if (textUser.getText().length() > 0) {
             textPass.setColleagueEnabled(true);
-            if (textUser.getText().length() >= 4 && textPass.getText().length() >= 4) {     
+            if (textUser.getText().length() >= 4 && textPass.getText().length() >= 4) {
                 buttonOk.setColleagueEnabled(true);
             } else {
                 buttonOk.setColleagueEnabled(false);
@@ -94,6 +97,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
             buttonOk.setColleagueEnabled(false);
         }
     }
+
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());
         System.exit(0);
