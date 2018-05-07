@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Gamer {
     private int money;                          // 所持金钱
-    private List fruits = new ArrayList();      // 获得的水果
+    private List<String> fruits = new ArrayList<String>();      // 获得的水果
     private Random random = new Random();       // 随机数生成器
     private static String[] fruitsname = {      // 表示水果种类的数组
         "苹果", "葡萄", "香蕉", "橘子",
@@ -32,9 +32,9 @@ public class Gamer {
     }
     public Memento createMemento() {                // 拍摄快照
         Memento m = new Memento(money);
-        Iterator it = fruits.iterator();
+        Iterator<String> it = fruits.iterator();
         while (it.hasNext()) {
-            String f = (String)it.next();
+            String f = it.next();
             if (f.startsWith("好吃的")) {         // 只保存好吃的水果
                 m.addFruit(f);
             }

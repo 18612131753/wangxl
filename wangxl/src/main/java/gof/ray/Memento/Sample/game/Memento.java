@@ -22,6 +22,7 @@ public class Memento {
         fruits.add(fruit);
     }
 
+    @SuppressWarnings("unchecked")
     // 获取当前所持所有水果（wide interface）
     List<String> getFruits() { // 获取当前所持所有水果（wide interface）
         return (List<String>) fruits.clone();
