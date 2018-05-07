@@ -18,6 +18,7 @@ public class RandomNumberGenerator extends NumberGenerator {
     public void execute() {
         for (int i = 0; i < 20; i++) {
             number = random.nextInt(50);
+            //通知
             this.notifyObservers();
         }
     }
