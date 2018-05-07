@@ -1,16 +1,19 @@
 package gof.ray.State.A3;
-import java.awt.Frame;
-import java.awt.Label;
-import java.awt.Color;
-import java.awt.Button;
-import java.awt.TextField;
-import java.awt.TextArea;
-import java.awt.Panel;
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Panel;
+import java.awt.TextArea;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SafeFrame extends Frame implements ActionListener, Context {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
     private TextField textClock = new TextField(60);        // 显示当前时间
     private TextArea textScreen = new TextArea(10, 60);     // 显示警报中心的记录
     private Button buttonUse = new Button("使用金库");      // 金库使用按钮
@@ -41,7 +44,7 @@ public class SafeFrame extends Frame implements ActionListener, Context {
         add(panel, BorderLayout.SOUTH);
         // 显示
         pack();
-        show();
+        this.setVisible(true); // 设置可见,底层是this.show()方法
         // 设置监听器
         buttonUse.addActionListener(this);
         buttonAlarm.addActionListener(this);
