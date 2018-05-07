@@ -3,10 +3,11 @@ package gof.ray.Memento.Sample.game;
 import java.util.*;
 
 public class Memento {
+
     int money; // 所持金钱
     ArrayList<String> fruits; // 当前获得的水果
 
-    // 构造函数(wide interface)
+    // 构造函数(narrow interface)
     Memento(int money) {
         this.money = money;
         this.fruits = new ArrayList<String>();
