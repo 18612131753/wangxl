@@ -4,6 +4,8 @@ import gof.ray.State.Sample.Context;
 import gof.ray.State.Sample.DayState;
 import gof.ray.State.Sample.NightState;
 
+
+//注意，要将中介者 注入到 DayState，NightState中去
 public class ConcreteMediator extends Mediator {
 
     @Override
