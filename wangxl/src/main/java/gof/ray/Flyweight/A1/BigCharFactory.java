@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class BigCharFactory {
     // 管理已经生成的BigChar的实例
-    private HashMap pool = new HashMap();
+    private HashMap<String,BigChar> pool = new HashMap<String,BigChar>();
     // Singleton模式
     private static BigCharFactory singleton = new BigCharFactory();
     // 构造函数

@@ -9,6 +9,7 @@ public class BigChar {
     private char charname;
     // 大型字符对应的字符串(由'#' '.' '\n'组成)
     private String fontdata;
+    
     // 构造函数
     public BigChar(char charname) {
         this.charname = charname;
@@ -31,5 +32,8 @@ public class BigChar {
     // 显示大型字符
     public void print() {
         System.out.print(fontdata);
+    }
+    public char getCharname() {
+        return charname;
     }
 }
