@@ -1,6 +1,7 @@
 package gof.ray.Strategy.Q4;
 
 public class SelectionSorter implements Sorter {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public void sort(Comparable[] data) {
         for (int i = 0; i < data.length - 1; i++) {
             int min = i;

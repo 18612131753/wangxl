@@ -1,11 +1,16 @@
 package gof.ray.Strategy.A4;
 
 public class QuickSorter implements Sorter {
+    @SuppressWarnings("rawtypes")
     Comparable[] data;
+
+    @SuppressWarnings("rawtypes")
     public void sort(Comparable[] data) {
         this.data = data;
         qsort(0, data.length - 1);
     }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     private void qsort(int pre, int post) {
         int saved_pre = pre;
         int saved_post = post;
