@@ -10,7 +10,7 @@ public class CglibProxy implements MethodInterceptor {
 
     private Enhancer enhancer = new Enhancer();
 
-    public Object getProxy(Class clazz) {
+    public Object getProxy(Class<?> clazz) {
         // 设置创建子类的类(为哪个类设置代理类)
         enhancer.setSuperclass(clazz);
         enhancer.setCallback(this);
